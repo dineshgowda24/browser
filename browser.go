@@ -6,3 +6,10 @@ type Matcher interface {
 	Match() bool
 	Name() string
 }
+
+// BrowserMatcher is an interface for browser matchers.
+type BrowserMatcher interface {
+	Matcher          // BrowserMatcher implements Matcher interface.
+	Version() string // Version returns the full version of the browser.
+}
+
