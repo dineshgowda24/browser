@@ -6,11 +6,11 @@ I wanted a package to detect the browser, device and platform from the user agen
 
 ### Inspiration
 
-This package is inspired by the ruby gem [fnando/browser](https://github.com/fnando/browser). I wanted to have something similar in Go (Golang) to detect the browser and the platform from the user agent string but I couldn't find anything similar. So I decided to write my own package inspired by the ruby gem.
+This package is inspired by the ruby gem [fnando/browser](https://github.com/fnando/browser). I have used the ruby gem in my previous projects and I really liked it. All the credit goes to the author of the ruby gem who has done a great job. After much procrastination, I finally decided to write a similar package in Go.
 
 ## Design
 
-I have tried to keep the architecture as similar as possible to the ruby gem. I have followed the language conventions and the package structure of Go.
+I have tried to keep the architecture as similar as possible to the ruby gem. But made changes where I felt it was necessary as per the Go standards.
 
 The package is divided into three parts:
 
@@ -25,6 +25,7 @@ A `Matcher` interface defines a matching behaviour for a user agent string.
 ```go
 type Matchers interface {
     Match() bool
+    Name() string
 }
 ```
 
@@ -33,8 +34,7 @@ type Matchers interface {
 ```go
 type BrowserMatcher interface {
     Matcher
-    Name() string        // Name returns the name of the browser.
-    FullVersion() string // FullVersion returns the full version of the browser.
+    Version() string // FullVersion returns the full version of the browser.
 }
 ```
 
@@ -45,7 +45,6 @@ type BrowserMatcher interface {
 ```go
 type DeviceMatcher interface {
     Matcher
-    Name() string // Name of the device
 }
 ```
 
@@ -56,7 +55,6 @@ type DeviceMatcher interface {
 ```go
 type PlatformMatcher interface {
     Matcher
-    Name() string    // Name returns the name of the platform.
     Version() string // Version returns the version of the platform.
 }
 ```
