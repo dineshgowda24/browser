@@ -1,8 +1,10 @@
 package matchers
 
 import (
+	"fmt"
 	"log"
 	"os"
+	"strings"
 	"testing"
 
 	"gopkg.in/yaml.v2"
@@ -24,9 +26,13 @@ var testUserAgents map[string]ua
 // initTestUserAgents reads the matchers.yml file and
 // unmarshals it into the testUserAgents map.
 func initTestUserAgents() {
-	// TODO: use a relative path
+	wd, err := os.Getwd()
+	if err != nil {
+		log.Fatalf("failed to get working directory: %v", err)
+	}
 
-	yamlFile, err := os.ReadFile("assets/_test/matchers.yml")
+	wd = strings.Split(wd, "/browser")[0]
+	yamlFile, err := os.ReadFile(fmt.Sprintf("%s/browser/assets/_test/matchers.yml", wd))
 	if err != nil {
 		log.Fatalf("failed to read file: %v", err)
 	}
