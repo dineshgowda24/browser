@@ -1,1 +1,6 @@
 ---
+alipay:
+  android: Mozilla/5.0 (Linux; Android 7.1.1; Nexus 5 Build/NMF26V; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/55.0.2883.105 Mobile Safari/537.36 Nebula AlipayDefined(nt:WIFI,ws:360|0|3.0) AliApp(APHK/1.7.0.123008) AlipayClientHK/1.7.0.123008 Language/zh-HK useStatusBar/true
+  ios: Mozilla/5.0 (iPhone; CPU iPhone OS 9_3 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13E230 ChannelId(3) Nebula PSDType(1) AlipayDefined(nt:WIFI,ws:320|504|2.0) AliApp(AP/9.9.0.000001) AlipayClient/9.9.0.000001 Language/zh-Hans ProductType/dev
+  mac: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2,AlipayClient) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.134 Safari/537.36
+  windows: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/538.1 (KHTML like Gecko) alipay_demo1 Safari/538.1
