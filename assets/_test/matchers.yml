@@ -71,3 +71,8 @@ opera-touch:
   linux: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/67.0.3396.68 Safari/537.36 OPT/1.6.18
   mac: Mozilla/5.0 (Macintosh; Intel Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) OPT/69
   windows: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.68 Safari/537.36 OPT/1.6.18
+pale-moon:
+  android: Mozilla/5.0 (Android; Mobile; rv:25.4) Gecko/25.4 Firefox/31.9 PaleMoon/25.4.1
+  linux: Mozilla/5.0 (X11; Linux i686; rv:25.6) Gecko/20150723 PaleMoon/25.6.0
+  mac: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; rv:25.3) Gecko/20150325 PaleMoon/25.3.1
+  windows: Mozilla/5.0 (Windows NT 6.1; rv:25.6) Gecko/20150723 Firefox/31.9 PaleMoon/25.6.0
