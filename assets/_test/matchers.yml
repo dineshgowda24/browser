@@ -10,3 +10,9 @@ blackberry:
   linux: Mozilla/5.0 (BB10; Touch) AppleWebKit/537.10+ (KHTML, like Gecko) Version/10.1.0.2342 Mobile Safari/537.10+(Linux LLC 1.2)
   windows: Mozilla/5.0 (Blackberry; U; BlackBerry 9900; en) AppleWebKit/534.11+ (KHTML, like Gecko) Version/7.1.0.346 Mobile Safari/534.11+ (Windows NT 6.2; WOW64; Trident/7.0; rv:11.0) like Gecko
   mac: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36@i-0bb1056c6cb023f60
+duck_duck_go:
+  android: Mozilla/5.0 (Linux; Android 9) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/76.0.3809.132 Mobile Safari/537.36 DuckDuckGo/5
+  ios: DuckDuckGo/2 CFNetwork/897.15 Darwin/17.5.0
+  linux: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/76.0.3809.132 Safari/537.36 DuckDuckGo/5
+  mac: Mozilla/5.0 (Macintosh; PPC Mac OS X 10.4; FPR32; rv:45.0) Gecko/20100101 DuckDuckGoKite/1.0.1 TenFourFox/7450
+  windows: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.80 Safari/537.36 Edg/98.0.1108.50 DuckDuck/1.0
