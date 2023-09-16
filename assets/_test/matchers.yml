@@ -39,3 +39,9 @@ konqueror:
   linux: Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.21 (KHTML, like Gecko) konqueror/4.14.1 Safari/537.21
   mac: Konqueror/5.0 (Macintosh; Intel Mac OS X 10_9_5) AppleWebKit/600.1.17 (KHTML, like Gecko) Version/7.1 Safari/537.85.10
   windows: Mozilla/5.0 (Windows; Windows i686) KHTML/4.10.2 (like Gecko) Konqueror/4.10
+maxthon:
+  android: Mozilla/5.0 (Linux; U; Android 4.1.1; en-us; NABI2-NV7A Build/JRO03C)Maxthon AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Safari/534.30
+  ios: Mozilla/5.0 (iPad; CPU OS 5_1 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9B176 Safari/537.4 Maxthon/4.1.8.2000
+  linux: Mozilla/5.0 (X11; Linux x86_64; Ubuntu 15.04) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.0 Maxthon/1.0.5.3 Safari/537.36
+  mac: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/600.7.12 (KHTML, like Gecko) Maxthon/4.5.2
+  windows: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Maxthon/4.4.3.4000 Chrome/30.0.1599.101 Safari/537.36
