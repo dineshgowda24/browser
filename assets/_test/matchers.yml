@@ -33,3 +33,9 @@ instagram:
   android: Mozilla/5.0 (Linux; Android 6.0.1; SM-G930K Build/MMB29K; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/54.0.2840.68 Mobile Safari/537.36 Instagram 9.7.0 Android (23/6.0.1; 640dpi; 1440x2560; samsung; SM-G930K; heroltektt; samsungexynos8890; ko_KR)
   mac: Mozilla/5.0 instagram (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/601.7.7 (KHTML, like Gecko) Version/9.1.2 Safari/601.7.7
   windows: Mozilla/5.0 (Windows NT 10.0.14393.693; osmeta 9.3.50207392) AppleWebKit/602.1.1 (KHTML, like Gecko) Version/9.0 Safari/602.1.1 osmeta/9.3.50207392 Build/50207392 Instagram 10.8.1 (Windows Device; osmeta/Windows 9_3_50207392; en_SG; en-SG; scale=1.00; gamut=normal; 1920x1008)
+konqueror:
+  android: Konqueror/10.1 (Android 4.4; da;)
+  ios: Konqueror/14.1 (iPad 2.4; zh_TW;)
+  linux: Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.21 (KHTML, like Gecko) konqueror/4.14.1 Safari/537.21
+  mac: Konqueror/5.0 (Macintosh; Intel Mac OS X 10_9_5) AppleWebKit/600.1.17 (KHTML, like Gecko) Version/7.1 Safari/537.85.10
+  windows: Mozilla/5.0 (Windows; Windows i686) KHTML/4.10.2 (like Gecko) Konqueror/4.10
