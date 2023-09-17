@@ -61,3 +61,6 @@ ios-17:  Mozilla/5.0 (iPhone; CPU iPhone OS 17_6 like Mac OS X) AppleWebKit/605.
 kai-os-1: Mozilla/5.0 (Mobile; ALCATEL4044T; rv:37.0) Gecko/37.0 Firefox/37.0 KaiOS/1.0
 kai-os-2: Mozilla/5.0 (Mobile; LYF/LF-2403N/LYF-LF2403N-000-01-18IMEI-040817-i; rv:48.0) Gecko/48.0 Firefox/48.0 KaiOS/2.0
 linux: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Atom/1.0.15 Chrome/43.0.2357.65 Electron/0.30.6 Safari/537.36
+mac-os: XMind/10.2.1.202007271856 (darwin.x64; macOS Arch/x64 Version/11.0.1; en-US) Electron/5.0.13
+mac-os-1: MOZILLA/5.0 (MACINTOSH; INTEL MAC OS X 10_14_6) APPLEWEBKIT/537.36 (KHTML LIKE GECKO) CHROME/94.0.4606.61 SAFARI/537.36
+mac-os-x: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11) AppleWebKit/537.36 (KHTML, like Gecko) NativefierPlaceholder/0.0.1 Chrome/47.0.2526.73 Electron/0.36.4 Safari/537.36
