@@ -72,3 +72,7 @@ windows-7: Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.
 windows-8: Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) your-app/0.1.0 Chrome/41.0.2272.76 Electron/0.24.0 Safari/537.36
 windows-8-1: Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Min/1.1.2 Chrome/49.0.2623.75 Electron/0.37.1 Safari/537.36
 windows-10: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Atom/1.6.2 Chrome/45.0.2454.85 Electron/0.34.5 Safari/537.36
+apple-watch-3: Watch3,2/5.2.1 (16U113)
+apple-watch-4: server-bag [Watch OS,5.3,16T225,Watch4,2]
+apple-watch-5: com.apple.invitation-registration [Watch OS,6.0.1,17R604,Watch5,4]
+apple-watch-6: server-bag [Watch OS,7.0,18R382,Watch6,4]
