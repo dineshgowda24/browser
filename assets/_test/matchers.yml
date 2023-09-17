@@ -102,3 +102,8 @@ uc-browser:
   linux: JUC (Linux; U; 2.2; zh-cn; GT-I9000; 480*800) UCWEB7.9.0.94/139/444
   mac: Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_3) AppleWebKit/534.31 (KHTML, like Gecko) Chrome/17.0.558.0 Safari/534.31 UCBrowser/3.2.0.417
   windows: UCWEB/2.0 (Windows; U; wds 8.0; en-IN; NOKIA; RM-914_im_mea3_319) U2/1.0.0 UCBrowser/4.2.1.541 U2/1.0.0 Mobile
+vivo-browser:
+  android: Mozilla/5.0 (Linux; Android 5.1.1; vivo V3Max A Build/LMY47V) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/38.0.0.0 Mobile Safari/537.36 VivoBrowser/5.0.10
+  ios: Mozilla/5.0 (iPhone; CPU iPhone OS 10_0_2 like Mac OS X; zh-CN) AppleWebKit/537.51.1 (KHTML, like Gecko) Version/4.0 Chrome/38.0.0.0 Mobile Safari/537.36 VivoBrowser/5.0.10
+  linux: Mozilla/5.0 (Linux; Xhrome  4.4.4; vivo Y13L Build/KTU84P) AppleWebKit/537.36 (KHTML, like Cocca) Version/4.0 Chrome/38.0.0.0 Mobile Safari/537.36 VivoBrowser/5.0.2
+  windows: Mozilla/5.0 (Windows; U; Windows NT 5.2; en-US) AppleWebKit/537.36 (KHTML, like Gecko) Safari/537.36 VivoBrowser/5.4.11 Chrome/38.0.2125.102
