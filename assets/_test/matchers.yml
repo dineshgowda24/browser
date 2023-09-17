@@ -113,3 +113,9 @@ yandex:
   linux: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.97 YaBrowser/15.9.2403.2150 (beta) Safari/537.36
   mac: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 YaBrowser/15.4.2272.3909 (beta) Yowser/2.0 Safari/537.36
   windows: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.152 YaBrowser/15.6.2311.5029 Safari/537.36
+yaani-browser:
+  android: Mozilla/5.0 (Android 7.1.2; Pixel Build/NHG47O) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.9 YaaniBrowser/3.3.0.301 (Turkcell-TR) Mobile Safari/537.36
+  ios: Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_2 like Mac OS X) AppleWebKit/603.2.4 (KHTML, like Gecko) YaaniBrowser/3.6.355 Mobile Turkcell-TR
+  linux: Mozilla/5.0 X11 (Linux x86_64) AppleWebKit/537.36 KHTML, like Gecko Chrome/54.0.2840.9 YaaniBrowser/3.5.0.441 Safari/537.36
+  mac: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_1) AppleWebKit/605.1.15 (KHTML, like Gecko) Turkcell-YaaniBrowser/5.1.2b104 Turkcell-TR
+  windows: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 YaaniBrowser/0.1
