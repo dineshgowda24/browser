@@ -36,3 +36,9 @@ blackberry-5: Mozilla/5.0 (BlackBerry; U; BlackBerry 9900; en-US) AppleWebKit/53
 blackberry-6: Mozilla/5.0 (BlackBerry; U; BlackBerry 9300; es) AppleWebKit/534.8+ (KHTML, like Gecko) Version/6.0.0.480 Mobile Safari/534.8+
 blackberry-7: Mozilla/5.0 (BlackBerry; U; BlackBerry 9380; en) AppleWebKit/534.11+ (KHTML, like Gecko) Version/7.1.0.336 Mobile Safari/534.11+
 blackberry-10: Mozilla/5.0 (BB10; Touch) AppleWebKit/537.35+ (KHTML, like Gecko) Version/10.3.2.2339 Mobile Safari/537.35+
+chrome-os-armv7l: Mozilla/5.0 (X11; CrOS armv7l 7077.134.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.156 Safari/537.36
+chrome-os-armv7i: Mozilla/5.0 (X11; CrOS armv7I 6158.49.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.101 Safari/537.36
+chrome-os-armv8l: Mozilla/5.0 (X11; CrOS armv8l 8872.54.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.54 Safari/537.36
+chrome-os-x86-64: Mozilla/5.0 (X11; CrOS x86_64 7647.84.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36,gzip(gfe)
+chrome-os-i686: Mozilla/5.0 (X11; CrOS i686 6310.68.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.96
+chrome-os-aarch64: Mozilla/5.0 (X11; CrOS aarch64 9202.64.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.146 Safari/537.36
