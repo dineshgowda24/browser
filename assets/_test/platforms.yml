@@ -58,3 +58,5 @@ ios-14: Mozilla/5.0 (iPhone; CPU iPhone OS 14_7 like Mac OS X) AppleWebKit/605.1
 ios-15: Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.0 Mobile/15E148 Browlser/4.0.1 (1) Safari/605.1.15
 ios-16: Mozilla/5.0 (iPhone; CPU iPhone OS 16_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/94.0.4606.52 Mobile/15E148 Safari/604.1
 ios-17:  Mozilla/5.0 (iPhone; CPU iPhone OS 17_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/92.0.4515.90 Mobile/15E148 Safari/604.
+kai-os-1: Mozilla/5.0 (Mobile; ALCATEL4044T; rv:37.0) Gecko/37.0 Firefox/37.0 KaiOS/1.0
+kai-os-2: Mozilla/5.0 (Mobile; LYF/LF-2403N/LYF-LF2403N-000-01-18IMEI-040817-i; rv:48.0) Gecko/48.0 Firefox/48.0 KaiOS/2.0
