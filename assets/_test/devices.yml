@@ -16,3 +16,6 @@ ps-vita-3: Mozilla/5.0 (PlayStation Vita 6.61) AppleWebKit/537.73 (KHTML, like G
 psp-1: Mozilla/4.0 (PSP (PlayStation Portable); 2.00)
 psp-2: PSP (PlayStation Portable); 5.70
 psp-3: Mozilla/4.0 (PSP (PlayStation Portable); 2.00)(Linux LLC 1.2)
+switch-1: Mozilla/5.0 (Nintendo Switch BETA) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.119 Console Safari/537.36
+switch-2: Opera/9.30 (Nintendo Switch; U; ; 2047-7; de)
+switch-3: Nintendo Wii Browser(Nintendo Switch Lite)
