@@ -10,3 +10,6 @@ kindle-fire-2: Mozilla/5.0 (Linux; U; Android 4.0.3; en-us; KFTT Build/IML74K) A
 ps3: Mozilla/5.0 (PlayStation 3) AppleWebKit/531.3 (KHTML, like Gecko) SCEE/1.0 Nuanti/2.0
 ps4: Mozilla/5.0 (PlayStation 4 2.57) AppleWebKit/537.73 (KHTML, like Gecko)
 ps5: Mozilla/5.0 (PlayStation 5 3.03/SmartTV) AppleWebKit/605.1.15 (KHTML, like Gecko) THEWORLD
+ps-vita-1: Mozilla/5.0 (PlayStation Vita 2.06) AppleWebKit/536.26 (KHTML, like Gecko)
+ps-vita-2: Mozilla/5.0 (Sony PlayStation Vita; Win64; x64; rv:109.0) Gecko/20100101 Firefox/116.0
+ps-vita-3: Mozilla/5.0 (PlayStation Vita 6.61) AppleWebKit/537.73 (KHTML, like Gecko) Silk/3.2
