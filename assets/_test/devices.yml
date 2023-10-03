@@ -27,3 +27,6 @@ wiiu-3: Mozilla/5.0 (Nintendo WiiU) AppleWebKit/536.30 (KHTML, like Gecko) NX/3.
 wii-1: MSIE 999; Nintendo WIi; Mozilla/5.0; (Win64)
 wii-2: Mozilla/5.0 (Nintendo Wii; U; en-US) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4200.1 Safari/537.36
 wii-3: Google Chrome/10 (Nintendo Wii)
+xbox360-1: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML; like Gecko) Xbox/1910.1001.6.0 Chrome/69.0.3497.128 Electron/4.2.2 Safari/537.36
+xbox360-2: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Xbox/2001.1001.4.0 Chrome/69.0.3497.128 Electron/4.2.2 Safari/537.36
+xbox360-3: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.74 Safari/537.36 Xbox Live Client/2.0.17003.0
