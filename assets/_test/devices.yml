@@ -1,6 +1,11 @@
 ---
 bb-playbook-1:  Mozilla/5.0 (PlayBook; U; RIM Tablet OS 1.0.0; en-US) AppleWebKit/534.8+ (KHTML, like Gecko) Version/0.0.1 Safari/534.8+
 bb-playbook-2: Mozilla/5.0 (PlayBook; U; RIM Tablet OS 2.1.0; en-US) AppleWebKit/536.2+ (KHTML, like Gecko) Version/7.2.1.0 Safari/536.2+
+ipad-1: Mozilla/5.0 (iPad; U; CPU OS 6_0_1 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A523 Safari/8536.25 XiaoMi/MiuiBrowser/2.1.1
+ipad-2: Mozilla/5.0 (iPad; CPU OS 12_1_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/16C5050a Electron/like MathspaceIOS/2.7.2
+ipad-3: Mozilla/5.0 (iPad; CPU OS 15_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.0 Mobile/15E148 Browlser/4.2
+ipad-4: Mozilla/5.0 (iPad; CPU OS 5_1_1 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) CriOS/29.0.1547.11 Mobile/9B206 Safari/7534.48.3
+ipad-5: bonprix mobile App 1.40 (20200325.1) (iOS 13.3; iPad) AppleWebKit (KHTML, like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25
 ipod-touch-1: bonprix mobile app 1.35.1 (20190919.1) (ios 12.4.2; ipod7,1) applewebkit (khtml, like gecko) version/6.0 mobile/10a5376e safari/8536.25
 ipod-touch-2: Mozilla/5.0 (iPod touch; CPU iPhone OS 12_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Electron/like MathspaceIOS/2.7.2
 kindle-1: Mozilla/5.0 (Linux; Android 4.4.2; SM-T310 Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/30.0.0.0 Safari/537.36/Kindle 4.3.0.110
