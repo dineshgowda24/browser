@@ -110,6 +110,9 @@ vivo-browser:
   ios: Mozilla/5.0 (iPhone; CPU iPhone OS 10_0_2 like Mac OS X; zh-CN) AppleWebKit/537.51.1 (KHTML, like Gecko) Version/4.0 Chrome/38.0.0.0 Mobile Safari/537.36 VivoBrowser/5.0.10
   linux: Mozilla/5.0 (Linux; Xhrome  4.4.4; vivo Y13L Build/KTU84P) AppleWebKit/537.36 (KHTML, like Cocca) Version/4.0 Chrome/38.0.0.0 Mobile Safari/537.36 VivoBrowser/5.0.2
   windows: Mozilla/5.0 (Windows; U; Windows NT 5.2; en-US) AppleWebKit/537.36 (KHTML, like Gecko) Safari/537.36 VivoBrowser/5.4.11 Chrome/38.0.2125.102
+weibo:
+  android: Mozilla/5.0 (Linux; Android 4.4.2; HUAWEI MT7-TL10 Build/HuaweiMT7-TL10) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/30.0.0.0 Mobile Safari/537.36 Weibo (HUAWEI-HUAWEI MT7-TL10__weibo__6.5.0__android__android4.4.2)
+  ios: Mozilla/5.0 (iPad; CPU OS 14_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Weibo (iPad7,11__weibo__10.9.2__ipad__os14.0)
 yandex:
   android: Mozilla/5.0 (Linux; Android 4.4.2; SM-T230 Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 YaBrowser/15.4.2272.3842.01 Safari/537.36
   ios: Mozilla/5.0 (iPhone; CPU iPhone OS 8_4_1 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) YaBrowser/15.9.2403.2772.10 Mobile/12H321 Safari/600.1.4
