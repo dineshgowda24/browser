@@ -30,3 +30,5 @@ wii-3: Google Chrome/10 (Nintendo Wii)
 xbox360-1: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML; like Gecko) Xbox/1910.1001.6.0 Chrome/69.0.3497.128 Electron/4.2.2 Safari/537.36
 xbox360-2: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Xbox/2001.1001.4.0 Chrome/69.0.3497.128 Electron/4.2.2 Safari/537.36
 xbox360-3: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.74 Safari/537.36 Xbox Live Client/2.0.17003.0
+xbox-one-1: Mozilla/4.0 (Windows 10; Win64; x86; Xbox; Xbox One) AppleWebKit/512.36 (KHTML, like Gecko) Chrome/39.0.2564.82 Safari/537.36 Edge/13.14310
+xbox-one-2: Mozilla/5.0 (Windows NT 10.0; Win64; x64; Xbox; Xbox One) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36
