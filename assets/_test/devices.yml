@@ -24,3 +24,6 @@ tv-2: Mozilla/5.0 (Linux; Android 5.0.2; ADT-1 Build/LRX22G) AppleWebKit/537.36 
 wiiu-1: Mozilla/5.0 (Nintendo WiiU) AppleWebKit/534.53 (KHTML, like Gecko) NWF/1.9.5.43313.JPN
 wiiu-2: Mozilla/5.0 (Nintendo WiiU/SmartTV) AppleWebKit/605.1.15 (KHTML, like Gecko) THEWORLD
 wiiu-3: Mozilla/5.0 (Nintendo WiiU) AppleWebKit/536.30 (KHTML, like Gecko) NX/3.0.4.2.11 NintendoBrowser/4.3.0.11224.US
+wii-1: MSIE 999; Nintendo WIi; Mozilla/5.0; (Win64)
+wii-2: Mozilla/5.0 (Nintendo Wii; U; en-US) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4200.1 Safari/537.36
+wii-3: Google Chrome/10 (Nintendo Wii)
