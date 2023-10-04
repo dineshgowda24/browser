@@ -119,3 +119,207 @@ func (b *Browser) ShortVersion() string {
 	return strings.Split(b.Version(), ".")[0]
 }
 
+
+// IsAliPay returns true if the browser is AliPay.
+//
+// https://www.alipay.com/
+func (b *Browser) IsAlipay() bool {
+	if _, ok := b.getMatcher().(*matchers.Alipay); ok {
+		return true
+	}
+
+	return false
+}
+
+// IsBlackBerry returns true if the browser is BlackBerry.
+//
+// https://www.blackberry.com/
+func (b *Browser) IsBlackBerry() bool {
+	if _, ok := b.getMatcher().(*matchers.BlackBerry); ok {
+		return true
+	}
+
+	return false
+}
+
+// IsDuckDuckGo returns true if the browser is DuckDuckGo.
+//
+// https://duckduckgo.com/
+func (b *Browser) IsDuckDuckGo() bool {
+	if _, ok := b.getMatcher().(*matchers.DuckDuckGo); ok {
+		return true
+	}
+
+	return false
+}
+
+// IsElectron returns true if the browser is Electron.
+//
+// https://www.electronjs.org/
+func (b *Browser) IsElectron() bool {
+	if _, ok := b.getMatcher().(*matchers.Electron); ok {
+		return true
+	}
+
+	return false
+}
+
+// IsInstagram returns true if the browser is Instagram.
+//
+// https://www.instagram.com/
+func (b *Browser) IsInstagram() bool {
+	if _, ok := b.getMatcher().(*matchers.Instagram); ok {
+		return true
+	}
+
+	return false
+}
+
+// IsMaxthon returns true if the browser is Maxthon.
+//
+// https://www.maxthon.com/
+func (b *Browser) IsMaxthon() bool {
+	if _, ok := b.getMatcher().(*matchers.Maxthon); ok {
+		return true
+	}
+
+	return false
+}
+
+// IsMicroMessenger returns true if the browser is MicroMessenger.
+func (b *Browser) IsMicroMessenger() bool {
+	if _, ok := b.getMatcher().(*matchers.MicroMessenger); ok {
+		return true
+	}
+
+	return false
+}
+
+// IsWechat returns true if the browser is Wechat.
+// Wechat is an alias for MicroMessenger.
+func (b *Browser) IsWechat() bool {
+	return b.IsMicroMessenger()
+}
+
+// IsMiuiBrowser returns true if the browser is MiuiBrowser.
+func (b *Browser) IsMiuiBrowser() bool {
+	if _, ok := b.getMatcher().(*matchers.MiuiBrowser); ok {
+		return true
+	}
+
+	return false
+}
+
+func (b *Browser) IsNokia() bool {
+	if _, ok := b.getMatcher().(*matchers.Nokia); ok {
+		return true
+	}
+
+	return false
+}
+
+// IsOpera returns true if the browser is Opera.
+//
+// https://www.opera.com/
+func (b *Browser) IsOpera() bool {
+	if _, ok := b.getMatcher().(*matchers.Opera); ok {
+		return true
+	}
+
+	return false
+}
+
+// IsOtter returns true if the browser is Otter.
+//
+// https://otter-browser.org/
+func (b *Browser) IsOtter() bool {
+	if _, ok := b.getMatcher().(*matchers.Otter); ok {
+		return true
+	}
+
+	return false
+}
+
+// IsQQ returns true if the browser is QQ.
+//
+// https://browser.qq.com/
+func (b *Browser) IsQQ() bool {
+	if _, ok := b.getMatcher().(*matchers.QQ); ok {
+		return true
+	}
+
+	return false
+}
+
+// IsSnapchat returns true if the browser is Snapchat.
+//
+// https://www.snapchat.com/
+func (b *Browser) IsSnapchat() bool {
+	if _, ok := b.getMatcher().(*matchers.Snapchat); ok {
+		return true
+	}
+
+	return false
+}
+
+// IsSougouBrowser returns true if the browser is SougouBrowser.
+//
+// https://www.sogou.com/
+func (b *Browser) IsSougouBrowser() bool {
+	if _, ok := b.getMatcher().(*matchers.SogouBrowser); ok {
+		return true
+	}
+
+	return false
+}
+
+// IsSputnik returns true if the browser is Sputnik.
+func (b *Browser) IsSputnik() bool {
+	if _, ok := b.getMatcher().(*matchers.Sputnik); ok {
+		return true
+	}
+
+	return false
+}
+
+// IsUCBrowser returns true if the browser is UCBrowser.
+//
+// https://www.ucweb.com/
+func (b *Browser) IsUCBrowser() bool {
+	if _, ok := b.getMatcher().(*matchers.UCBrowser); ok {
+		return true
+	}
+
+	return false
+}
+
+// IsWeibo returns true if the browser is Weibo.
+//
+// https://weibo.com/
+func (b *Browser) IsWeibo() bool {
+	if _, ok := b.getMatcher().(*matchers.Weibo); ok {
+		return true
+	}
+
+	return false
+}
+
+// IsYandex returns true if the browser is Yandex.
+//
+// https://yandex.com/
+func (b *Browser) IsYandex() bool {
+	if _, ok := b.getMatcher().(*matchers.Yandex); ok {
+		return true
+	}
+
+	return false
+}
+
+
+// IsSafariWebappMode returns true if the browser is Safari Webapp Mode.
+// It is true for iOS devices which have AppleWebKit in the user agent string.
+func (b *Browser) IsSafariWebappMode() bool {
+	d := b.Device()
+	return (d.IsIPad() || d.IsIPhone()) &&
+		strings.Contains(b.userAgent, "AppleWebKit")
+}

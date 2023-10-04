@@ -240,3 +240,103 @@ func TestBrowserShortVersion(t *testing.T) {
 		})
 	})
 }
+
+func TestBrowserIsAlipay(t *testing.T) {
+	Convey("Subject: #IsAlipay", t, func() {
+		Convey("When the browser is Alipay", func() {
+			Convey("It should return true", func() {
+				ua := testUserAgents["alipay"]
+				b, _ := NewBrowser(ua.Android)
+				So(b.IsAlipay(), ShouldBeTrue)
+			})
+		})
+
+		Convey("When the browser is not Alipay", func() {
+			Convey("It should return false", func() {
+				ua := testUserAgents["chrome"]
+				b, _ := NewBrowser(ua.Windows)
+				So(b.IsAlipay(), ShouldBeFalse)
+			})
+		})
+	})
+}
+
+func TestBrowserIsBlackBerry(t *testing.T) {
+	Convey("Subject: #IsBlackBerry", t, func() {
+		Convey("When the browser is BlackBerry", func() {
+			Convey("It should return true", func() {
+				ua := testUserAgents["blackberry"]
+				b, _ := NewBrowser(ua.Windows)
+				So(b.IsBlackBerry(), ShouldBeTrue)
+			})
+		})
+
+		Convey("When the browser is not BlackBerry", func() {
+			Convey("It should return false", func() {
+				ua := testUserAgents["chrome"]
+				b, _ := NewBrowser(ua.Windows)
+				So(b.IsBlackBerry(), ShouldBeFalse)
+			})
+		})
+	})
+}
+
+func TestBrowserIsDuckDuckGo(t *testing.T) {
+	Convey("Subject: #IsDuckDuckGo", t, func() {
+		Convey("When the browser is DuckDuckGo", func() {
+			Convey("It should return true", func() {
+				ua := testUserAgents["duck_duck_go"]
+				b, _ := NewBrowser(ua.Windows)
+				So(b.IsDuckDuckGo(), ShouldBeTrue)
+			})
+		})
+
+		Convey("When the browser is not DuckDuckGo", func() {
+			Convey("It should return false", func() {
+				ua := testUserAgents["chrome"]
+				b, _ := NewBrowser(ua.Windows)
+				So(b.IsDuckDuckGo(), ShouldBeFalse)
+			})
+		})
+	})
+}
+
+func TestBrowserIsOpera(t *testing.T) {
+	Convey("Subject: #IsOpera", t, func() {
+		Convey("When the browser is Opera", func() {
+			Convey("It should return true", func() {
+				ua := testUserAgents["opera"]
+				b, _ := NewBrowser(ua.Windows)
+				So(b.IsOpera(), ShouldBeTrue)
+			})
+		})
+
+		Convey("When the browser is not Opera", func() {
+			Convey("It should return false", func() {
+				ua := testUserAgents["chrome"]
+				b, _ := NewBrowser(ua.Windows)
+				So(b.IsOpera(), ShouldBeFalse)
+			})
+		})
+	})
+}
+
+func TestBrowserIsOtter(t *testing.T) {
+	Convey("Subject: #IsOtter", t, func() {
+		Convey("When the browser is Otter", func() {
+			Convey("It should return true", func() {
+				ua := testUserAgents["otter"]
+				b, _ := NewBrowser(ua.Windows)
+				So(b.IsOtter(), ShouldBeTrue)
+			})
+		})
+
+		Convey("When the browser is not Otter", func() {
+			Convey("It should return false", func() {
+				ua := testUserAgents["chrome"]
+				b, _ := NewBrowser(ua.Windows)
+				So(b.IsOtter(), ShouldBeFalse)
+			})
+		})
+	})
+}
