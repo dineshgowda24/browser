@@ -27,6 +27,7 @@ type BrowserMatcher interface {
 // It contains information about the browser's name, version, platform and device.
 type Browser struct {
 	userAgent string         // the user agent string
+	device    *Device        // detected device
 	matcher   BrowserMatcher // detected browser matcher
 }
 
@@ -42,6 +43,9 @@ func NewBrowser(userAgent string) (*Browser, error) {
 
 	b := &Browser{
 		userAgent: userAgent,
+		device: &Device{
+			userAgent: userAgent,
+		},
 	}
 
 	b.getMatcher()
@@ -119,6 +123,11 @@ func (b *Browser) ShortVersion() string {
 	return strings.Split(b.Version(), ".")[0]
 }
 
+// Device returns the device of the browser.
+// It can used to further query information about the device.
+func (b *Browser) Device() *Device {
+	return b.device
+}
 
 // IsAliPay returns true if the browser is AliPay.
 //
