@@ -41,6 +41,7 @@ func initTestUserAgents() {
 // TestMain is the entry point for running tests in this package.
 func TestMain(m *testing.M) {
 	initTestUserAgents()
+	initTestDevices()
 	exitCode := m.Run()
 	os.Exit(exitCode)
 }
