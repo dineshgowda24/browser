@@ -44,6 +44,7 @@ chrome-os-i686: Mozilla/5.0 (X11; CrOS i686 6310.68.0) AppleWebKit/537.36 (KHTML
 chrome-os-aarch64: Mozilla/5.0 (X11; CrOS aarch64 9202.64.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.146 Safari/537.36
 firefox: Mozilla/5.0 (Mobile; rv:32.0) Gecko/32.0 Firefox/32.0
 ios: Mozilla/5.0 (iPhone; CPU iPhone OS 0_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.1 Mobile/15E148 Safari/604.1
+ios-app: Mozilla/5.0 (iPhone; CPU iPhone OS 12_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/16B93 Electron/like MathspaceIOS/2.7.2
 ios-3: Mozilla/5.0 (iPhone; U; CPU iPhone OS 3_0 like Mac OS X; en-us) AppleWebKit/528.18 (KHTML, like Gecko) Version/4.0 Mobile/7A341 Safari/528.16; Ipad
 ios-4: Mozilla/5.0 (iPhone; U; CPU iPhone OS 4_0_2 like Mac OS X; en-us) AppleWebKit/532.9 (KHTML, like Gecko) Mobile/8A400 iPhone3,1 BingWeb/3.03.1428.20120423
 ios-5: Mozilla/5.0 (iPhone; U; CPU iPhone OS 5_1_1 like Mac OS X; en-us) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9B206 Safari/7534.48.3
@@ -64,6 +65,7 @@ linux: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) At
 mac-os: XMind/10.2.1.202007271856 (darwin.x64; macOS Arch/x64 Version/11.0.1; en-US) Electron/5.0.13
 mac-os-1: MOZILLA/5.0 (MACINTOSH; INTEL MAC OS X 10_14_6) APPLEWEBKIT/537.36 (KHTML LIKE GECKO) CHROME/94.0.4606.61 SAFARI/537.36
 mac-os-x: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11) AppleWebKit/537.36 (KHTML, like Gecko) NativefierPlaceholder/0.0.1 Chrome/47.0.2526.73 Electron/0.36.4 Safari/537.36
+windows-rt: Mozilla/5.0 (Windows NT 6.3; ARM; Trident/7.0; Touch; .NET4.0E; .NET4.0C; Tablet PC 2.0; rv:11.0) like Gecko
 windows-ce: Mozilla/5.0 (Windows CE) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.125 Safari/537.36
 windows-phone: Mozilla/5.0 (Windows Phone 10.0 like Android 6.0.1; Microsoft; Lumia 950) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.133 Mobile/537.36 Version/12.10136
 windows-xp: Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0; .NET CLR 2.0.50727; .NET CLR 3.0.4506.2152; .NET CLR 3.5.30729; Wildfire NoTrail; ProE-Datecode:2902011330),gzip(gfe) (via translate.google.com)

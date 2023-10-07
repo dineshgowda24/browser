@@ -27,6 +27,7 @@ type BrowserMatcher interface {
 // It contains information about the browser's name, version, platform and device.
 type Browser struct {
 	userAgent string         // the user agent string
+	platform  *Platform      // detected platform
 	device    *Device        // detected device
 	matcher   BrowserMatcher // detected browser matcher
 }
@@ -43,6 +44,9 @@ func NewBrowser(userAgent string) (*Browser, error) {
 
 	b := &Browser{
 		userAgent: userAgent,
+		platform: &Platform{
+			userAgent: userAgent,
+		},
 		device: &Device{
 			userAgent: userAgent,
 		},
@@ -121,6 +125,12 @@ func (b *Browser) Version() string {
 // 04.34  => 04
 func (b *Browser) ShortVersion() string {
 	return strings.Split(b.Version(), ".")[0]
+}
+
+// Platform returns the platform of the browser.
+// It can used to further query information about the platform.
+func (b *Browser) Platform() *Platform {
+	return b.platform
 }
 
 // Device returns the device of the browser.
