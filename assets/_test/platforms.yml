@@ -1,5 +1,7 @@
 ---
 adobe-air: Mozilla/5.0 (Windows; U; en-US) AppleWebKit/533.19.4 (KHTML, like Gecko) AdobeAIR/18.0
+android-app-1: Mozilla/5.0 (Linux; Android 7.0; ZTE BLADE V0800 Build/NRD90M wv ) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.77 Mobile Safari/537.36
+android-app-2: Mozilla/5.0 (Linux; Android 10; SM-G965N Build/QP1A.190711.020; wv NAVER(client; navergame; app; AOS; 1.0.1; com.navercorp.game.android.community)) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/93.0.4577.62 Mobile Safari/537.36
 android-eclair-2-0: Mozilla/5.0 (Linux; Android 2.0; HUAWEI XXGW Build/Z8RWFA) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.3882.85 Mobile Safari/537.36
 android-eclair-2-1: Mozilla/5.0 (Linux; Android 2.1.6; Xperia Ray Build/XP451) AppleWebKit/467.36 (KHTML, like Gecko) Version/4.0 Chrome/48.0.0.0 Mobile Safari/467.36
 android-froyo-2-2: Mozilla/5.0 (Linux; U; Android 2.2; en-us; Nexus One Build/FRF91) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1 XiaoMi/MiuiBrowser/8.1.4

@@ -191,6 +191,8 @@ func (p *Platform) IsIOSWebview() bool {
 	return p.IsIOSApp()
 }
 
+// IsAndroidApp returns true if the platform is Android app and the user agent string contains wv.
+// https://developer.chrome.com/docs/multidevice/user-agent/#webview_user_agent
 func (p *Platform) IsAndroidApp() bool {
 	rg := regexp.MustCompile(`\bwv\b`)
 	if p.IsAndroid() && rg.MatchString(p.userAgent) {

@@ -122,6 +122,30 @@ func TestPlatformIsAndroid(t *testing.T) {
 	})
 }
 
+func TestPlatformIsAndroidApp(t *testing.T) {
+	Convey("Given a user agent string", t, func() {
+		Convey("When the platform is Android App", func() {
+			Convey("It returns true", func() {
+				apps := []string{"android-app-1", "android-app-2"}
+				for _, app := range apps {
+					p, _ := NewPlatform(testPlatforms[app])
+
+					So(p.IsAndroidApp(), ShouldBeTrue)
+					So(p.IsAndroidWebview(), ShouldBeTrue)
+				}
+			})
+		})
+
+		Convey("When the platform is not Android App", func() {
+			p, _ := NewPlatform(testPlatforms["android-jelly-bean-4.1"])
+			Convey("It returns false", func() {
+				So(p.IsAndroidApp(), ShouldBeFalse)
+				So(p.IsAndroidWebview(), ShouldBeFalse)
+			})
+		})
+	})
+}
+
 func TestPlatformIsChromeOS(t *testing.T) {
 	Convey("Given a user agent string", t, func() {
 		Convey("When the platform is Chrome OS", func() {
