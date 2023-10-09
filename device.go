@@ -54,7 +54,7 @@ func (d *Device) getMatcher() DeviceMatcher {
 		devices.NewXboxOne(d.userAgent), // this must be before xbox 360
 		devices.NewXbox360(d.userAgent),
 		devices.NewSwitch(d.userAgent),
-		devices.NewIpad(d.userAgent),
+		devices.NewSurface(d.userAgent),
 		devices.NewKindle(d.userAgent),
 		devices.NewTV(d.userAgent), // this must be before android
 		devices.NewAndroid(d.userAgent),
@@ -213,6 +213,15 @@ func (d *Device) IsNintendoWiiU() bool {
 // IsSwitch returns true if the device is a Switch
 func (d *Device) IsSwitch() bool {
 	if _, ok := d.getMatcher().(*devices.Switch); ok {
+		return true
+	}
+
+	return false
+}
+
+// IsSurface returns true if the device is a Surface
+func (d *Device) IsSurface() bool {
+	if _, ok := d.getMatcher().(*devices.Surface); ok {
 		return true
 	}
 
