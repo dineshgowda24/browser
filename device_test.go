@@ -39,14 +39,14 @@ func initTestDevices() {
 func TestNewDevice(t *testing.T) {
 	Convey("Given a user agent string", t, func() {
 		Convey("When NewDevice is called", func() {
-			Convey("Then it should return a Device", func() {
+			Convey("It returns a device", func() {
 				d, _ := NewDevice(testDevices["iphone-7"])
 				So(d, ShouldHaveSameTypeAs, &Device{})
 			})
 		})
 
 		Convey("When NewDevice is called with a user agent string larger than the limit", func() {
-			Convey("Then it should return an error", func() {
+			Convey("It returns ErrUserAgentSizeExceeded error", func() {
 				// generate a string that is larger than the limit of 2k
 				largeString := strings.Repeat("a", 2049)
 				_, err := NewDevice(largeString)
