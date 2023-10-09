@@ -49,6 +49,8 @@ kindle-1: Mozilla/5.0 (Linux; Android 4.4.2; SM-T310 Build/KOT49H) AppleWebKit/5
 kindle-2: Mozilla/5.0 (Linux; Android 4.4.2; Tab2A7-20F Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/30.0.0.0 Safari/537.36/Kindle 4.6.0.128
 kindle-fire-1: Mozilla/5.0 (Linux; Android 4.4.4; Kindle Fire HDX 8.9 Build/KTU84Q) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/33.0.0.0 Safari/537.36
 kindle-fire-2: Mozilla/5.0 (Linux; U; Android 4.0.3; en-us; KFTT Build/IML74K) AppleWebKit/537.36 (KHTML, like Gecko) Silk/3.68 like Chrome/39.0.2171.93 Safari/537.36
+mobile-1: Mozilla/4.0 (compatible; AvantGo 6.0; FreeBSD)
+mobile-2: Mozilla/5.0 (Linux; U; Android 4.2.2; pt-pt; Vodafone 785 Build/JDQ39) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.2 Mobile Safari/534.30 SVN/240HGG2[FBAN/EMA;FBLC/pt_PT;FBAV/73.0.0.7.192;]
 ps3: Mozilla/5.0 (PlayStation 3) AppleWebKit/531.3 (KHTML, like Gecko) SCEE/1.0 Nuanti/2.0
 ps4: Mozilla/5.0 (PlayStation 4 2.57) AppleWebKit/537.73 (KHTML, like Gecko)
 ps5: Mozilla/5.0 (PlayStation 5 3.03/SmartTV) AppleWebKit/605.1.15 (KHTML, like Gecko) THEWORLD
