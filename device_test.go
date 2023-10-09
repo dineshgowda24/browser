@@ -275,3 +275,45 @@ func TestDeviceIsTV(t *testing.T) {
 		})
 	})
 }
+
+func TestDeviceIsMobile(t *testing.T) {
+	Convey("Given a user agent string", t, func() {
+		Convey("When the device is a mobile", func() {
+			Convey("It should return true", func() {
+				mobiles := []string{testDevices["iphone-7"], testDevices["android-froyo-2-2"], testDevices["mobile-1"], testDevices["mobile-2"]}
+				for _, ua := range mobiles {
+					d, _ := NewDevice(ua)
+					So(d.IsMobile(), ShouldBeTrue)
+				}
+			})
+		})
+
+		Convey("When the device is not a mobile", func() {
+			Convey("It should return false", func() {
+				d, _ := NewDevice(testDevices["ipad-1"])
+				So(d.IsMobile(), ShouldBeFalse)
+			})
+		})
+	})
+}
+
+func TestDeviceIsTablet(t *testing.T) {
+	Convey("Given a user agent string", t, func() {
+		Convey("When the device is a tablet", func() {
+			Convey("It should return true", func() {
+				tablets := []string{testDevices["ipad-4"], testDevices["surface-1"], testDevices["bb-playbook-1"]}
+				for _, ua := range tablets {
+					d, _ := NewDevice(ua)
+					So(d.IsTablet(), ShouldBeTrue)
+				}
+			})
+		})
+
+		Convey("When the device is not a tablet", func() {
+			Convey("It should return false", func() {
+				d, _ := NewDevice(testDevices["iphone-7"])
+				So(d.IsTablet(), ShouldBeFalse)
+			})
+		})
+	})
+}
