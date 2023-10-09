@@ -7,7 +7,7 @@ import (
 )
 
 const (
-	userAgentSizeLimit      = 2048 // 2KB
+	userAgentSizeLimit = 2048 // 2KB
 )
 
 // Matcher is an interface for user agent matchers.
@@ -334,6 +334,20 @@ func (b *Browser) IsYandex() bool {
 	return false
 }
 
+// IsUnknown returns true if the browser is Unknown.
+// Browsers are considered unknown when they do not match any of the known browsers.
+func (b *Browser) IsUnknown() bool {
+	if _, ok := b.getMatcher().(*matchers.Unknown); ok {
+		return true
+	}
+
+	return false
+}
+
+// IsBrowserKnown returns true if a match was found for the browser.
+func (b *Browser) IsBrowserKnown() bool {
+	return !b.IsUnknown()
+}
 
 // IsSafariWebappMode returns true if the browser is Safari Webapp Mode.
 // It is true for iOS devices which have AppleWebKit in the user agent string.
