@@ -218,6 +218,17 @@ func TestDeviceIsSwitch(t *testing.T) {
 	})
 }
 
+func TestDeviceIsSurface(t *testing.T) {
+	Convey("Given a user agent string", t, func() {
+		Convey("When the device is a Surface", func() {
+			Convey("It should return true", func() {
+				d, _ := NewDevice(testDevices["surface-1"])
+				So(d.IsSurface(), ShouldBeTrue)
+			})
+		})
+	})
+}
+
 func TestDeviceIsKindle(t *testing.T) {
 	Convey("Given a user agent string", t, func() {
 		Convey("When the device is a Kindle or Kindle fire", func() {
