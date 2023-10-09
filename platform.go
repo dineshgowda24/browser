@@ -44,6 +44,7 @@ func (p *Platform) getMatcher() PlatformMatcher {
 	}
 
 	// define all your platform matchers here
+	// the order of the matchers is important as some user agents may contain multiple platform keywords
 	matchers := []PlatformMatcher{
 		platforms.NewAdobeAir(p.userAgent),
 		platforms.NewBlackBerry(p.userAgent),
@@ -107,6 +108,8 @@ func (p *Platform) IsChromeOS() bool {
 	return false
 }
 
+// IsChromeOSVersionCompatible returns true if the user agent string matches Chrome OS and
+// the version is greater than or equal to the specified version.
 func (p *Platform) IsChromeOSVersionCompatible(version string) bool {
 	return p.IsChromeOS() &&
 		utils.VersionGTE(p.getMatcher().Version(), version)
@@ -130,6 +133,7 @@ func (p *Platform) IsWatchOS() bool {
 	return false
 }
 
+// IsKaiOS returns true if the user agent string matches KaiOS.
 func (p *Platform) IsKaiOS() bool {
 	if _, ok := p.getMatcher().(*platforms.KaiOS); ok {
 		return true
@@ -138,7 +142,7 @@ func (p *Platform) IsKaiOS() bool {
 	return false
 }
 
-// IsLinux returns true if the user agent string matches Linux.
+// IsLinux returns true if the platform is Linux.
 func (p *Platform) IsLinux() bool {
 	if _, ok := p.getMatcher().(*platforms.Linux); ok {
 		return true
@@ -147,6 +151,7 @@ func (p *Platform) IsLinux() bool {
 	return false
 }
 
+// IsBlackBerry returns true if platform is BlackBerry.
 func (p *Platform) IsBlackBerry() bool {
 	if _, ok := p.getMatcher().(*platforms.BlackBerry); ok {
 		return true
@@ -155,6 +160,7 @@ func (p *Platform) IsBlackBerry() bool {
 	return false
 }
 
+// IsWindowsMobile returns true if the platform is Windows Mobile.
 func (p *Platform) IsWindowsMobile() bool {
 	if _, ok := p.getMatcher().(*platforms.WindowsMobile); ok {
 		return true
@@ -163,6 +169,7 @@ func (p *Platform) IsWindowsMobile() bool {
 	return false
 }
 
+// IsWindowsPhone returns true if the platform is Windows Phone.
 func (p *Platform) IsWindowsPhone() bool {
 	if _, ok := p.getMatcher().(*platforms.WindowsPhone); ok {
 		return true
@@ -171,6 +178,7 @@ func (p *Platform) IsWindowsPhone() bool {
 	return false
 }
 
+// IsIOSApp returns true if the platform is iOS app and the user agent string does not contain Safari.
 func (p *Platform) IsIOSApp() bool {
 	if p.IsIOS() && !strings.Contains(p.userAgent, "Safari") {
 		return true
@@ -178,6 +186,7 @@ func (p *Platform) IsIOSApp() bool {
 	return false
 }
 
+// IsIOSWebview is an alias for IsIOSApp.
 func (p *Platform) IsIOSWebview() bool {
 	return p.IsIOSApp()
 }
@@ -190,10 +199,12 @@ func (p *Platform) IsAndroidApp() bool {
 	return false
 }
 
+// IsAndroidWebview is an alias for IsAndroidApp.
 func (p *Platform) IsAndroidWebview() bool {
 	return p.IsAndroidApp()
 }
 
+// IsWindows returns true if the platform is Windows.
 func (p *Platform) IsWindows() bool {
 	if _, ok := p.getMatcher().(*platforms.Windows); ok {
 		return true
@@ -202,6 +213,7 @@ func (p *Platform) IsWindows() bool {
 	return false
 }
 
+// IsWindowsXP returns true if the platform is Windows XP.
 func (p *Platform) IsWindowsXP() bool {
 	v := p.getMatcher().Version()
 	rg := regexp.MustCompile(`5\.[12]`)
@@ -213,6 +225,7 @@ func (p *Platform) IsWindowsXP() bool {
 	return false
 }
 
+// IsWindowsVista returns true if the platform is Windows Vista.
 func (p *Platform) IsWindowsVista() bool {
 	v := p.getMatcher().Version()
 	if p.IsWindows() && v == "6.0" {
@@ -221,6 +234,7 @@ func (p *Platform) IsWindowsVista() bool {
 	return false
 }
 
+// IsWindows7 returns true if the platform is Windows 7.
 func (p *Platform) IsWindows7() bool {
 	ver := p.getMatcher().Version()
 	if p.IsWindows() && ver == "6.1" {
@@ -229,6 +243,7 @@ func (p *Platform) IsWindows7() bool {
 	return false
 }
 
+// IsWindows8 returns true if the platform is Windows 8.
 func (p *Platform) IsWindows8() bool {
 	ver := p.getMatcher().Version()
 	rg := regexp.MustCompile(`6\.[2-3]`)
@@ -238,6 +253,7 @@ func (p *Platform) IsWindows8() bool {
 	return false
 }
 
+// IsWindows8_1 returns true if the platform is Windows 8.1.
 func (p *Platform) IsWindows8_1() bool {
 	ver := p.getMatcher().Version()
 	if p.IsWindows() && ver == "6.3" {
@@ -246,6 +262,7 @@ func (p *Platform) IsWindows8_1() bool {
 	return false
 }
 
+// IsWindows10 returns true if the platform is Windows 10.
 func (p *Platform) IsWindows10() bool {
 	ver := p.getMatcher().Version()
 	if p.IsWindows() && ver == "10.0" {
@@ -254,6 +271,7 @@ func (p *Platform) IsWindows10() bool {
 	return false
 }
 
+// IsWindowsRT returns true if the platform is Windows RT.
 func (p *Platform) IsWindowsRT() bool {
 	if p.IsWindows8() && strings.Contains(p.userAgent, "ARM") {
 		return true
@@ -261,6 +279,7 @@ func (p *Platform) IsWindowsRT() bool {
 	return false
 }
 
+// IsWindowsX64 returns true if the platform is Windows x64.
 func (p *Platform) IsWindowsX64() bool {
 	rg := regexp.MustCompile(`(Win64|x64|Windows NT 5\.2)`)
 	if p.IsWindows() && rg.MatchString(p.userAgent) {
