@@ -152,3 +152,6 @@ micro-messenger:
   linux: Mozilla/5.0 (X11; Linux x86_64; rv:32.0) Gecko/    20100101 Firefox/32.0 wxwork/3.1.16 MicroMessenger/7.0.1 Language/zh
   mac: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_4) AppleWebKit/601.5.17 (KHTML, like Gecko) MicroMessenger/2.3.24(0x12031810) MacWechat NetType/WIFI WindowsWechat
   windows: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36 MicroMessenger/6.5.2.501 NetType/WIFI WindowsWechat
+unknown:
+  ios: Mozilla/30.0 (AppleCoreMedia/1.0.0.11B554a (iPad; U; CPU OS 7_0_4 like Mac OS X; en_us)
+  mac: QuickTime\x5Cxaa.7.0.4 (qtver=7.0.4;cpu=PPC;os=Mac 10.3.9)
