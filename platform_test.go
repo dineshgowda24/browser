@@ -491,3 +491,65 @@ func TestPlatformIsWindowsX64(t *testing.T) {
 	})
 }
 
+func TestPlatformIsWindowsWOW64(t *testing.T) {
+	Convey("Given a user agent string", t, func() {
+		Convey("When the platform is Windows WOW64", func() {
+			p, _ := NewPlatform(testPlatforms["windows-10"])
+			Convey("It returns true", func() {
+				So(p.IsWindowsWOW64(), ShouldBeTrue)
+			})
+		})
+
+		Convey("When the platform is not Windows WOW64", func() {
+			Convey("It returns false", func() {
+				platforms := []string{"windows-vista", "windows-xp"}
+				for _, platform := range platforms {
+					p, _ := NewPlatform(testPlatforms[platform])
+					So(p.IsWindowsWOW64(), ShouldBeFalse)
+				}
+			})
+		})
+	})
+}
+
+func TestPlatformIsWindowsX64Inclusive(t *testing.T) {
+	Convey("Given a user agent string", t, func() {
+		Convey("When the platform is Windows X64 Inclusive", func() {
+			p, _ := NewPlatform(testPlatforms["windows-inclusive"])
+			Convey("It returns true", func() {
+				So(p.IsWindowsX64Inclusive(), ShouldBeTrue)
+			})
+		})
+
+		Convey("When the platform is not Windows X64 Inclusive", func() {
+			Convey("It returns false", func() {
+				platforms := []string{"windows-10", "windows-8", "windows-7", "windows-xp"}
+				for _, platform := range platforms {
+					p, _ := NewPlatform(testPlatforms[platform])
+					So(p.IsWindowsX64(), ShouldBeFalse)
+				}
+			})
+		})
+	})
+}
+
+func TestPlatformIsWindowsTouchScreenDesktop(t *testing.T) {
+	Convey("Given a user agent string", t, func() {
+		Convey("When the platform is Windows Touch Screen Desktop", func() {
+			p, _ := NewPlatform(testPlatforms["windows-touch"])
+			Convey("It returns true", func() {
+				So(p.IsWindowsTouchScreenDesktop(), ShouldBeTrue)
+			})
+		})
+
+		Convey("When the platform is not Windows Touch Screen Desktop", func() {
+			Convey("It returns false", func() {
+				platforms := []string{"windows-10", "windows-8", "windows-7", "windows-xp"}
+				for _, platform := range platforms {
+					p, _ := NewPlatform(testPlatforms[platform])
+					So(p.IsWindowsTouchScreenDesktop(), ShouldBeFalse)
+				}
+			})
+		})
+	})
+}
