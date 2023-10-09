@@ -268,3 +268,23 @@ func (p *Platform) IsWindowsX64() bool {
 	}
 	return false
 }
+
+func (p *Platform) IsWindowsWOW64() bool {
+	rg := regexp.MustCompile(`(?i)WOW64`)
+	if p.IsWindows() && rg.MatchString(p.userAgent) {
+		return true
+	}
+	return false
+}
+
+func (p *Platform) IsWindowsX64Inclusive() bool {
+	return p.IsWindowsX64() || p.IsWindowsWOW64()
+}
+
+// IsWindowsTouchScreenDesktop returns true if the platform is Windows 8 and the user agent string contains Touch.
+func (p *Platform) IsWindowsTouchScreenDesktop() bool {
+	if p.IsWindows() && strings.Contains(p.userAgent, "Touch") {
+		return true
+	}
+	return false
+}
