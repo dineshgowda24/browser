@@ -342,3 +342,43 @@ func TestBrowserIsOtter(t *testing.T) {
 		})
 	})
 }
+
+func TestBrowserIsUnknown(t *testing.T) {
+	Convey("Subject: #IsUnknown", t, func() {
+		Convey("When the browser is Unknown", func() {
+			Convey("It should return true", func() {
+				ua := testUserAgents["unknown"]
+				b, _ := NewBrowser(ua.Mac)
+				So(b.IsUnknown(), ShouldBeTrue)
+			})
+		})
+
+		Convey("When the browser is not Unknown", func() {
+			Convey("It should return false", func() {
+				ua := testUserAgents["chrome"]
+				b, _ := NewBrowser(ua.Windows)
+				So(b.IsUnknown(), ShouldBeFalse)
+			})
+		})
+	})
+}
+
+func TestBrowserIsBrowserKnown(t *testing.T) {
+	Convey("Subject: #IsBrowserKnown", t, func() {
+		Convey("When the browser is known", func() {
+			Convey("It should return true", func() {
+				ua := testUserAgents["chrome"]
+				b, _ := NewBrowser(ua.Windows)
+				So(b.IsBrowserKnown(), ShouldBeTrue)
+			})
+		})
+
+		Convey("When the browser is not known", func() {
+			Convey("It should return false", func() {
+				ua := testUserAgents["unknown"]
+				b, _ := NewBrowser(ua.Mac)
+				So(b.IsBrowserKnown(), ShouldBeFalse)
+			})
+		})
+	})
+}
