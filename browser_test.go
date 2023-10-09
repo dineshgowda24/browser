@@ -42,6 +42,7 @@ func initTestUserAgents() {
 func TestMain(m *testing.M) {
 	initTestUserAgents()
 	initTestDevices()
+	initTestPlatforms()
 	exitCode := m.Run()
 	os.Exit(exitCode)
 }
