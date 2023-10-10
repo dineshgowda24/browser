@@ -408,3 +408,26 @@ func TestBrowserIsInternetExplorer(t *testing.T) {
 		})
 	})
 }
+
+func TestBrowserIsEdge(t *testing.T) {
+	Convey("Subject: #IsEdge", t, func() {
+		Convey("When the browser is Edge", func() {
+			uas := []string{testUserAgents["edge"].Windows, testUserAgents["edge"].Android}
+
+			Convey("It should return true", func() {
+				for _, ua := range uas {
+					b, _ := NewBrowser(ua)
+					So(b.IsEdge(), ShouldBeTrue)
+				}
+			})
+		})
+
+		Convey("When the browser is not Edge", func() {
+			Convey("It should return false", func() {
+				ua := testUserAgents["chrome"]
+				b, _ := NewBrowser(ua.Windows)
+				So(b.IsEdge(), ShouldBeFalse)
+			})
+		})
+	})
+}

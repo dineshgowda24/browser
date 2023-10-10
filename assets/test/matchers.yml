@@ -22,6 +22,9 @@ duck_duck_go:
   linux: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/76.0.3809.132 Safari/537.36 DuckDuckGo/5
   mac: Mozilla/5.0 (Macintosh; PPC Mac OS X 10.4; FPR32; rv:45.0) Gecko/20100101 DuckDuckGoKite/1.0.1 TenFourFox/7450
   windows: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.80 Safari/537.36 Edg/98.0.1108.50 DuckDuck/1.0
+edge:
+  android: Mozilla/5.0 (Windows Phone 8.1; Android 6.0; ARM; Trident/8.0; Touch; rv:11.0; IEMobile/11.0; Microsoft; Lumia 550) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Mobile Safari/537.36 Edge/14.14393
+  windows: Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Safari/537.36 Edge/12.10240
 electron:
   android: Mozilla/5.0 (Linux; Android 9; Pixel 3 XL) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Mobile Safari/537.36 Electron/7.1.2 like MathspaceAndroid/2.7.2
   ios: Mozilla/5.0 (iPhone; CPU iPhone OS 12_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/16B93 Electron/like MathspaceIOS/2.7.2
