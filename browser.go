@@ -83,6 +83,7 @@ func (b *Browser) getMatcher() BrowserMatcher {
 		matchers.NewMiuiBrowser(b.userAgent),
 		matchers.NewPaleMoon(b.userAgent),
 		matchers.NewPuffin(b.userAgent),
+		matchers.NewInternetExplorer(b.userAgent),
 		matchers.NewSamsungBrowser(b.userAgent),
 		matchers.NewSogouBrowser(b.userAgent),
 		matchers.NewVivoBrowser(b.userAgent),
@@ -355,4 +356,13 @@ func (b *Browser) IsSafariWebappMode() bool {
 	d := b.Device()
 	return (d.IsIPad() || d.IsIPhone()) &&
 		strings.Contains(b.userAgent, "AppleWebKit")
+}
+
+// IsInternetExplorer returns true if the browser is Internet Explorer.
+func (b *Browser) IsInternetExplorer() bool {
+	if _, ok := b.getMatcher().(*matchers.InternetExplorer); ok {
+		return true
+	}
+
+	return false
 }
