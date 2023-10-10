@@ -382,3 +382,29 @@ func TestBrowserIsBrowserKnown(t *testing.T) {
 		})
 	})
 }
+
+func TestBrowserIsInternetExplorer(t *testing.T) {
+	Convey("Subject: #IsInternetExplorer", t, func() {
+		Convey("When the browser is Internet Explorer", func() {
+			Convey("It should return true", func() {
+				ie := testUserAgents["ie"]
+				oldIE := testUserAgents["old-ie"]
+
+				uas := []string{ie.Windows, oldIE.Mac, oldIE.Windows}
+
+				for _, ua := range uas {
+					b, _ := NewBrowser(ua)
+					So(b.IsInternetExplorer(), ShouldBeTrue)
+				}
+			})
+		})
+
+		Convey("When the browser is not Internet Explorer", func() {
+			Convey("It should return false", func() {
+				ua := testUserAgents["chrome"]
+				b, _ := NewBrowser(ua.Windows)
+				So(b.IsInternetExplorer(), ShouldBeFalse)
+			})
+		})
+	})
+}
