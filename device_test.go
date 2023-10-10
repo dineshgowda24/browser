@@ -265,6 +265,17 @@ func TestDeviceIsPSP(t *testing.T) {
 	})
 }
 
+func TestDeviceIsSamsung(t *testing.T) {
+	Convey("Given a user agent string", t, func() {
+		Convey("When the device is a Samsung", func() {
+			Convey("It should return true", func() {
+				d, _ := NewDevice(testDevices["samsung-1"])
+				So(d.IsSamsung(), ShouldBeTrue)
+			})
+		})
+	})
+}
+
 func TestDeviceIsTV(t *testing.T) {
 	Convey("Given a user agent string", t, func() {
 		Convey("When the device is a TV", func() {

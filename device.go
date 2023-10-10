@@ -62,6 +62,7 @@ func (d *Device) getMatcher() DeviceMatcher {
 		devices.NewSwitch(d.userAgent),
 		devices.NewSurface(d.userAgent),
 		devices.NewKindle(d.userAgent),
+		devices.NewSamsung(d.userAgent),
 		devices.NewTV(d.userAgent), // this must be before android
 		devices.NewAndroid(d.userAgent),
 		devices.NewUnknown(d.userAgent),
@@ -263,6 +264,15 @@ func (d *Device) IsKindleFire() bool {
 // IsPSP returns true if the device is a PlayStation Portable
 func (d *Device) IsPSP() bool {
 	if _, ok := d.getMatcher().(*devices.PSP); ok {
+		return true
+	}
+
+	return false
+}
+
+// IsSamsung returns true if the device is a Samsung device
+func (d *Device) IsSamsung() bool {
+	if _, ok := d.getMatcher().(*devices.Samsung); ok {
 		return true
 	}
 
