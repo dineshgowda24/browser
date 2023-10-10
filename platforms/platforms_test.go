@@ -22,7 +22,7 @@ func initTestPlatforms() {
 	}
 
 	wd = strings.Split(wd, "/browser")[0]
-	yamlFile, err := os.ReadFile(fmt.Sprintf("%s/browser/assets/_test/platforms.yml", wd))
+	yamlFile, err := os.ReadFile(fmt.Sprintf("%s/browser/assets/test/platforms.yml", wd))
 	if err != nil {
 		log.Fatalf("failed to read file: %v", err)
 	}

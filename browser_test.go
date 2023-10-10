@@ -25,7 +25,7 @@ var testUserAgents map[string]ua
 // initTestUserAgents reads the matchers.yml file and
 // unmarshals it into the testUserAgents map.
 func initTestUserAgents() {
-	yamlFile, err := os.ReadFile("assets/_test/matchers.yml")
+	yamlFile, err := os.ReadFile("assets/test/matchers.yml")
 	if err != nil {
 		log.Fatalf("failed to read file: %v", err)
 	}

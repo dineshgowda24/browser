@@ -22,7 +22,7 @@ func initTestDevices() {
 	}
 
 	wd = strings.Split(wd, "/browser")[0]
-	yamlFile, err := os.ReadFile(fmt.Sprintf("%s/browser/assets/_test/devices.yml", wd))
+	yamlFile, err := os.ReadFile(fmt.Sprintf("%s/browser/assets/test/devices.yml", wd))
 	if err != nil {
 		log.Fatalf("failed to read file: %v", err)
 	}
