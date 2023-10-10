@@ -152,87 +152,33 @@ func (b *Browser) IsAlipay() bool {
 	return false
 }
 
+// IsNokia returns true if the browser is Nokia.
+//
+// https://www.nokia.com/
+func (b *Browser) IsNokia() bool {
+	if _, ok := b.getMatcher().(*matchers.Nokia); ok {
+		return true
+	}
+
+	return false
+}
+
+// IsUCBrowser returns true if the browser is UCBrowser.
+//
+// https://www.ucweb.com/
+func (b *Browser) IsUCBrowser() bool {
+	if _, ok := b.getMatcher().(*matchers.UCBrowser); ok {
+		return true
+	}
+
+	return false
+}
+
 // IsBlackBerry returns true if the browser is BlackBerry.
 //
 // https://www.blackberry.com/
 func (b *Browser) IsBlackBerry() bool {
 	if _, ok := b.getMatcher().(*matchers.BlackBerry); ok {
-		return true
-	}
-
-	return false
-}
-
-// IsDuckDuckGo returns true if the browser is DuckDuckGo.
-//
-// https://duckduckgo.com/
-func (b *Browser) IsDuckDuckGo() bool {
-	if _, ok := b.getMatcher().(*matchers.DuckDuckGo); ok {
-		return true
-	}
-
-	return false
-}
-
-// IsElectron returns true if the browser is Electron.
-//
-// https://www.electronjs.org/
-func (b *Browser) IsElectron() bool {
-	if _, ok := b.getMatcher().(*matchers.Electron); ok {
-		return true
-	}
-
-	return false
-}
-
-// IsInstagram returns true if the browser is Instagram.
-//
-// https://www.instagram.com/
-func (b *Browser) IsInstagram() bool {
-	if _, ok := b.getMatcher().(*matchers.Instagram); ok {
-		return true
-	}
-
-	return false
-}
-
-// IsMaxthon returns true if the browser is Maxthon.
-//
-// https://www.maxthon.com/
-func (b *Browser) IsMaxthon() bool {
-	if _, ok := b.getMatcher().(*matchers.Maxthon); ok {
-		return true
-	}
-
-	return false
-}
-
-// IsMicroMessenger returns true if the browser is MicroMessenger.
-func (b *Browser) IsMicroMessenger() bool {
-	if _, ok := b.getMatcher().(*matchers.MicroMessenger); ok {
-		return true
-	}
-
-	return false
-}
-
-// IsWechat returns true if the browser is Wechat.
-// Wechat is an alias for MicroMessenger.
-func (b *Browser) IsWechat() bool {
-	return b.IsMicroMessenger()
-}
-
-// IsMiuiBrowser returns true if the browser is MiuiBrowser.
-func (b *Browser) IsMiuiBrowser() bool {
-	if _, ok := b.getMatcher().(*matchers.MiuiBrowser); ok {
-		return true
-	}
-
-	return false
-}
-
-func (b *Browser) IsNokia() bool {
-	if _, ok := b.getMatcher().(*matchers.Nokia); ok {
 		return true
 	}
 
@@ -261,11 +207,11 @@ func (b *Browser) IsOtter() bool {
 	return false
 }
 
-// IsQQ returns true if the browser is QQ.
+// IsInstagram returns true if the browser is Instagram.
 //
-// https://browser.qq.com/
-func (b *Browser) IsQQ() bool {
-	if _, ok := b.getMatcher().(*matchers.QQ); ok {
+// https://www.instagram.com/
+func (b *Browser) IsInstagram() bool {
+	if _, ok := b.getMatcher().(*matchers.Instagram); ok {
 		return true
 	}
 
@@ -283,11 +229,183 @@ func (b *Browser) IsSnapchat() bool {
 	return false
 }
 
+// IsWeibo returns true if the browser is Weibo.
+//
+// https://weibo.com/
+func (b *Browser) IsWeibo() bool {
+	if _, ok := b.getMatcher().(*matchers.Weibo); ok {
+		return true
+	}
+
+	return false
+}
+
+// IsWechat returns true if the browser is Wechat.
+// Wechat is an alias for MicroMessenger.
+func (b *Browser) IsWechat() bool {
+	return b.IsMicroMessenger()
+}
+
+// IsMicroMessenger returns true if the browser is MicroMessenger.
+func (b *Browser) IsMicroMessenger() bool {
+	if _, ok := b.getMatcher().(*matchers.MicroMessenger); ok {
+		return true
+	}
+
+	return false
+}
+
+// IsQQ returns true if the browser is QQ.
+//
+// https://browser.qq.com/
+func (b *Browser) IsQQ() bool {
+	if _, ok := b.getMatcher().(*matchers.QQ); ok {
+		return true
+	}
+
+	return false
+}
+
+// IsElectron returns true if the browser is Electron.
+//
+// https://www.electronjs.org/
+func (b *Browser) IsElectron() bool {
+	if _, ok := b.getMatcher().(*matchers.Electron); ok {
+		return true
+	}
+
+	return false
+}
+
+// IsDuckDuckGo returns true if the browser is DuckDuckGo.
+//
+// https://duckduckgo.com/
+func (b *Browser) IsDuckDuckGo() bool {
+	if _, ok := b.getMatcher().(*matchers.DuckDuckGo); ok {
+		return true
+	}
+
+	return false
+}
+
+// IsGoogleSearchApp returns true if the browser is GoogleSearchApp.
+//
+// https://www.google.com/search/about/
+func (b *Browser) IsGoogleSearchApp() bool {
+	if _, ok := b.getMatcher().(*matchers.GoogleSearchApp); ok {
+		return true
+	}
+
+	return false
+}
+
+// IsHuaweiBrowser returns true if the browser is HuaweiBrowser.
+//
+// https://consumer.huawei.com/en/mobileservices/browser/
+func (b *Browser) IsHuaweiBrowser() bool {
+	if _, ok := b.getMatcher().(*matchers.HuaweiBrowser); ok {
+		return true
+	}
+
+	return false
+}
+
+// IsKonqueror returns true if the browser is Konqueror.
+//
+// https://konqueror.org/
+func (b *Browser) IsKonqueror() bool {
+	if _, ok := b.getMatcher().(*matchers.Konqueror); ok {
+		return true
+	}
+
+	return false
+}
+
+// IsMaxthon returns true if the browser is Maxthon.
+//
+// https://www.maxthon.com/
+func (b *Browser) IsMaxthon() bool {
+	if _, ok := b.getMatcher().(*matchers.Maxthon); ok {
+		return true
+	}
+
+	return false
+}
+
+// IsMiuiBrowser returns true if the browser is MiuiBrowser.
+func (b *Browser) IsMiuiBrowser() bool {
+	if _, ok := b.getMatcher().(*matchers.MiuiBrowser); ok {
+		return true
+	}
+
+	return false
+}
+
+// IsPaleMoon returns true if the browser is PaleMoon.
+//
+// https://www.palemoon.org/
+func (b *Browser) IsPaleMoon() bool {
+	if _, ok := b.getMatcher().(*matchers.PaleMoon); ok {
+		return true
+	}
+
+	return false
+}
+
+// IsPuffin returns true if the browser is Puffin.
+//
+// https://www.puffin.com/
+func (b *Browser) IsPuffin() bool {
+	if _, ok := b.getMatcher().(*matchers.Puffin); ok {
+		return true
+	}
+
+	return false
+}
+
+// IsEdge returns true if the browser is Edge.
+func (b *Browser) IsEdge() bool {
+	if _, ok := b.getMatcher().(*matchers.Edge); ok {
+		return true
+	}
+
+	return false
+}
+
+// IsInternetExplorer returns true if the browser is Internet Explorer.
+func (b *Browser) IsInternetExplorer() bool {
+	if _, ok := b.getMatcher().(*matchers.InternetExplorer); ok {
+		return true
+	}
+
+	return false
+}
+
+// IsSamsungBrowser returns true if the browser is SamsungBrowser.
+func (b *Browser) IsSamsungBrowser() bool {
+	if _, ok := b.getMatcher().(*matchers.SamsungBrowser); ok {
+		return true
+	}
+
+	return false
+}
+
 // IsSougouBrowser returns true if the browser is SougouBrowser.
 //
 // https://www.sogou.com/
 func (b *Browser) IsSougouBrowser() bool {
 	if _, ok := b.getMatcher().(*matchers.SogouBrowser); ok {
+		return true
+	}
+
+	return false
+}
+
+// IsVivoBrowser returns true if the browser is VivoBrowser.
+//
+// https://www.vivo.com/
+func (b *Browser) IsVivoBrowser() bool {
+	if _, ok := b.getMatcher().(*matchers.VivoBrowser); ok {
 		return true
 	}
 
@@ -303,22 +421,9 @@ func (b *Browser) IsSputnik() bool {
 	return false
 }
 
-// IsUCBrowser returns true if the browser is UCBrowser.
-//
-// https://www.ucweb.com/
-func (b *Browser) IsUCBrowser() bool {
-	if _, ok := b.getMatcher().(*matchers.UCBrowser); ok {
-		return true
-	}
-
-	return false
-}
-
-// IsWeibo returns true if the browser is Weibo.
-//
-// https://weibo.com/
-func (b *Browser) IsWeibo() bool {
-	if _, ok := b.getMatcher().(*matchers.Weibo); ok {
+// IsYaaniBrowser returns true if the browser is YaaniBrowser.
+func (b *Browser) IsYaaniBrowser() bool {
+	if _, ok := b.getMatcher().(*matchers.YaaniBrowser); ok {
 		return true
 	}
 
@@ -330,6 +435,28 @@ func (b *Browser) IsWeibo() bool {
 // https://yandex.com/
 func (b *Browser) IsYandex() bool {
 	if _, ok := b.getMatcher().(*matchers.Yandex); ok {
+		return true
+	}
+
+	return false
+}
+
+// IsChrome returns true if the browser is Chrome.
+//
+// https://www.google.com/chrome/
+func (b *Browser) IsChrome() bool {
+	if _, ok := b.getMatcher().(*matchers.Chrome); ok {
+		return true
+	}
+
+	return false
+}
+
+// IsSafari returns true if the browser is Safari.
+//
+// https://www.apple.com/safari/
+func (b *Browser) IsSafari() bool {
+	if _, ok := b.getMatcher().(*matchers.Safari); ok {
 		return true
 	}
 
@@ -357,22 +484,4 @@ func (b *Browser) IsSafariWebappMode() bool {
 	d := b.Device()
 	return (d.IsIPad() || d.IsIPhone()) &&
 		strings.Contains(b.userAgent, "AppleWebKit")
-}
-
-// IsEdge returns true if the browser is Edge.
-func (b *Browser) IsEdge() bool {
-	if _, ok := b.getMatcher().(*matchers.Edge); ok {
-		return true
-	}
-
-	return false
-}
-
-// IsInternetExplorer returns true if the browser is Internet Explorer.
-func (b *Browser) IsInternetExplorer() bool {
-	if _, ok := b.getMatcher().(*matchers.InternetExplorer); ok {
-		return true
-	}
-
-	return false
 }
