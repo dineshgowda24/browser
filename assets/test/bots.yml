@@ -1,3 +1,5 @@
+---
+apis-google: APIs-Google (https://developers.google.com/webmasters/APIs-Google.html)
 crawl: NetSeer/Nutch-0.9 (NetSeer Crawler; http://www.netseer.com; crawler@netseer.com)
 datapack: DataparkSearch/4.35 ( http://www.dataparksearch.org/)
 fetch: admantx-ussy02/2.4 (+http://www.admantx.com/service-fetcher.html)
