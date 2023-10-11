@@ -1,5 +1,12 @@
 ---
 adobe-air: Mozilla/5.0 (Windows; U; en-US) AppleWebKit/533.19.4 (KHTML, like Gecko) AdobeAIR/18.0
+android-10: Mozilla/5.0 (Linux; Android 10.0.0; Nexus 7 Build/OPM1.171019.011) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3359.158 Safari/537.36
+android-11: Mozilla/5.0 (Linux; Android 11.0; LG-D335 Build/LRX223G) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.93 Mobile Safari/537.36
+android-12: Mozilla/5.0 (Linux; Android 12; Pixel 3a Build/S2B2.211203.006;) Browlser/1.0.0-beta
+android-20-0: Mozilla/5.0 (Linux; Android 20.0; Lenovo A3500-H) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.162 Safari/537.36
+android-20-1: Mozilla/5.0 (Linux; Android 20.10; SM-J100H Build/KTU84P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.81 Mobile Safari/537.36
+android-21: Mozilla/5.0 (Linux; U; Android 21; pt_BR; SM-G360M Build/02048735) AppleWebKit/535.30 (KHTML, like Gecko) Chrome/18.0.1025.133 Mobile Safari/535.19
+android-22: Mozilla/5.0 (Linux; U; Android 22; en_US; Z818L Build/4fd1f814) AppleWebKit/535.30 (KHTML, like Gecko) Chrome/18.0.1025.133 Mobile Safari/535.19
 android-app-1: Mozilla/5.0 (Linux; Android 7.0; ZTE BLADE V0800 Build/NRD90M wv ) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.77 Mobile Safari/537.36
 android-app-2: Mozilla/5.0 (Linux; Android 10; SM-G965N Build/QP1A.190711.020; wv NAVER(client; navergame; app; AOS; 1.0.1; com.navercorp.game.android.community)) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/93.0.4577.62 Mobile Safari/537.36
 android-eclair-2-0: Mozilla/5.0 (Linux; Android 2.0; HUAWEI XXGW Build/Z8RWFA) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.3882.85 Mobile Safari/537.36
@@ -25,34 +32,24 @@ android-nougat-7-0: Mozilla/5.0 (Linux; Android 7.0; Nexus 5x Build/KOT49H) Appl
 android-nougat-7-1: Mozilla/5.0 (Linux; Android 7.1; SM-G935V Build/NRD90M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.132 Mobile Safari/537.36
 android-oreo-8-0: Mozilla/5.0 (Linux; Android 8.0; Pixel XL Build/OPR1.170530.002) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3107.3 Mobile Safari/537.36
 android-pie-9-0: Mozilla/5.0 (Linux; Android 9; Pixel XL Build/PPP3.180510.008) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.81 Mobile Safari/537.36
-android-10: Mozilla/5.0 (Linux; Android 10.0.0; Nexus 7 Build/OPM1.171019.011) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3359.158 Safari/537.36
-android-11: Mozilla/5.0 (Linux; Android 11.0; LG-D335 Build/LRX223G) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.93 Mobile Safari/537.36
-android-12: Mozilla/5.0 (Linux; Android 12; Pixel 3a Build/S2B2.211203.006;) Browlser/1.0.0-beta
-android-20-0: Mozilla/5.0 (Linux; Android 20.0; Lenovo A3500-H) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.162 Safari/537.36
-android-20-1: Mozilla/5.0 (Linux; Android 20.10; SM-J100H Build/KTU84P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.81 Mobile Safari/537.36
-android-21: Mozilla/5.0 (Linux; U; Android 21; pt_BR; SM-G360M Build/02048735) AppleWebKit/535.30 (KHTML, like Gecko) Chrome/18.0.1025.133 Mobile Safari/535.19
-android-22: Mozilla/5.0 (Linux; U; Android 22; en_US; Z818L Build/4fd1f814) AppleWebKit/535.30 (KHTML, like Gecko) Chrome/18.0.1025.133 Mobile Safari/535.19
+apple-watch-3: Watch3,2/5.2.1 (16U113)
+apple-watch-4: server-bag [Watch OS,5.3,16T225,Watch4,2]
+apple-watch-5: com.apple.invitation-registration [Watch OS,6.0.1,17R604,Watch5,4]
+apple-watch-6: server-bag [Watch OS,7.0,18R382,Watch6,4]
 blackberry: BlackBerry7100i/4.1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1 VendorID/103
+blackberry-10: Mozilla/5.0 (BB10; Touch) AppleWebKit/537.35+ (KHTML, like Gecko) Version/10.3.2.2339 Mobile Safari/537.35+
 blackberry-4: BlackBerry8100/4.2.1 Profile/MIDP-2.0 Configuration/CLDC-1.1 VendorID/103
 blackberry-5: Mozilla/5.0 (BlackBerry; U; BlackBerry 9900; en-US) AppleWebKit/534.11+ (KHTML, like Gecko) Version/5.0.0.187 Mobile Safari/534.11+
 blackberry-6: Mozilla/5.0 (BlackBerry; U; BlackBerry 9300; es) AppleWebKit/534.8+ (KHTML, like Gecko) Version/6.0.0.480 Mobile Safari/534.8+
 blackberry-7: Mozilla/5.0 (BlackBerry; U; BlackBerry 9380; en) AppleWebKit/534.11+ (KHTML, like Gecko) Version/7.1.0.336 Mobile Safari/534.11+
-blackberry-10: Mozilla/5.0 (BB10; Touch) AppleWebKit/537.35+ (KHTML, like Gecko) Version/10.3.2.2339 Mobile Safari/537.35+
-chrome-os-armv7l: Mozilla/5.0 (X11; CrOS armv7l 7077.134.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.156 Safari/537.36
-chrome-os-armv7i: Mozilla/5.0 (X11; CrOS armv7I 6158.49.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.101 Safari/537.36
-chrome-os-armv8l: Mozilla/5.0 (X11; CrOS armv8l 8872.54.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.54 Safari/537.36
-chrome-os-x86-64: Mozilla/5.0 (X11; CrOS x86_64 7647.84.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36,gzip(gfe)
-chrome-os-i686: Mozilla/5.0 (X11; CrOS i686 6310.68.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.96
 chrome-os-aarch64: Mozilla/5.0 (X11; CrOS aarch64 9202.64.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.146 Safari/537.36
+chrome-os-armv7i: Mozilla/5.0 (X11; CrOS armv7I 6158.49.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.101 Safari/537.36
+chrome-os-armv7l: Mozilla/5.0 (X11; CrOS armv7l 7077.134.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.156 Safari/537.36
+chrome-os-armv8l: Mozilla/5.0 (X11; CrOS armv8l 8872.54.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.54 Safari/537.36
+chrome-os-i686: Mozilla/5.0 (X11; CrOS i686 6310.68.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.96
+chrome-os-x86-64: Mozilla/5.0 (X11; CrOS x86_64 7647.84.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36,gzip(gfe)
 firefox: Mozilla/5.0 (Mobile; rv:32.0) Gecko/32.0 Firefox/32.0
 ios: Mozilla/5.0 (iPhone; CPU iPhone OS 0_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.1 Mobile/15E148 Safari/604.1
-ios-app: Mozilla/5.0 (iPhone; CPU iPhone OS 12_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/16B93 Electron/like MathspaceIOS/2.7.2
-ios-3: Mozilla/5.0 (iPhone; U; CPU iPhone OS 3_0 like Mac OS X; en-us) AppleWebKit/528.18 (KHTML, like Gecko) Version/4.0 Mobile/7A341 Safari/528.16; Ipad
-ios-4: Mozilla/5.0 (iPhone; U; CPU iPhone OS 4_0_2 like Mac OS X; en-us) AppleWebKit/532.9 (KHTML, like Gecko) Mobile/8A400 iPhone3,1 BingWeb/3.03.1428.20120423
-ios-5: Mozilla/5.0 (iPhone; U; CPU iPhone OS 5_1_1 like Mac OS X; en-us) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9B206 Safari/7534.48.3
-ios-6: Mozilla/5.0 (iPad; U; CPU OS 6_0_1 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A523 Safari/8536.25
-ios-7: Mozilla/5.0 (iPhone; CPU iPhone OS 7_8_1; like Mac OS X) AppleWebKit/602.43 (KHTML, like Gecko)  Chrome/52.0.1826.288 Mobile Safari/600.2
-ios-8: Mozilla/5.0 (iPhone; CPU iPhone OS 8_7_2; like Mac OS X) AppleWebKit/535.7 (KHTML, like Gecko)  Chrome/50.0.3718.337 Mobile Safari/602.3
 ios-10: Mozilla/5.0 (iPhone; CPU iPhone OS 10_0_1 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) Version/10.0 Mobile/14A403 Safari/602.1
 ios-11: Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) CriOS/60.0.3112.89 Mobile/15A5370a Safari/602.1
 ios-12: Mozilla/5.0 (iPhone; CPU iPhone OS 12_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/16B93 Electron/like MathspaceIOS/2.7.2
@@ -60,25 +57,28 @@ ios-13: Mozilla/5.0 (iPhone; CPU iPhone OS 13_1_1 like Mac OS X) AppleWebKit/605
 ios-14: Mozilla/5.0 (iPhone; CPU iPhone OS 14_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.7 Mobile/15E148 Browlser/4.2
 ios-15: Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.0 Mobile/15E148 Browlser/4.0.1 (1) Safari/605.1.15
 ios-16: Mozilla/5.0 (iPhone; CPU iPhone OS 16_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/94.0.4606.52 Mobile/15E148 Safari/604.1
-ios-17:  Mozilla/5.0 (iPhone; CPU iPhone OS 17_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/92.0.4515.90 Mobile/15E148 Safari/604.
+ios-17: Mozilla/5.0 (iPhone; CPU iPhone OS 17_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/92.0.4515.90 Mobile/15E148 Safari/604.
+ios-3: Mozilla/5.0 (iPhone; U; CPU iPhone OS 3_0 like Mac OS X; en-us) AppleWebKit/528.18 (KHTML, like Gecko) Version/4.0 Mobile/7A341 Safari/528.16; Ipad
+ios-4: Mozilla/5.0 (iPhone; U; CPU iPhone OS 4_0_2 like Mac OS X; en-us) AppleWebKit/532.9 (KHTML, like Gecko) Mobile/8A400 iPhone3,1 BingWeb/3.03.1428.20120423
+ios-5: Mozilla/5.0 (iPhone; U; CPU iPhone OS 5_1_1 like Mac OS X; en-us) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9B206 Safari/7534.48.3
+ios-6: Mozilla/5.0 (iPad; U; CPU OS 6_0_1 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A523 Safari/8536.25
+ios-7: Mozilla/5.0 (iPhone; CPU iPhone OS 7_8_1; like Mac OS X) AppleWebKit/602.43 (KHTML, like Gecko)  Chrome/52.0.1826.288 Mobile Safari/600.2
+ios-8: Mozilla/5.0 (iPhone; CPU iPhone OS 8_7_2; like Mac OS X) AppleWebKit/535.7 (KHTML, like Gecko)  Chrome/50.0.3718.337 Mobile Safari/602.3
+ios-app: Mozilla/5.0 (iPhone; CPU iPhone OS 12_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/16B93 Electron/like MathspaceIOS/2.7.2
 kai-os-1: Mozilla/5.0 (Mobile; ALCATEL4044T; rv:37.0) Gecko/37.0 Firefox/37.0 KaiOS/1.0
 kai-os-2: Mozilla/5.0 (Mobile; LYF/LF-2403N/LYF-LF2403N-000-01-18IMEI-040817-i; rv:48.0) Gecko/48.0 Firefox/48.0 KaiOS/2.0
 linux: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Atom/1.0.15 Chrome/43.0.2357.65 Electron/0.30.6 Safari/537.36
 mac-os: XMind/10.2.1.202007271856 (darwin.x64; macOS Arch/x64 Version/11.0.1; en-US) Electron/5.0.13
 mac-os-1: MOZILLA/5.0 (MACINTOSH; INTEL MAC OS X 10_14_6) APPLEWEBKIT/537.36 (KHTML LIKE GECKO) CHROME/94.0.4606.61 SAFARI/537.36
 mac-os-x: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11) AppleWebKit/537.36 (KHTML, like Gecko) NativefierPlaceholder/0.0.1 Chrome/47.0.2526.73 Electron/0.36.4 Safari/537.36
-windows-rt: Mozilla/5.0 (Windows NT 6.3; ARM; Trident/7.0; Touch; .NET4.0E; .NET4.0C; Tablet PC 2.0; rv:11.0) like Gecko
-windows-ce: Mozilla/5.0 (Windows CE) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.125 Safari/537.36
-windows-inclusive: Mozilla/5.0 (Windows NT 5.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) your-app/0.1.0 Chrome/41.0.2272.76 Electron/0.24.0 Safari/537.36
-windows-phone: Mozilla/5.0 (Windows Phone 10.0 like Android 6.0.1; Microsoft; Lumia 950) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.133 Mobile/537.36 Version/12.10136
-windows-touch: Mozilla/5.0 (Windows NT 6.3; ARM; Trident/7.0; Touch; .NET4.0E; .NET4.0C; Tablet PC 2.0; rv:11.0) like Gecko
-windows-xp: Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0; .NET CLR 2.0.50727; .NET CLR 3.0.4506.2152; .NET CLR 3.5.30729; Wildfire NoTrail; ProE-Datecode:2902011330),gzip(gfe) (via translate.google.com)
-windows-vista: Mozilla/5.0 (Windows NT 6.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) mtz_krunker/1.15.10 Chrome/78.0.3905.1 Electron/7.0.0 Safari/537.36
+windows-10: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Atom/1.6.2 Chrome/45.0.2454.85 Electron/0.34.5 Safari/537.36
 windows-7: Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0; Wildfire NoTrail; ProE-Datecode:3302014090)
 windows-8: Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) your-app/0.1.0 Chrome/41.0.2272.76 Electron/0.24.0 Safari/537.36
 windows-8-1: Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Min/1.1.2 Chrome/49.0.2623.75 Electron/0.37.1 Safari/537.36
-windows-10: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Atom/1.6.2 Chrome/45.0.2454.85 Electron/0.34.5 Safari/537.36
-apple-watch-3: Watch3,2/5.2.1 (16U113)
-apple-watch-4: server-bag [Watch OS,5.3,16T225,Watch4,2]
-apple-watch-5: com.apple.invitation-registration [Watch OS,6.0.1,17R604,Watch5,4]
-apple-watch-6: server-bag [Watch OS,7.0,18R382,Watch6,4]
+windows-ce: Mozilla/5.0 (Windows CE) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.125 Safari/537.36
+windows-inclusive: Mozilla/5.0 (Windows NT 5.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) your-app/0.1.0 Chrome/41.0.2272.76 Electron/0.24.0 Safari/537.36
+windows-phone: Mozilla/5.0 (Windows Phone 10.0 like Android 6.0.1; Microsoft; Lumia 950) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.133 Mobile/537.36 Version/12.10136
+windows-rt: Mozilla/5.0 (Windows NT 6.3; ARM; Trident/7.0; Touch; .NET4.0E; .NET4.0C; Tablet PC 2.0; rv:11.0) like Gecko
+windows-touch: Mozilla/5.0 (Windows NT 6.3; ARM; Trident/7.0; Touch; .NET4.0E; .NET4.0C; Tablet PC 2.0; rv:11.0) like Gecko
+windows-vista: Mozilla/5.0 (Windows NT 6.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) mtz_krunker/1.15.10 Chrome/78.0.3905.1 Electron/7.0.0 Safari/537.36
+windows-xp: Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0; .NET CLR 2.0.50727; .NET CLR 3.0.4506.2152; .NET CLR 3.5.30729; Wildfire NoTrail; ProE-Datecode:2902011330),gzip(gfe) (via translate.google.com)
