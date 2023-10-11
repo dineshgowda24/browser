@@ -17,8 +17,9 @@ type PlatformMatcher interface {
 
 // Platform is a struct that contains information about the user agent's platforms.
 type Platform struct {
-	userAgent string          // the user agent string
-	matcher   PlatformMatcher // detected platform matcher
+	userAgent  string          // the user agent string
+	matcher    PlatformMatcher // detected platform matcher
+	registered bool            // indicates if the platform matcher has been registered
 }
 
 // NewPlatform creates a new platform based on the user agent string.
@@ -35,14 +36,8 @@ func NewPlatform(userAgent string) (*Platform, error) {
 	}, nil
 }
 
-// getMatcher returns the platform matcher detected from the user agent string.
-// It sets the matcher if it is not already set.
-// If the matcher is already set, it returns the matcher.
-func (p *Platform) getMatcher() PlatformMatcher {
-	if p.matcher != nil {
-		return p.matcher
-	}
-
+// register registers the platform matcher detected from the user agent string.
+func (p *Platform) register() {
 	// define all your platform matchers here
 	// the order of the matchers is important as some user agents may contain multiple platform keywords
 	matchers := []PlatformMatcher{
@@ -66,6 +61,16 @@ func (p *Platform) getMatcher() PlatformMatcher {
 			p.matcher = matcher
 			break
 		}
+	}
+
+	p.registered = true
+}
+
+// getMatcher returns the platform matcher detected from the user agent string.
+// If the platform matcher has not been registered, it will be registered.
+func (p *Platform) getMatcher() PlatformMatcher {
+	if !p.registered {
+		p.register()
 	}
 
 	return p.matcher

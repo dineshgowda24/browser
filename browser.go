@@ -26,10 +26,11 @@ type BrowserMatcher interface {
 // Browser is a struct that contains information about the user agent's browser.
 // It contains information about the browser's name, version, platform and device.
 type Browser struct {
-	userAgent string         // the user agent string
-	platform  *Platform      // detected platform
-	device    *Device        // detected device
-	matcher   BrowserMatcher // detected browser matcher
+	userAgent  string         // the user agent string
+	platform   *Platform      // detected platform
+	device     *Device        // detected device
+	matcher    BrowserMatcher // detected browser matcher
+	registered bool           // whether the matcher has been registered
 }
 
 // NewBrowser creates a new browser based on the user agent string.
@@ -42,25 +43,34 @@ func NewBrowser(userAgent string) (*Browser, error) {
 		return nil, ErrUserAgentSizeExceeded
 	}
 
-	b := &Browser{
-		userAgent: userAgent,
-		platform: &Platform{
-			userAgent: userAgent,
-		},
-		device: &Device{
-			userAgent: userAgent,
-		},
+	p, err := NewPlatform(userAgent)
+	if err != nil {
+		return nil, err
 	}
 
-	b.getMatcher()
+	d, err := NewDevice(userAgent)
+	if err != nil {
+		return nil, err
+	}
+
+	bot, err := NewBot(userAgent)
+	if err != nil {
+		return nil, err
+	}
+
+	b := &Browser{
+		userAgent: userAgent,
+		platform:  p,
+		device:    d,
+		bot:       bot,
+	}
+	b.register()
+
 	return b, nil
 }
 
-func (b *Browser) getMatcher() BrowserMatcher {
-	if b.matcher != nil {
-		return b.matcher
-	}
-
+// register registers the browser matcher detected from the user agent string.
+func (b *Browser) register() {
 	// add all your browser matchers here, order matters
 	matchers := []BrowserMatcher{
 		matchers.NewAlipay(b.userAgent),
@@ -101,6 +111,16 @@ func (b *Browser) getMatcher() BrowserMatcher {
 			b.matcher = matcher
 			break
 		}
+	}
+
+	b.registered = true
+}
+
+// getMatcher returns the browser matcher detected from the user agent string.
+// If the browser matcher has not been registered, it will be registered.
+func (b *Browser) getMatcher() BrowserMatcher {
+	if !b.registered {
+		b.register()
 	}
 
 	return b.matcher

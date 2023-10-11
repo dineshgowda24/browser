@@ -20,8 +20,9 @@ type DeviceMatcher interface {
 
 // Device is a struct that contains information about the user agent's device
 type Device struct {
-	userAgent string
-	matcher   DeviceMatcher
+	userAgent  string        // user agent string
+	matcher    DeviceMatcher // detected device matcher
+	registered bool          // indicates if the device matcher has been registered
 }
 
 // NewDevice creates a new device based on the user agent string
@@ -31,17 +32,16 @@ func NewDevice(userAgent string) (*Device, error) {
 		return nil, ErrUserAgentSizeExceeded
 	}
 
-	return &Device{
+	d := &Device{
 		userAgent: userAgent,
-	}, nil
+	}
+	d.register()
+
+	return d, nil
 }
 
-// getMatcher returns the device matcher detected from the user agent string
-func (d *Device) getMatcher() DeviceMatcher {
-	if d.matcher != nil {
-		return d.matcher
-	}
-
+// register registers the device matcher detected from the user agent string
+func (d *Device) register() {
 	// define all your device matchers here
 	matchers := []DeviceMatcher{
 		devices.NewBlackberryPlaybook(d.userAgent),
@@ -74,6 +74,17 @@ func (d *Device) getMatcher() DeviceMatcher {
 			break
 		}
 	}
+
+	d.registered = true
+}
+
+// getMatcher returns the device matcher detected from the user agent string
+// If the device matcher has not been registered, it will be registered
+func (d *Device) getMatcher() DeviceMatcher {
+	if !d.registered {
+		d.register()
+	}
+
 	return d.matcher
 }
 
