@@ -31,9 +31,12 @@ func NewPlatform(userAgent string) (*Platform, error) {
 		return nil, ErrUserAgentSizeExceeded
 	}
 
-	return &Platform{
+	p := &Platform{
 		userAgent: userAgent,
-	}, nil
+	}
+	p.register()
+
+	return p, nil
 }
 
 // register registers the platform matcher detected from the user agent string.
