@@ -1,1 +1,6 @@
+crawl: NetSeer/Nutch-0.9 (NetSeer Crawler; http://www.netseer.com; crawler@netseer.com)
+datapack: DataparkSearch/4.35 ( http://www.dataparksearch.org/)
+fetch: admantx-ussy02/2.4 (+http://www.admantx.com/service-fetcher.html)
 googlebot: Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)
+monitoring: FreeWebMonitoring SiteChecker/0.2 (+https://www.freewebmonitoring.com/bot.html)
+spider: Mozilla/5.0(compatible; Sosospider/2.0; +http://help.soso.com/webspider.htm)
