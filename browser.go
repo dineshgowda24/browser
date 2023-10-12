@@ -29,6 +29,7 @@ type Browser struct {
 	userAgent  string         // the user agent string
 	platform   *Platform      // detected platform
 	device     *Device        // detected device
+	bot        *Bot           // detected bot
 	matcher    BrowserMatcher // detected browser matcher
 	registered bool           // whether the matcher has been registered
 }
@@ -159,6 +160,11 @@ func (b *Browser) Platform() *Platform {
 // It can used to further query information about the device.
 func (b *Browser) Device() *Device {
 	return b.device
+}
+
+// Bot returns the bot of the browser.
+func (b *Browser) Bot() *Bot {
+	return b.bot
 }
 
 // IsAliPay returns true if the browser is AliPay.
