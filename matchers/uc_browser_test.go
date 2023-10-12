@@ -16,9 +16,9 @@ func TestNewUCBrowser(t *testing.T) {
 
 func TestUCBrowserName(t *testing.T) {
 	Convey("Subject: #Name", t, func() {
-		Convey("It should return UC Browser", func() {
+		Convey("It should return UCBrowser", func() {
 			uc := NewUCBrowser("")
-			So(uc.Name(), ShouldEqual, "UC Browser")
+			So(uc.Name(), ShouldEqual, "UCBrowser")
 		})
 	})
 }
