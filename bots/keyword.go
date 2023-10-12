@@ -18,9 +18,9 @@ func NewKeyword(userAgent string) *Keyword {
 	}
 }
 
-// Name returns the keyword that matched.
+// Name returns genericBot.
 func (k *Keyword) Name() string {
-	return regexp.MustCompile(keywordMatchRegex).FindString(k.userAgent)
+	return genericBot
 }
 
 // Match returns true if the user agent contains a keyword.

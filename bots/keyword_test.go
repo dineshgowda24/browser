@@ -18,17 +18,11 @@ func TestNewKeyword(t *testing.T) {
 func TestKeywordName(t *testing.T) {
 	Convey("Subject: #Name", t, func() {
 		Convey("It returns the keyword that matched", func() {
-			bots := map[string]string{
-				"crawl":      "crawl",
-				"spider":     "spider",
-				"fetch":      "fetch",
-				"datapack":   "search",
-				"monitoring": "monitoring",
-				"googlebot":  "bot"}
+			bots := []string{"crawl", "spider", "fetch", "datapack", "monitoring", "googlebot"}
 
-			for k, v := range bots {
-				k := NewKeyword(bots[k])
-				So(k.Name(), ShouldEqual, v)
+			for _, v := range bots {
+				k := NewKeyword(testBots[v])
+				So(k.Name(), ShouldEqual, "Generic Bot")
 			}
 		})
 	})

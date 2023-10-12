@@ -16,8 +16,8 @@ func TestNewEmpty(t *testing.T) {
 
 func TestEmptyName(t *testing.T) {
 	Convey("Subject: #Name", t, func() {
-		Convey("It should return an empty string", func() {
-			So(NewEmpty(testBots["googlebot"]).Name(), ShouldEqual, "")
+		Convey("It should return Generic Bot", func() {
+			So(NewEmpty(testBots["googlebot"]).Name(), ShouldEqual, "Generic Bot")
 		})
 	})
 }
