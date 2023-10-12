@@ -39,7 +39,7 @@ func TestYaaniBrowserVersion(t *testing.T) {
 
 		Convey("When the version is not matched", func() {
 			Convey("It should return 0.0", func() {
-				yb := NewYaaniBrowser(testUserAgents["chrome"].Linux)
+				yb := NewYaaniBrowser(testUserAgents["blackberry"].Windows)
 				So(yb.Version(), ShouldEqual, "0.0")
 			})
 		})

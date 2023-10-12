@@ -32,7 +32,7 @@ func TestSputnikVersion(t *testing.T) {
 				So(NewSputnik(s.Android).Version(), ShouldEqual, "0.6.1")
 				So(NewSputnik(s.IOS).Version(), ShouldEqual, "2.3.8")
 				So(NewSputnik(s.Linux).Version(), ShouldEqual, "3.3.2038.2")
-				So(NewSputnik(s.Windows).Version(), ShouldEqual, "0.6.1")
+				So(NewSputnik(s.Windows).Version(), ShouldEqual, "1.9.48.2")
 			})
 		})
 	})

@@ -38,7 +38,7 @@ func TestSamsungBrowserVersion(t *testing.T) {
 
 		Convey("When the version is not matched", func() {
 			Convey("It should return default version", func() {
-				sb := NewSamsungBrowser(testUserAgents["chrome"].Linux)
+				sb := NewSamsungBrowser("Mozilla/5.0 (Linux; Android 4.4.2; SM-G900F Build/KOT49H)")
 				So(sb.Version(), ShouldEqual, "0.0")
 			})
 		})

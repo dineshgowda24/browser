@@ -16,9 +16,9 @@ func TestNewMiuiBrowser(t *testing.T) {
 
 func TestMiuiBrowserName(t *testing.T) {
 	Convey("Subject: #Name", t, func() {
-		Convey("It should return MiuiBrowser", func() {
+		Convey("It should return Miui Browser", func() {
 
-			So(NewMiuiBrowser("").Name(), ShouldEqual, "MiuiBrowser")
+			So(NewMiuiBrowser("").Name(), ShouldEqual, "Miui Browser")
 		})
 	})
 }
