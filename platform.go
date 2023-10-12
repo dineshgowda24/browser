@@ -84,6 +84,11 @@ func (p *Platform) Name() string {
 	return p.getMatcher().Name()
 }
 
+// Version returns the version of the platform.
+func (p *Platform) Version() string {
+	return p.getMatcher().Version()
+}
+
 // IsAdobeAir returns true if the user agent string matches Adobe AIR.
 func (p *Platform) IsAdobeAir() bool {
 	if _, ok := p.getMatcher().(*platforms.AdobeAir); ok {
