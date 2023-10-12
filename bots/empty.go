@@ -1,5 +1,7 @@
 package bots
 
+var genericBot = "Generic Bot"
+
 // Empty is a bot that matches when the user agent is empty.
 // An empty user agent is treated as a bot.
 type Empty struct {
@@ -12,9 +14,9 @@ func NewEmpty(userAgent string) *Empty {
 	}
 }
 
-// Name returns an empty string.
+// Name returns genericBot.
 func (e *Empty) Name() string {
-	return ""
+	return genericBot
 }
 
 // Match returns true if the user agent is empty.
