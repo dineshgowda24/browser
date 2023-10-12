@@ -93,32 +93,55 @@ A ton of helper functions are defined in the `Browser` struct to make it easy to
 go get github.com/dineshgowda24/browser
 ```
 
+### Browser Detection
+
 ```go
-b, err := browser.New("Mozilla/5.0 (Linux; Android 10; SM-A205U) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.210 Mobile Safari/537.36")
+b, err := browser.NewBrowser("Mozilla/5.0 (Linux; Android 10; SM-A205U) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.210 Mobile Safari/537.36")
+ if err != nil {
+  // handle error
+ }
+
+ // browser level information
+ fmt.Println(b.Name())           // Chrome
+ fmt.Println(b.Version())        // 90.0.4430.210
+ fmt.Println(b.ShortVersion())   // 90
+ fmt.Println(b.IsBrowserKnown()) // true
+ fmt.Println(b.IsChrome())       // true
+
+ // device level information
+ fmt.Println(b.Device().Name())      // Samsung SM-A205U
+ fmt.Println(b.Device().IsTablet())  // false
+ fmt.Println(b.Device().IsSamsung()) // true
+
+ // platform level information
+ fmt.Println(b.Platform().Name())         // Android
+ fmt.Println(b.Platform().Version())      // 10
+ fmt.Println(b.Platform().IsAndroidApp()) // false
+
+ // bot level information
+ fmt.Println(b.Bot().Name())  // ""
+ fmt.Println(b.Bot().IsBot()) // false
+```
+
+### Bot Detection
+
+```go
+b, err := browser.NewBrowser("APIs-Google (https://developers.google.com/webmasters/APIs-Google.html)")
 if err != nil {
-    // handle error
+   // handle error
 }
 
 // browser level information
-b.Name()            // Chrome
-b.Version()         // 90.0.4430.210
-b.ShortVersion()    // 90
-b.IsBrowserKnown()  // true
-b.IsChrome()        // true
+fmt.Println(b.Name())           // Unknown Browser
+fmt.Println(b.Version())        // 0.0
+fmt.Println(b.ShortVersion())   // 0
+fmt.Println(b.IsBrowserKnown()) // false
+fmt.Println(b.IsUnknown())      // true
 
-// device level information
-b.Device().Name()       // Samsung SM-A205U
-b.Device().IsTablet()   // false
-b.Device().IsSamsung()  // true
-
-// platform level information
-b.Platform().Name()         // Android
-b.Platform().Version()      // 10
-b.Platform().IsAndroidApp() // false
-
-// bot level information(irrelevant for this user agent)
-b.Bot().Name()      // ""
-b.Bot().IsBot()     // false
+// bot level information
+fmt.Println(b.Bot().Name())  // "APIs-Google"
+fmt.Println(b.Bot().IsBot()) // true
+fmt.Println(b.Bot().Why())   // *bots.Known
 ```
 
 ## Contributing
