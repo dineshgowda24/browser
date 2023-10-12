@@ -1,5 +1,8 @@
 ---
+apache-httpclient: Apache-HttpClient/4.5.5 (Java/9.0.1)
 apis-google: APIs-Google (https://developers.google.com/webmasters/APIs-Google.html)
+barkrowler: Barkrowler/0.9 (+http://www.exensa.com/crawl) X-SiteSpeedApp-1
+bingbot: Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)
 crawl: NetSeer/Nutch-0.9 (NetSeer Crawler; http://www.netseer.com; crawler@netseer.com)
 datapack: DataparkSearch/4.35 ( http://www.dataparksearch.org/)
 fetch: admantx-ussy02/2.4 (+http://www.admantx.com/service-fetcher.html)
