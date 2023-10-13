@@ -13,10 +13,13 @@
     <img alt="Go report card" src="https://goreportcard.com/badge/github.com/dineshgowda24/browser" />
   </a>
   <a href="https://dl.circleci.com/status-badge/redirect/circleci/MQTLZJuBejHgr2yqrojz3u/5NTLeuQeViQw2JaPQf7gKa/tree/main">
-    <img alt="Build Status" src="https://dl.circleci.com/status-badge/img/circleci/MQTLZJuBejHgr2yqrojz3u/5NTLeuQeViQw2JaPQf7gKa/tree/main.svg?style=svg" />
+    <img alt="Build Status" src="https://dl.circleci.com/status-badge/img/circleci/MQTLZJuBejHgr2yqrojz3u/5NTLeuQeViQw2JaPQf7gKa/tree/main.svg?style=shield&circle-token=ab7a417fe410b8387c767f83568f7d2f2788ac4f" />
   </a>
   <a href="https://codecov.io/gh/dineshgowda24/browser">
     <img alt="Code coverage" src="https://codecov.io/gh/dineshgowda24/browser/graph/badge.svg?token=XUA2VJW5FU">
+  </a>
+  <a href="https://twitter.com/_dineshgowda">
+    <img alt="Code coverage" src="https://img.shields.io/twitter/follow/_dineshgowda">
   </a>
 </div>
 
