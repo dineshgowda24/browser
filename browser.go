@@ -44,15 +44,8 @@ func NewBrowser(userAgent string) (*Browser, error) {
 		return nil, ErrUserAgentSizeExceeded
 	}
 
-	p, err := NewPlatform(userAgent)
-	if err != nil {
-		return nil, err
-	}
-
-	d, err := NewDevice(userAgent)
-	if err != nil {
-		return nil, err
-	}
+	p, _ := NewPlatform(userAgent)
+	d, _ := NewDevice(userAgent)
 
 	bot, err := NewBot(userAgent)
 	if err != nil {
