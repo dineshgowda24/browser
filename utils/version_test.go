@@ -21,6 +21,24 @@ func TestVersionGTE(t *testing.T) {
 			})
 		})
 
+		Convey("When the actual version is ''", func() {
+			Convey("It should return false", func() {
+				So(VersionGTE("", "1.0.0"), ShouldBeFalse)
+			})
+		})
+
+		Convey("When the actual version is unparsable", func() {
+			Convey("It should return false", func() {
+				So(VersionGTE("@#", "1.0.0"), ShouldBeFalse)
+			})
+		})
+
+		Convey("When the expected version is unparsable", func() {
+			Convey("It should return false", func() {
+				So(VersionGTE("1.0.0", "@#"), ShouldBeFalse)
+			})
+		})
+
 		Convey("When the actual version is less than the expected version", func() {
 			Convey("It should return false", func() {
 				So(VersionGTE("1.0.0", "1.0.1"), ShouldBeFalse)
@@ -44,6 +62,24 @@ func TestVersionGT(t *testing.T) {
 				So(VersionGT("1.0.0", "0"), ShouldBeTrue)
 				So(VersionGT("1.0.0", "0.0"), ShouldBeTrue)
 				So(VersionGT("1.0.0", "0.0.0"), ShouldBeTrue)
+			})
+		})
+
+		Convey("When the actual version is ''", func() {
+			Convey("It should return false", func() {
+				So(VersionGT("", "1.0.0"), ShouldBeFalse)
+			})
+		})
+
+		Convey("When the actual version is unparsable", func() {
+			Convey("It should return false", func() {
+				So(VersionGT("@#", "1.0.0"), ShouldBeFalse)
+			})
+		})
+
+		Convey("When the expected version is unparsable", func() {
+			Convey("It should return false", func() {
+				So(VersionGT("1.0.0", "@#"), ShouldBeFalse)
 			})
 		})
 
@@ -73,6 +109,24 @@ func TestVersionLTE(t *testing.T) {
 			})
 		})
 
+		Convey("When the actual version is ''", func() {
+			Convey("It should return true", func() {
+				So(VersionLTE("", "1.0.0"), ShouldBeTrue)
+			})
+		})
+
+		Convey("When the actual version is unparsable", func() {
+			Convey("It should return false", func() {
+				So(VersionLTE("@#", "1.0.0"), ShouldBeFalse)
+			})
+		})
+
+		Convey("When the expected version is unparsable", func() {
+			Convey("It should return false", func() {
+				So(VersionLTE("1.0.0", "@#"), ShouldBeFalse)
+			})
+		})
+
 		Convey("When the actual version is greater than the expected version", func() {
 			Convey("It should return false", func() {
 				So(VersionLTE("1.0.0", "0.9.0"), ShouldBeFalse)
@@ -96,6 +150,24 @@ func TestVersionLT(t *testing.T) {
 				So(VersionLT("1.0.0", "2.0.0"), ShouldBeTrue)
 				So(VersionLT("1.0.0", "4"), ShouldBeTrue)
 				So(VersionLT("1.0.0", "4.0"), ShouldBeTrue)
+			})
+		})
+
+		Convey("When the actual version is ''", func() {
+			Convey("It should return true", func() {
+				So(VersionLT("", "1.0.0"), ShouldBeTrue)
+			})
+		})
+
+		Convey("When the actual version is unparsable", func() {
+			Convey("It should return false", func() {
+				So(VersionLT("@#", "1.0.0"), ShouldBeFalse)
+			})
+		})
+
+		Convey("When the expected version is unparsable", func() {
+			Convey("It should return false", func() {
+				So(VersionLT("1.0.0", "@#"), ShouldBeFalse)
 			})
 		})
 
