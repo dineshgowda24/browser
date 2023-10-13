@@ -1,4 +1,3 @@
-
 package matchers
 
 type Sputnik struct {

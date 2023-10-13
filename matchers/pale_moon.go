@@ -4,7 +4,6 @@ type PaleMoon struct {
 	base
 }
 
-
 var (
 	paleMoonName          = "Pale Moon"
 	paleMoonVersionRegexp = []string{`PaleMoon/([\d.]+)`}
