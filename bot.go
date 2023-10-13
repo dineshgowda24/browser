@@ -124,12 +124,7 @@ func (b *Bot) Name() string {
 		return ""
 	}
 
-	n := b.matcher.Name()
-	if n != "" {
-		return n
-	}
-
-	return genericBotName
+	return b.matcher.Name()
 }
 
 // Why returns the reason why the user agent is a bot
