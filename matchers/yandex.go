@@ -1,4 +1,3 @@
-
 package matchers
 
 type Yandex struct {

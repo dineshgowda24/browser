@@ -1,4 +1,3 @@
-
 package matchers
 
 type Weibo struct {
