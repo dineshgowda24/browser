@@ -108,6 +108,13 @@ func TestDeviceIsIPodTouch(t *testing.T) {
 				So(d.IsIPodTouch(), ShouldBeTrue)
 			})
 		})
+
+		Convey("When the device is not an iPod touch", func() {
+			Convey("It should return false", func() {
+				d, _ := NewDevice(testDevices["iphone-7"])
+				So(d.IsIPodTouch(), ShouldBeFalse)
+			})
+		})
 	})
 }
 
@@ -215,6 +222,13 @@ func TestDeviceIsSwitch(t *testing.T) {
 				So(d.IsConsole(), ShouldBeTrue)
 			})
 		})
+
+		Convey("When the device is not a Switch", func() {
+			Convey("It should return false", func() {
+				d, _ := NewDevice(testDevices["wiiu-1"])
+				So(d.IsSwitch(), ShouldBeFalse)
+			})
+		})
 	})
 }
 
@@ -251,6 +265,13 @@ func TestDeviceIsKindleFire(t *testing.T) {
 				So(d.IsKindleFire(), ShouldBeTrue)
 			})
 		})
+
+		Convey("When the device is not a Kindle Fire", func() {
+			Convey("It should return false", func() {
+				d, _ := NewDevice(testDevices["kindle-1"])
+				So(d.IsKindleFire(), ShouldBeFalse)
+			})
+		})
 	})
 }
 
@@ -273,6 +294,13 @@ func TestDeviceIsSamsung(t *testing.T) {
 				So(d.IsSamsung(), ShouldBeTrue)
 			})
 		})
+
+		Convey("When the device is not a Samsung", func() {
+			Convey("It should return false", func() {
+				d, _ := NewDevice(testDevices["iphone-7"])
+				So(d.IsSamsung(), ShouldBeFalse)
+			})
+		})
 	})
 }
 
@@ -282,6 +310,13 @@ func TestDeviceIsTV(t *testing.T) {
 			Convey("It should return true", func() {
 				d, _ := NewDevice(testDevices["tv-1"])
 				So(d.IsTV(), ShouldBeTrue)
+			})
+		})
+
+		Convey("When the device is not a TV", func() {
+			Convey("It should return false", func() {
+				d, _ := NewDevice(testDevices["iphone-7"])
+				So(d.IsTV(), ShouldBeFalse)
 			})
 		})
 	})
