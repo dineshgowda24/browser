@@ -3,18 +3,14 @@ package devices
 // Unknown represents an unknown device.
 // These are devices that we don't know about yet. These are matched last.
 type Unknown struct {
-	base
+	p Parser
 }
 
-var (
-	unknownName = "Unknown"
-)
+var unknownName = "Unknown"
 
-func NewUnknown(userAgent string) *Unknown {
+func NewUnknown(p Parser) *Unknown {
 	return &Unknown{
-		base: base{
-			userAgent: userAgent,
-		},
+		p: p,
 	}
 }
 

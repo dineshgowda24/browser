@@ -1,7 +1,7 @@
 package devices
 
 type BlackberryPlaybook struct {
-	base
+	p Parser
 }
 
 var (
@@ -9,11 +9,9 @@ var (
 	bbPlaybookMatchRegex = []string{`PlayBook.*?RIM Tablet`}
 )
 
-func NewBlackberryPlaybook(userAgent string) *BlackberryPlaybook {
+func NewBlackberryPlaybook(p Parser) *BlackberryPlaybook {
 	return &BlackberryPlaybook{
-		base{
-			userAgent: userAgent,
-		},
+		p: p,
 	}
 }
 
@@ -22,5 +20,5 @@ func (b *BlackberryPlaybook) Name() string {
 }
 
 func (b *BlackberryPlaybook) Match() bool {
-	return b.match(bbPlaybookMatchRegex)
+	return b.p.Match(bbPlaybookMatchRegex)
 }

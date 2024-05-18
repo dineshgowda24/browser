@@ -1,7 +1,7 @@
 package devices
 
 type XboxOne struct {
-	base
+	p Parser
 }
 
 var (
@@ -9,11 +9,9 @@ var (
 	xboxOneMatchRegex = []string{`(?i)Xbox One`}
 )
 
-func NewXboxOne(userAgent string) *XboxOne {
+func NewXboxOne(p Parser) *XboxOne {
 	return &XboxOne{
-		base{
-			userAgent: userAgent,
-		},
+		p: p,
 	}
 }
 
@@ -22,5 +20,5 @@ func (x *XboxOne) Name() string {
 }
 
 func (x *XboxOne) Match() bool {
-	return x.match(xboxOneMatchRegex)
+	return x.p.Match(xboxOneMatchRegex)
 }

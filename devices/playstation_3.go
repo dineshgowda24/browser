@@ -1,7 +1,7 @@
 package devices
 
 type PlayStation3 struct {
-	base
+	p Parser
 }
 
 var (
@@ -9,11 +9,9 @@ var (
 	playStation3MatchRegex = []string{`(?i)PLAYSTATION 3`}
 )
 
-func NewPlayStation3(userAgent string) *PlayStation3 {
+func NewPlayStation3(p Parser) *PlayStation3 {
 	return &PlayStation3{
-		base{
-			userAgent: userAgent,
-		},
+		p: p,
 	}
 }
 
@@ -22,5 +20,5 @@ func (p *PlayStation3) Name() string {
 }
 
 func (p *PlayStation3) Match() bool {
-	return p.match(playStation3MatchRegex)
+	return p.p.Match(playStation3MatchRegex)
 }

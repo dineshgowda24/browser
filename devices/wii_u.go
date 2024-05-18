@@ -1,7 +1,7 @@
 package devices
 
 type WiiU struct {
-	base
+	p Parser
 }
 
 var (
@@ -9,11 +9,9 @@ var (
 	wiiUMatchRegex = []string{`(?i)Nintendo WiiU`}
 )
 
-func NewWiiU(userAgent string) *WiiU {
+func NewWiiU(p Parser) *WiiU {
 	return &WiiU{
-		base{
-			userAgent: userAgent,
-		},
+		p: p,
 	}
 }
 
@@ -22,5 +20,5 @@ func (w *WiiU) Name() string {
 }
 
 func (w *WiiU) Match() bool {
-	return w.match(wiiUMatchRegex)
+	return w.p.Match(wiiUMatchRegex)
 }

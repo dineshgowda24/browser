@@ -1,7 +1,7 @@
 package devices
 
 type IpodTouch struct {
-	base
+	p Parser
 }
 
 var (
@@ -9,11 +9,9 @@ var (
 	ipodTouchMatchRegex = []string{`(?i)iPod`}
 )
 
-func NewIpodTouch(userAgent string) *IpodTouch {
+func NewIpodTouch(p Parser) *IpodTouch {
 	return &IpodTouch{
-		base{
-			userAgent: userAgent,
-		},
+		p: p,
 	}
 }
 
@@ -22,5 +20,5 @@ func (i *IpodTouch) Name() string {
 }
 
 func (i *IpodTouch) Match() bool {
-	return i.match(ipodTouchMatchRegex)
+	return i.p.Match(ipodTouchMatchRegex)
 }
