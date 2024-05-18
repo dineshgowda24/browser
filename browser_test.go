@@ -986,3 +986,23 @@ func TestBrowserIsFirefox(t *testing.T) {
 		})
 	})
 }
+
+func TestBrowserIsBrave(t *testing.T) {
+	Convey("Subject: #IsBrave", t, func() {
+		Convey("When the browser is Brave", func() {
+			Convey("It should return true", func() {
+				ua := testUserAgents["brave"]
+				b, _ := NewBrowser(ua.Windows)
+				So(b.IsBrave(), ShouldBeTrue)
+			})
+		})
+
+		Convey("When the browser is not Brave", func() {
+			Convey("It should return false", func() {
+				ua := testUserAgents["chrome"]
+				b, _ := NewBrowser(ua.Windows)
+				So(b.IsBrave(), ShouldBeFalse)
+			})
+		})
+	})
+}

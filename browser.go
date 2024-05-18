@@ -72,6 +72,7 @@ func (b *Browser) register() {
 		matchers.NewNokia(parser),
 		matchers.NewUCBrowser(parser),
 		matchers.NewBlackBerry(parser),
+		matchers.NewBrave(parser),
 		matchers.NewOpera(parser),
 		matchers.NewOtter(parser),
 		matchers.NewInstagram(parser),
@@ -200,6 +201,17 @@ func (b *Browser) IsUCBrowser() bool {
 // https://www.blackberry.com/
 func (b *Browser) IsBlackBerry() bool {
 	if _, ok := b.getMatcher().(*matchers.BlackBerry); ok {
+		return true
+	}
+
+	return false
+}
+
+// IsBrave returns true if the browser is Brave.
+//
+// https://brave.com/
+func (b *Browser) IsBrave() bool {
+	if _, ok := b.getMatcher().(*matchers.Brave); ok {
 		return true
 	}
 
