@@ -41,22 +41,23 @@ func NewPlatform(userAgent string) (*Platform, error) {
 
 // register registers the platform matcher detected from the user agent string.
 func (p *Platform) register() {
+	parser := platforms.NewUAParser(p.userAgent)
 	// define all your platform matchers here
 	// the order of the matchers is important as some user agents may contain multiple platform keywords
 	matchers := []PlatformMatcher{
-		platforms.NewAdobeAir(p.userAgent),
-		platforms.NewBlackBerry(p.userAgent),
-		platforms.NewKaiOS(p.userAgent),
-		platforms.NewIOS(p.userAgent),
-		platforms.NewWatchOS(p.userAgent),
-		platforms.NewWindowsMobile(p.userAgent),
-		platforms.NewWindowsPhone(p.userAgent),
-		platforms.NewWindows(p.userAgent),
-		platforms.NewAndroid(p.userAgent),
-		platforms.NewLinux(p.userAgent),
-		platforms.NewFirefoxOS(p.userAgent),
-		platforms.NewChromeOS(p.userAgent),
-		platforms.NewUnknown(p.userAgent),
+		platforms.NewAdobeAir(parser),
+		platforms.NewBlackBerry(parser),
+		platforms.NewKaiOS(parser),
+		platforms.NewIOS(parser),
+		platforms.NewWatchOS(parser),
+		platforms.NewWindowsMobile(parser),
+		platforms.NewWindowsPhone(parser),
+		platforms.NewWindows(parser),
+		platforms.NewAndroid(parser),
+		platforms.NewLinux(parser),
+		platforms.NewFirefoxOS(parser),
+		platforms.NewChromeOS(parser),
+		platforms.NewUnknown(parser),
 	}
 
 	for _, matcher := range matchers {

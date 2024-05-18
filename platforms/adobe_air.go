@@ -1,7 +1,7 @@
 package platforms
 
 type AdobeAir struct {
-	base
+	p Parser
 }
 
 var (
@@ -10,11 +10,9 @@ var (
 	adobeAirMatchRegexp   = []string{`AdobeAIR`}
 )
 
-func NewAdobeAir(userAgent string) *AdobeAir {
+func NewAdobeAir(p Parser) *AdobeAir {
 	return &AdobeAir{
-		base: base{
-			userAgent: userAgent,
-		},
+		p: p,
 	}
 }
 
@@ -23,9 +21,9 @@ func (a *AdobeAir) Name() string {
 }
 
 func (a *AdobeAir) Version() string {
-	return a.version(adobeAirVersionRegexp, 1, "")
+	return a.p.Version(adobeAirVersionRegexp, 1, "")
 }
 
 func (a *AdobeAir) Match() bool {
-	return a.match(adobeAirMatchRegexp)
+	return a.p.Match(adobeAirMatchRegexp)
 }

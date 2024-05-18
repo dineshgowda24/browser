@@ -9,7 +9,7 @@ import (
 func TestNewUnknown(t *testing.T) {
 	Convey("Subject: #NewUnknown", t, func() {
 		Convey("It should return a new Unknown instance", func() {
-			So(NewUnknown(""), ShouldHaveSameTypeAs, &Unknown{})
+			So(NewUnknown(NewUAParser("")), ShouldHaveSameTypeAs, &Unknown{})
 		})
 	})
 }
@@ -17,7 +17,7 @@ func TestNewUnknown(t *testing.T) {
 func TestUnknownName(t *testing.T) {
 	Convey("Subject: #Name", t, func() {
 		Convey("It should return Unknown", func() {
-			u := NewUnknown("")
+			u := NewUnknown(NewUAParser(""))
 			So(u.Name(), ShouldEqual, "Unknown")
 		})
 	})
@@ -26,7 +26,7 @@ func TestUnknownName(t *testing.T) {
 func TestUnknownVersion(t *testing.T) {
 	Convey("Subject: #Version", t, func() {
 		Convey("It should return 0", func() {
-			So(NewUnknown("").Version(), ShouldEqual, "0")
+			So(NewUnknown(NewUAParser("")).Version(), ShouldEqual, "0")
 		})
 	})
 }
@@ -34,7 +34,7 @@ func TestUnknownVersion(t *testing.T) {
 func TestUnknownMatch(t *testing.T) {
 	Convey("Subject: #Match", t, func() {
 		Convey("It should return true", func() {
-			So(NewUnknown("").Match(), ShouldBeTrue)
+			So(NewUnknown(NewUAParser("")).Match(), ShouldBeTrue)
 		})
 	})
 }

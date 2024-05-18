@@ -1,7 +1,7 @@
 package platforms
 
 type WatchOS struct {
-	base
+	p Parser
 }
 
 var (
@@ -10,11 +10,9 @@ var (
 	watchOSMatchRegexp   = []string{`(?i)Watch\s*OS`, `Watch[\d+]`}
 )
 
-func NewWatchOS(userAgent string) *WatchOS {
+func NewWatchOS(p Parser) *WatchOS {
 	return &WatchOS{
-		base{
-			userAgent: userAgent,
-		},
+		p: p,
 	}
 }
 
@@ -23,9 +21,9 @@ func (w *WatchOS) Name() string {
 }
 
 func (w *WatchOS) Version() string {
-	return w.version(watchOSVersionRegexp, 1, "0.0")
+	return w.p.Version(watchOSVersionRegexp, 1, "0.0")
 }
 
 func (w *WatchOS) Match() bool {
-	return w.match(watchOSMatchRegexp)
+	return w.p.Match(watchOSMatchRegexp)
 }

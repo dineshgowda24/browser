@@ -7,7 +7,7 @@ import (
 )
 
 type Mac struct {
-	base
+	p Parser
 }
 
 var (
@@ -17,11 +17,9 @@ var (
 	macMatchRegexp   = []string{`M(ac|AC)|macOS`}
 )
 
-func NewMac(userAgent string) *Mac {
+func NewMac(p Parser) *Mac {
 	return &Mac{
-		base: base{
-			userAgent: userAgent,
-		},
+		p: p,
 	}
 }
 
@@ -33,10 +31,10 @@ func (m *Mac) Name() string {
 }
 
 func (m *Mac) Version() string {
-	version := m.version(macVersionRegexp, 1, "0")
+	version := m.p.Version(macVersionRegexp, 1, "0")
 	return strings.Replace(version, "_", ".", -1)
 }
 
 func (m *Mac) Match() bool {
-	return m.match(macMatchRegexp)
+	return m.p.Match(macMatchRegexp)
 }

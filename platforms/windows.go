@@ -1,7 +1,7 @@
 package platforms
 
 type Windows struct {
-	base
+	p Parser
 }
 
 var (
@@ -10,11 +10,9 @@ var (
 	windowsMatchRegexp   = []string{`Windows`}
 )
 
-func NewWindows(userAgent string) *Windows {
+func NewWindows(p Parser) *Windows {
 	return &Windows{
-		base: base{
-			userAgent: userAgent,
-		},
+		p: p,
 	}
 }
 
@@ -23,9 +21,9 @@ func (w *Windows) Name() string {
 }
 
 func (w *Windows) Version() string {
-	return w.version(windowsVersionRegexp, 1, "0")
+	return w.p.Version(windowsVersionRegexp, 1, "0")
 }
 
 func (w *Windows) Match() bool {
-	return w.match(windowsMatchRegexp)
+	return w.p.Match(windowsMatchRegexp)
 }

@@ -9,7 +9,7 @@ import (
 func TestNewBlackBerry(t *testing.T) {
 	Convey("Subject: #NewBlackBerry", t, func() {
 		Convey("It should return a new BlackBerry instance", func() {
-			So(NewBlackBerry(""), ShouldHaveSameTypeAs, &BlackBerry{})
+			So(NewBlackBerry(NewUAParser("")), ShouldHaveSameTypeAs, &BlackBerry{})
 		})
 	})
 }
@@ -17,7 +17,7 @@ func TestNewBlackBerry(t *testing.T) {
 func TestBlackBerryName(t *testing.T) {
 	Convey("Subject: #Name", t, func() {
 		Convey("It should return the correct name", func() {
-			So(NewBlackBerry("").Name(), ShouldEqual, "BlackBerry")
+			So(NewBlackBerry(NewUAParser("")).Name(), ShouldEqual, "BlackBerry")
 		})
 	})
 }
@@ -27,12 +27,12 @@ func TestBlackBerryVersion(t *testing.T) {
 		Convey("When the version is matched", func() {
 			Convey("It should return the correct version", func() {
 				p := testPlatforms
-				So(NewBlackBerry(p["blackberry"]).Version(), ShouldEqual, "4.1.0")
-				So(NewBlackBerry(p["blackberry-4"]).Version(), ShouldEqual, "4.2.1")
-				So(NewBlackBerry(p["blackberry-5"]).Version(), ShouldEqual, "5.0.0.187")
-				So(NewBlackBerry(p["blackberry-6"]).Version(), ShouldEqual, "6.0.0.480")
-				So(NewBlackBerry(p["blackberry-7"]).Version(), ShouldEqual, "7.1.0.336")
-				So(NewBlackBerry(p["blackberry-10"]).Version(), ShouldEqual, "10.3.2.2339")
+				So(NewBlackBerry(NewUAParser(p["blackberry"])).Version(), ShouldEqual, "4.1.0")
+				So(NewBlackBerry(NewUAParser(p["blackberry-4"])).Version(), ShouldEqual, "4.2.1")
+				So(NewBlackBerry(NewUAParser(p["blackberry-5"])).Version(), ShouldEqual, "5.0.0.187")
+				So(NewBlackBerry(NewUAParser(p["blackberry-6"])).Version(), ShouldEqual, "6.0.0.480")
+				So(NewBlackBerry(NewUAParser(p["blackberry-7"])).Version(), ShouldEqual, "7.1.0.336")
+				So(NewBlackBerry(NewUAParser(p["blackberry-10"])).Version(), ShouldEqual, "10.3.2.2339")
 			})
 		})
 	})
@@ -43,18 +43,18 @@ func TestBlackBerryMatch(t *testing.T) {
 		Convey("When user agent matches", func() {
 			Convey("It should return true", func() {
 				p := testPlatforms
-				So(NewBlackBerry(p["blackberry"]).Match(), ShouldBeTrue)
-				So(NewBlackBerry(p["blackberry-4"]).Match(), ShouldBeTrue)
-				So(NewBlackBerry(p["blackberry-5"]).Match(), ShouldBeTrue)
-				So(NewBlackBerry(p["blackberry-6"]).Match(), ShouldBeTrue)
-				So(NewBlackBerry(p["blackberry-7"]).Match(), ShouldBeTrue)
-				So(NewBlackBerry(p["blackberry-10"]).Match(), ShouldBeTrue)
+				So(NewBlackBerry(NewUAParser(p["blackberry"])).Match(), ShouldBeTrue)
+				So(NewBlackBerry(NewUAParser(p["blackberry-4"])).Match(), ShouldBeTrue)
+				So(NewBlackBerry(NewUAParser(p["blackberry-5"])).Match(), ShouldBeTrue)
+				So(NewBlackBerry(NewUAParser(p["blackberry-6"])).Match(), ShouldBeTrue)
+				So(NewBlackBerry(NewUAParser(p["blackberry-7"])).Match(), ShouldBeTrue)
+				So(NewBlackBerry(NewUAParser(p["blackberry-10"])).Match(), ShouldBeTrue)
 			})
 		})
 
 		Convey("When user agent does not match", func() {
 			Convey("It should return false", func() {
-				So(NewBlackBerry("").Match(), ShouldBeFalse)
+				So(NewBlackBerry(NewUAParser("")).Match(), ShouldBeFalse)
 			})
 		})
 	})

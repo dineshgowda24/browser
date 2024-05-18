@@ -9,7 +9,7 @@ import (
 func TestNewWindowsPhone(t *testing.T) {
 	Convey("Subject: #NewWindowsPhone", t, func() {
 		Convey("It should return a new WindowsPhone instance", func() {
-			So(NewWindowsPhone(""), ShouldHaveSameTypeAs, &WindowsPhone{})
+			So(NewWindowsPhone(NewUAParser("")), ShouldHaveSameTypeAs, &WindowsPhone{})
 		})
 	})
 }
@@ -17,7 +17,7 @@ func TestNewWindowsPhone(t *testing.T) {
 func TestWindowsPhoneName(t *testing.T) {
 	Convey("Subject: #Name", t, func() {
 		Convey("It should return Windows Phone", func() {
-			So(NewWindowsPhone("").Name(), ShouldEqual, "Windows Phone")
+			So(NewWindowsPhone(NewUAParser("")).Name(), ShouldEqual, "Windows Phone")
 		})
 	})
 }
@@ -26,14 +26,14 @@ func TestWindowsPhoneVersion(t *testing.T) {
 	Convey("Subject: #Version", t, func() {
 		Convey("When the version is matched", func() {
 			Convey("It should return the version", func() {
-				wp := NewWindowsPhone(testPlatforms["windows-phone"])
+				wp := NewWindowsPhone(NewUAParser(testPlatforms["windows-phone"]))
 				So(wp.Version(), ShouldEqual, "10.0")
 			})
 		})
 
 		Convey("When the version is not matched", func() {
 			Convey("It should return default version", func() {
-				wp := NewWindowsPhone(testPlatforms["windows-ce"])
+				wp := NewWindowsPhone(NewUAParser(testPlatforms["windows-ce"]))
 				So(wp.Version(), ShouldEqual, "")
 			})
 		})
@@ -44,13 +44,13 @@ func TestWindowsPhoneMatch(t *testing.T) {
 	Convey("Subject: #Match", t, func() {
 		Convey("When user agent matches Windows Phone", func() {
 			Convey("It should return true", func() {
-				So(NewWindowsPhone(testPlatforms["windows-phone"]).Match(), ShouldBeTrue)
+				So(NewWindowsPhone(NewUAParser(testPlatforms["windows-phone"])).Match(), ShouldBeTrue)
 			})
 		})
 
 		Convey("When user agent does not match Windows Phone", func() {
 			Convey("It should return false", func() {
-				So(NewWindowsPhone(testPlatforms["windows-ce"]).Match(), ShouldBeFalse)
+				So(NewWindowsPhone(NewUAParser(testPlatforms["windows-ce"])).Match(), ShouldBeFalse)
 			})
 		})
 	})

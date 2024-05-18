@@ -1,7 +1,7 @@
 package platforms
 
 type Linux struct {
-	base
+	p Parser
 }
 
 var (
@@ -9,11 +9,9 @@ var (
 	linuxMatchRegexp = []string{`Linux`}
 )
 
-func NewLinux(userAgent string) *Linux {
+func NewLinux(p Parser) *Linux {
 	return &Linux{
-		base: base{
-			userAgent: userAgent,
-		},
+		p: p,
 	}
 }
 
@@ -26,5 +24,5 @@ func (l *Linux) Version() string {
 }
 
 func (l *Linux) Match() bool {
-	return l.match(linuxMatchRegexp)
+	return l.p.Match(linuxMatchRegexp)
 }

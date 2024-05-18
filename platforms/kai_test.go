@@ -9,7 +9,7 @@ import (
 func TestNewKaiOS(t *testing.T) {
 	Convey("Subject: #NewKaiOS", t, func() {
 		Convey("It should return a new KaiOS instance", func() {
-			So(NewKaiOS(""), ShouldHaveSameTypeAs, &KaiOS{})
+			So(NewKaiOS(NewUAParser("")), ShouldHaveSameTypeAs, &KaiOS{})
 		})
 	})
 }
@@ -17,7 +17,7 @@ func TestNewKaiOS(t *testing.T) {
 func TestKaiOSName(t *testing.T) {
 	Convey("Subject: #Name", t, func() {
 		Convey("It should return KaiOS", func() {
-			So(NewKaiOS("").Name(), ShouldEqual, "Kai OS")
+			So(NewKaiOS(NewUAParser("")).Name(), ShouldEqual, "Kai OS")
 		})
 	})
 }
@@ -26,14 +26,14 @@ func TestKaiOSVersion(t *testing.T) {
 	Convey("Subject: #Version", t, func() {
 		Convey("When the version is matched", func() {
 			Convey("It should return the version", func() {
-				So(NewKaiOS(testPlatforms["kai-os-1"]).Version(), ShouldEqual, "1.0")
-				So(NewKaiOS(testPlatforms["kai-os-2"]).Version(), ShouldEqual, "2.0")
+				So(NewKaiOS(NewUAParser(testPlatforms["kai-os-1"])).Version(), ShouldEqual, "1.0")
+				So(NewKaiOS(NewUAParser(testPlatforms["kai-os-2"])).Version(), ShouldEqual, "2.0")
 			})
 		})
 
 		Convey("When the version is not matched", func() {
 			Convey("It should return default version", func() {
-				So(NewKaiOS(testPlatforms["firefox"]).Version(), ShouldEqual, "")
+				So(NewKaiOS(NewUAParser(testPlatforms["firefox"])).Version(), ShouldEqual, "")
 			})
 		})
 	})
@@ -43,14 +43,14 @@ func TestKaiOSMatch(t *testing.T) {
 	Convey("Subject: #Match", t, func() {
 		Convey("When user agent matches KaiOS", func() {
 			Convey("It should return true", func() {
-				So(NewKaiOS(testPlatforms["kai-os-1"]).Match(), ShouldBeTrue)
-				So(NewKaiOS(testPlatforms["kai-os-2"]).Match(), ShouldBeTrue)
+				So(NewKaiOS(NewUAParser(testPlatforms["kai-os-1"])).Match(), ShouldBeTrue)
+				So(NewKaiOS(NewUAParser(testPlatforms["kai-os-2"])).Match(), ShouldBeTrue)
 			})
 		})
 
 		Convey("When user agent does not match KaiOS", func() {
 			Convey("It should return false", func() {
-				So(NewKaiOS(testPlatforms["firefox"]).Match(), ShouldBeFalse)
+				So(NewKaiOS(NewUAParser(testPlatforms["firefox"])).Match(), ShouldBeFalse)
 			})
 		})
 	})

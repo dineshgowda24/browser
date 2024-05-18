@@ -1,7 +1,7 @@
 package platforms
 
 type WindowsMobile struct {
-	base
+	p Parser
 }
 
 var (
@@ -9,11 +9,9 @@ var (
 	windowsMobileMatchRegexp = []string{`Windows CE`}
 )
 
-func NewWindowsMobile(userAgent string) *WindowsMobile {
+func NewWindowsMobile(p Parser) *WindowsMobile {
 	return &WindowsMobile{
-		base: base{
-			userAgent: userAgent,
-		},
+		p: p,
 	}
 }
 
@@ -26,5 +24,5 @@ func (w *WindowsMobile) Version() string {
 }
 
 func (w *WindowsMobile) Match() bool {
-	return w.match(windowsMobileMatchRegexp)
+	return w.p.Match(windowsMobileMatchRegexp)
 }

@@ -4,18 +4,14 @@ package platforms
 // It is used as a fallback when the user agent is not recognized.
 // Its last in the list of platform matchers.
 type Unknown struct {
-	base
+	p Parser
 }
 
-var (
-	unknownName = "Unknown"
-)
+var unknownName = "Unknown"
 
-func NewUnknown(userAgent string) *Unknown {
+func NewUnknown(p Parser) *Unknown {
 	return &Unknown{
-		base{
-			userAgent: userAgent,
-		},
+		p: p,
 	}
 }
 

@@ -1,7 +1,7 @@
 package platforms
 
 type BlackBerry struct {
-	base
+	p Parser
 }
 
 var (
@@ -10,11 +10,9 @@ var (
 	blackBerryMatchRegexp   = []string{`BB10|BlackBerry`}
 )
 
-func NewBlackBerry(userAgent string) *BlackBerry {
+func NewBlackBerry(p Parser) *BlackBerry {
 	return &BlackBerry{
-		base: base{
-			userAgent: userAgent,
-		},
+		p: p,
 	}
 }
 
@@ -23,9 +21,9 @@ func (b *BlackBerry) Name() string {
 }
 
 func (b *BlackBerry) Version() string {
-	return b.version(blackBerryVersionRegexp, 1, "")
+	return b.p.Version(blackBerryVersionRegexp, 1, "")
 }
 
 func (b *BlackBerry) Match() bool {
-	return b.match(blackBerryMatchRegexp)
+	return b.p.Match(blackBerryMatchRegexp)
 }
