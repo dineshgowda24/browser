@@ -1,7 +1,7 @@
 package matchers
 
 type VivoBrowser struct {
-	base
+	p Parser
 }
 
 var (
@@ -10,11 +10,9 @@ var (
 	vivoBrowserMatchRegex = []string{`(?i)VivoBrowser`}
 )
 
-func NewVivoBrowser(userAgent string) *VivoBrowser {
+func NewVivoBrowser(p Parser) *VivoBrowser {
 	return &VivoBrowser{
-		base{
-			userAgent: userAgent,
-		},
+		p: p,
 	}
 }
 
@@ -23,9 +21,9 @@ func (v *VivoBrowser) Name() string {
 }
 
 func (v *VivoBrowser) Version() string {
-	return v.version(vivoBrowserVersionReg, 1)
+	return v.p.Version(vivoBrowserVersionReg, 1)
 }
 
 func (v *VivoBrowser) Match() bool {
-	return v.match(vivoBrowserMatchRegex)
+	return v.p.Match(vivoBrowserMatchRegex)
 }

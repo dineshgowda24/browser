@@ -1,7 +1,7 @@
 package matchers
 
 type Safari struct {
-	base
+	p Parser
 }
 
 var (
@@ -10,9 +10,9 @@ var (
 	safariMatchRegex    = []string{`Safari`}
 )
 
-func NewSafari(userAgent string) *Safari {
+func NewSafari(p Parser) *Safari {
 	return &Safari{
-		base: newBase(userAgent),
+		p: p,
 	}
 }
 
@@ -21,9 +21,9 @@ func (s *Safari) Name() string {
 }
 
 func (s *Safari) Version() string {
-	return s.version(safariVersionRegexp, 1)
+	return s.p.Version(safariVersionRegexp, 1)
 }
 
 func (s *Safari) Match() bool {
-	return s.match(safariMatchRegex)
+	return s.p.Match(safariMatchRegex)
 }

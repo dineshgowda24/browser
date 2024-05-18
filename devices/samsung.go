@@ -5,16 +5,14 @@ import (
 )
 
 type Samsung struct {
-	base
+	p       Parser
 	matches []string
 }
 
 // NewSamsung creates a new Samsung platform.
-func NewSamsung(userAgent string) *Samsung {
+func NewSamsung(p Parser) *Samsung {
 	return &Samsung{
-		base: base{
-			userAgent: userAgent,
-		},
+		p:       p,
 		matches: make([]string, 0),
 	}
 }
@@ -44,7 +42,7 @@ func (s *Samsung) registerMatches() {
 	}
 
 	re := regexp.MustCompile(samsungMatchRegex)
-	matches := re.FindStringSubmatch(s.userAgent)
+	matches := re.FindStringSubmatch(s.p.String())
 	if len(matches) > 0 {
 		s.matches = matches
 	}

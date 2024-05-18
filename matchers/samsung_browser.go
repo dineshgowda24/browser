@@ -1,7 +1,7 @@
 package matchers
 
 type SamsungBrowser struct {
-	base
+	p Parser
 }
 
 var (
@@ -16,11 +16,9 @@ var (
 	samsungBrowserMatchRegex = []string{`SamsungBrowser`}
 )
 
-func NewSamsungBrowser(userAgent string) *SamsungBrowser {
+func NewSamsungBrowser(p Parser) *SamsungBrowser {
 	return &SamsungBrowser{
-		base{
-			userAgent: userAgent,
-		},
+		p: p,
 	}
 }
 
@@ -29,9 +27,9 @@ func (s *SamsungBrowser) Name() string {
 }
 
 func (s *SamsungBrowser) Version() string {
-	return s.version(samsungBrowserVersionRegex, 1)
+	return s.p.Version(samsungBrowserVersionRegex, 1)
 }
 
 func (s *SamsungBrowser) Match() bool {
-	return s.match(samsungBrowserMatchRegex)
+	return s.p.Match(samsungBrowserMatchRegex)
 }

@@ -1,7 +1,7 @@
 package matchers
 
 type DuckDuckGo struct {
-	base
+	p Parser
 }
 
 var (
@@ -10,9 +10,9 @@ var (
 	duckDuckGoMatchRegex    = []string{`DuckDuck(Go|GoKite)?`}
 )
 
-func NewDuckDuckGo(userAgent string) *DuckDuckGo {
+func NewDuckDuckGo(p Parser) *DuckDuckGo {
 	return &DuckDuckGo{
-		base: newBase(userAgent),
+		p: p,
 	}
 }
 
@@ -21,9 +21,9 @@ func (ddg *DuckDuckGo) Name() string {
 }
 
 func (ddg *DuckDuckGo) Version() string {
-	return ddg.version(duckDuckGoVersionRegexp, 1)
+	return ddg.p.Version(duckDuckGoVersionRegexp, 1)
 }
 
 func (ddg *DuckDuckGo) Match() bool {
-	return ddg.match(duckDuckGoMatchRegex)
+	return ddg.p.Match(duckDuckGoMatchRegex)
 }

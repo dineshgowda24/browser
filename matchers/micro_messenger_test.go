@@ -9,7 +9,7 @@ import (
 func TestNewMicroMessenger(t *testing.T) {
 	Convey("Subject: #NewMicroMessenger", t, func() {
 		Convey("It should return a new MicroMessenger instance", func() {
-			So(NewMicroMessenger(""), ShouldHaveSameTypeAs, &MicroMessenger{})
+			So(NewMicroMessenger(NewUAParser("")), ShouldHaveSameTypeAs, &MicroMessenger{})
 		})
 	})
 }
@@ -17,7 +17,7 @@ func TestNewMicroMessenger(t *testing.T) {
 func TestMicroMessengerName(t *testing.T) {
 	Convey("Subject: #Name", t, func() {
 		Convey("It should return MicroMessenger", func() {
-			s := NewMicroMessenger("")
+			s := NewMicroMessenger(NewUAParser(""))
 			So(s.Name(), ShouldEqual, "MicroMessenger")
 		})
 	})
@@ -29,11 +29,11 @@ func TestMicroMessengerVersion(t *testing.T) {
 			Convey("It should return the version", func() {
 				s := testUserAgents["micro-messenger"]
 
-				So(NewMicroMessenger(s.Android).Version(), ShouldEqual, "6.2.5.51")
-				So(NewMicroMessenger(s.IOS).Version(), ShouldEqual, "6.2.3")
-				So(NewMicroMessenger(s.Linux).Version(), ShouldEqual, "7.0.1")
-				So(NewMicroMessenger(s.Mac).Version(), ShouldEqual, "2.3.24")
-				So(NewMicroMessenger(s.Windows).Version(), ShouldEqual, "6.5.2.501")
+				So(NewMicroMessenger(NewUAParser(s.Android)).Version(), ShouldEqual, "6.2.5.51")
+				So(NewMicroMessenger(NewUAParser(s.IOS)).Version(), ShouldEqual, "6.2.3")
+				So(NewMicroMessenger(NewUAParser(s.Linux)).Version(), ShouldEqual, "7.0.1")
+				So(NewMicroMessenger(NewUAParser(s.Mac)).Version(), ShouldEqual, "2.3.24")
+				So(NewMicroMessenger(NewUAParser(s.Windows)).Version(), ShouldEqual, "6.5.2.501")
 			})
 		})
 	})
@@ -45,11 +45,11 @@ func TestMicroMessengerMatch(t *testing.T) {
 			Convey("It should return true", func() {
 				s := testUserAgents["micro-messenger"]
 
-				So(NewMicroMessenger(s.Android).Match(), ShouldBeTrue)
-				So(NewMicroMessenger(s.IOS).Match(), ShouldBeTrue)
-				So(NewMicroMessenger(s.Linux).Match(), ShouldBeTrue)
-				So(NewMicroMessenger(s.Mac).Match(), ShouldBeTrue)
-				So(NewMicroMessenger(s.Windows).Match(), ShouldBeTrue)
+				So(NewMicroMessenger(NewUAParser(s.Android)).Match(), ShouldBeTrue)
+				So(NewMicroMessenger(NewUAParser(s.IOS)).Match(), ShouldBeTrue)
+				So(NewMicroMessenger(NewUAParser(s.Linux)).Match(), ShouldBeTrue)
+				So(NewMicroMessenger(NewUAParser(s.Mac)).Match(), ShouldBeTrue)
+				So(NewMicroMessenger(NewUAParser(s.Windows)).Match(), ShouldBeTrue)
 			})
 		})
 
@@ -57,7 +57,7 @@ func TestMicroMessengerMatch(t *testing.T) {
 			Convey("It should return false", func() {
 				s := testUserAgents["chrome"]
 
-				So(NewMicroMessenger(s.Linux).Match(), ShouldBeFalse)
+				So(NewMicroMessenger(NewUAParser(s.Linux)).Match(), ShouldBeFalse)
 			})
 		})
 	})

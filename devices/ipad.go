@@ -1,7 +1,7 @@
 package devices
 
 type Ipad struct {
-	base
+	p Parser
 }
 
 var (
@@ -9,11 +9,9 @@ var (
 	iPadMatchRegex = []string{`iPad`}
 )
 
-func NewIpad(userAgent string) *Ipad {
+func NewIpad(p Parser) *Ipad {
 	return &Ipad{
-		base{
-			userAgent: userAgent,
-		},
+		p: p,
 	}
 }
 
@@ -22,5 +20,5 @@ func (i *Ipad) Name() string {
 }
 
 func (i *Ipad) Match() bool {
-	return i.match(iPadMatchRegex)
+	return i.p.Match(iPadMatchRegex)
 }

@@ -1,7 +1,8 @@
 package matchers
 
 type Edge struct {
-	InternetExplorer
+	p  Parser
+	ie *InternetExplorer
 }
 
 var (
@@ -10,13 +11,10 @@ var (
 	edgeVersionRegex = []string{`(?:Edge|Edg|EdgiOS|EdgA)/([\d.]+)`}
 )
 
-func NewEdge(userAgent string) *Edge {
+func NewEdge(p Parser) *Edge {
 	return &Edge{
-		InternetExplorer: InternetExplorer{
-			base: base{
-				userAgent: userAgent,
-			},
-		},
+		p:  p,
+		ie: NewInternetExplorer(p),
 	}
 }
 
@@ -25,14 +23,14 @@ func (e *Edge) Name() string {
 }
 
 func (e *Edge) Version() string {
-	v := e.version(edgeVersionRegex, 1)
+	v := e.p.Version(edgeVersionRegex, 1)
 	if v != "0.0" {
 		return v
 	}
 
-	return e.InternetExplorer.Version()
+	return e.ie.Version()
 }
 
 func (e *Edge) Match() bool {
-	return e.match(edgeMatchRegex)
+	return e.p.Match(edgeMatchRegex)
 }

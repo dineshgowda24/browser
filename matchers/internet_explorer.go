@@ -6,7 +6,7 @@ import (
 )
 
 type InternetExplorer struct {
-	base
+	p Parser
 }
 
 var (
@@ -23,11 +23,9 @@ var (
 	}
 )
 
-func NewInternetExplorer(userAgent string) *InternetExplorer {
+func NewInternetExplorer(p Parser) *InternetExplorer {
 	return &InternetExplorer{
-		base: base{
-			userAgent: userAgent,
-		},
+		p: p,
 	}
 }
 
@@ -51,7 +49,7 @@ func (i *InternetExplorer) Version() string {
 // tridentVersion returns the version of Trident
 func (i *InternetExplorer) tridentVersion() string {
 	re := regexp.MustCompile(`Trident/([0-9.]+)`)
-	matches := re.FindStringSubmatch(i.userAgent)
+	matches := re.FindStringSubmatch(i.p.String())
 	if len(matches) > 1 {
 		return matches[1]
 	}
@@ -67,7 +65,7 @@ func (i *InternetExplorer) msieVersion() string {
 func (i *InternetExplorer) msieFullVersion() string {
 	re := regexp.MustCompile(`MSIE ([\d.]+)|Trident/.*?; rv:([\d.]+)`)
 
-	matches := re.FindStringSubmatch(i.userAgent)
+	matches := re.FindStringSubmatch(i.p.String())
 	if len(matches) > 2 {
 		if matches[1] != "" {
 			return matches[1]
@@ -83,6 +81,6 @@ func (i *InternetExplorer) msieFullVersion() string {
 // Internet Explorer matchers
 // It also checks if the user agent contains MSIE and does not contain Opera
 func (i *InternetExplorer) Match() bool {
-	return i.match(ieMatchRegex) || (strings.Contains(i.userAgent, "MSIE") &&
-		!strings.Contains(i.userAgent, "Opera"))
+	return i.p.Match(ieMatchRegex) || (strings.Contains(i.p.String(), "MSIE") &&
+		!strings.Contains(i.p.String(), "Opera"))
 }

@@ -966,3 +966,63 @@ func TestBrowserIsEdge(t *testing.T) {
 		})
 	})
 }
+
+func TestBrowserIsFirefox(t *testing.T) {
+	Convey("Subject: #IsFirefox", t, func() {
+		Convey("When the browser is Firefox", func() {
+			Convey("It should return true", func() {
+				ua := testUserAgents["firefox"]
+				b, _ := NewBrowser(ua.Mac)
+				So(b.IsFirefox(), ShouldBeTrue)
+			})
+		})
+
+		Convey("When the browser is not Firefox", func() {
+			Convey("It should return false", func() {
+				ua := testUserAgents["chrome"]
+				b, _ := NewBrowser(ua.Windows)
+				So(b.IsFirefox(), ShouldBeFalse)
+			})
+		})
+	})
+}
+
+func TestBrowserIsBrave(t *testing.T) {
+	Convey("Subject: #IsBrave", t, func() {
+		Convey("When the browser is Brave", func() {
+			Convey("It should return true", func() {
+				ua := testUserAgents["brave"]
+				b, _ := NewBrowser(ua.Windows)
+				So(b.IsBrave(), ShouldBeTrue)
+			})
+		})
+
+		Convey("When the browser is not Brave", func() {
+			Convey("It should return false", func() {
+				ua := testUserAgents["chrome"]
+				b, _ := NewBrowser(ua.Windows)
+				So(b.IsBrave(), ShouldBeFalse)
+			})
+		})
+	})
+}
+
+func TestBrowserIsVivaldi(t *testing.T) {
+	Convey("Subject: #IsVivaldi", t, func() {
+		Convey("When the browser is Vivaldi", func() {
+			Convey("It should return true", func() {
+				ua := testUserAgents["vivaldi"]
+				b, _ := NewBrowser(ua.Windows)
+				So(b.IsVivaldi(), ShouldBeTrue)
+			})
+		})
+
+		Convey("When the browser is not Vivaldi", func() {
+			Convey("It should return false", func() {
+				ua := testUserAgents["chrome"]
+				b, _ := NewBrowser(ua.Windows)
+				So(b.IsVivaldi(), ShouldBeFalse)
+			})
+		})
+	})
+}

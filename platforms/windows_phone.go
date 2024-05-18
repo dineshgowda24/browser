@@ -1,7 +1,7 @@
 package platforms
 
 type WindowsPhone struct {
-	base
+	p Parser
 }
 
 var (
@@ -10,11 +10,9 @@ var (
 	windowsPhoneMatchRegexp   = []string{`Windows Phone`}
 )
 
-func NewWindowsPhone(userAgent string) *WindowsPhone {
+func NewWindowsPhone(p Parser) *WindowsPhone {
 	return &WindowsPhone{
-		base: base{
-			userAgent: userAgent,
-		},
+		p: p,
 	}
 }
 
@@ -23,9 +21,9 @@ func (w *WindowsPhone) Name() string {
 }
 
 func (w *WindowsPhone) Version() string {
-	return w.version(windowsPhoneVersionRegexp, 1, "")
+	return w.p.Version(windowsPhoneVersionRegexp, 1, "")
 }
 
 func (w *WindowsPhone) Match() bool {
-	return w.match(windowsPhoneMatchRegexp)
+	return w.p.Match(windowsPhoneMatchRegexp)
 }

@@ -9,7 +9,7 @@ import (
 func TestNewSafari(t *testing.T) {
 	Convey("Given a user agent string", t, func() {
 		ua := testUserAgents["safari"]
-		So(NewSafari(ua.Mac), ShouldHaveSameTypeAs, &Safari{})
+		So(NewSafari(NewUAParser(ua.Mac)), ShouldHaveSameTypeAs, &Safari{})
 	})
 }
 
@@ -17,7 +17,7 @@ func TestSafariName(t *testing.T) {
 	Convey("Subject: #Name", t, func() {
 		Convey("It should return Safari", func() {
 			ua := testUserAgents["safari"]
-			So(NewSafari(ua.Mac).Name(), ShouldEqual, safariName)
+			So(NewSafari(NewUAParser(ua.Mac)).Name(), ShouldEqual, safariName)
 		})
 	})
 }
@@ -27,14 +27,14 @@ func TestSafariVersion(t *testing.T) {
 		ua := testUserAgents["safari"]
 		Convey("When the version is matched", func() {
 			Convey("It should return the version", func() {
-				So(NewSafari(ua.Mac).Version(), ShouldEqual, "8.0.7")
-				So(NewSafari(ua.IOS).Version(), ShouldEqual, "8.0")
+				So(NewSafari(NewUAParser(ua.Mac)).Version(), ShouldEqual, "8.0.7")
+				So(NewSafari(NewUAParser(ua.IOS)).Version(), ShouldEqual, "8.0")
 			})
 		})
 
 		Convey("When the version is not matched", func() {
 			Convey("It should return default version", func() {
-				So(NewSafari("").Version(), ShouldEqual, "0.0")
+				So(NewSafari(NewUAParser("")).Version(), ShouldEqual, "0.0")
 			})
 		})
 	})
@@ -46,8 +46,8 @@ func TestSafariMatch(t *testing.T) {
 			Convey("It should return true", func() {
 				ua := testUserAgents["safari"]
 
-				So(NewSafari(ua.Mac).Match(), ShouldBeTrue)
-				So(NewSafari(ua.IOS).Match(), ShouldBeTrue)
+				So(NewSafari(NewUAParser(ua.Mac)).Match(), ShouldBeTrue)
+				So(NewSafari(NewUAParser(ua.IOS)).Match(), ShouldBeTrue)
 			})
 		})
 	})

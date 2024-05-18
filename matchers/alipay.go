@@ -1,7 +1,7 @@
 package matchers
 
 type Alipay struct {
-	base
+	p Parser
 }
 
 var (
@@ -10,9 +10,9 @@ var (
 	aliPayMatchRegex    = []string{`(?i)Alipay`}
 )
 
-func NewAlipay(userAgent string) *Alipay {
+func NewAlipay(p Parser) *Alipay {
 	return &Alipay{
-		base: newBase(userAgent),
+		p: p,
 	}
 }
 
@@ -21,9 +21,9 @@ func (a *Alipay) Name() string {
 }
 
 func (a *Alipay) Version() string {
-	return a.version(aliPayVersionRegexp, 1)
+	return a.p.Version(aliPayVersionRegexp, 1)
 }
 
 func (a *Alipay) Match() bool {
-	return a.match(aliPayMatchRegex)
+	return a.p.Match(aliPayMatchRegex)
 }

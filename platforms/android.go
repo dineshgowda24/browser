@@ -1,7 +1,7 @@
 package platforms
 
 type Android struct {
-	base
+	p Parser
 }
 
 var (
@@ -10,11 +10,9 @@ var (
 	androidMatchRegexp   = []string{`(?i)Android`}
 )
 
-func NewAndroid(userAgent string) *Android {
+func NewAndroid(p Parser) *Android {
 	return &Android{
-		base: base{
-			userAgent: userAgent,
-		},
+		p: p,
 	}
 }
 
@@ -23,9 +21,9 @@ func (a *Android) Name() string {
 }
 
 func (a *Android) Version() string {
-	return a.version(androidVersionRegexp, 1, "")
+	return a.p.Version(androidVersionRegexp, 1, "")
 }
 
 func (a *Android) Match() bool {
-	return a.match(androidMatchRegexp) && !a.match([]string{`KAIOS`})
+	return a.p.Match(androidMatchRegexp) && !a.p.Match([]string{`KAIOS`})
 }

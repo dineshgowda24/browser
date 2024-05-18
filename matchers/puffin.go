@@ -1,7 +1,7 @@
 package matchers
 
 type Puffin struct {
-	base
+	p Parser
 }
 
 var (
@@ -10,22 +10,20 @@ var (
 	puffinMatchRegex = []string{`(?i)Puffin`}
 )
 
-func NewPuffin(userAgent string) *Puffin {
+func NewPuffin(p Parser) *Puffin {
 	return &Puffin{
-		base{
-			userAgent: userAgent,
-		},
+		p: p,
 	}
 }
 
-func (p *Puffin) Name() string {
+func (pu *Puffin) Name() string {
 	return puffinName
 }
 
-func (p *Puffin) Version() string {
-	return p.version(puffinVersionReg, 1)
+func (pu *Puffin) Version() string {
+	return pu.p.Version(puffinVersionReg, 1)
 }
 
-func (p *Puffin) Match() bool {
-	return p.match(puffinMatchRegex)
+func (pu *Puffin) Match() bool {
+	return pu.p.Match(puffinMatchRegex)
 }

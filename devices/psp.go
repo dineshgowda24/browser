@@ -1,7 +1,7 @@
 package devices
 
 type PSP struct {
-	base
+	p Parser
 }
 
 var (
@@ -9,11 +9,9 @@ var (
 	pspMatchRegex = []string{`(?i)PlayStation Portable`}
 )
 
-func NewPSP(userAgent string) *PSP {
+func NewPSP(p Parser) *PSP {
 	return &PSP{
-		base{
-			userAgent: userAgent,
-		},
+		p: p,
 	}
 }
 
@@ -22,5 +20,5 @@ func (p *PSP) Name() string {
 }
 
 func (p *PSP) Match() bool {
-	return p.match(pspMatchRegex)
+	return p.p.Match(pspMatchRegex)
 }

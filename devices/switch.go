@@ -1,7 +1,7 @@
 package devices
 
 type Switch struct {
-	base
+	p Parser
 }
 
 var (
@@ -9,11 +9,9 @@ var (
 	switchMatchRegex = []string{`(?i)Nintendo Switch`}
 )
 
-func NewSwitch(userAgent string) *Switch {
+func NewSwitch(p Parser) *Switch {
 	return &Switch{
-		base{
-			userAgent: userAgent,
-		},
+		p: p,
 	}
 }
 
@@ -22,5 +20,5 @@ func (s *Switch) Name() string {
 }
 
 func (s *Switch) Match() bool {
-	return s.match(switchMatchRegex)
+	return s.p.Match(switchMatchRegex)
 }

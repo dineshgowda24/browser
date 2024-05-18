@@ -1,7 +1,7 @@
 package matchers
 
 type Sputnik struct {
-	base
+	p Parser
 }
 
 var (
@@ -10,9 +10,9 @@ var (
 	sputnikMatchRegexp   = []string{`SputnikBrowser`}
 )
 
-func NewSputnik(userAgent string) *Sputnik {
+func NewSputnik(p Parser) *Sputnik {
 	return &Sputnik{
-		base: newBase(userAgent),
+		p: p,
 	}
 }
 
@@ -21,9 +21,9 @@ func (s *Sputnik) Name() string {
 }
 
 func (s *Sputnik) Version() string {
-	return s.version(sputnikVersionRegexp, 1)
+	return s.p.Version(sputnikVersionRegexp, 1)
 }
 
 func (s *Sputnik) Match() bool {
-	return s.match(sputnikMatchRegexp)
+	return s.p.Match(sputnikMatchRegexp)
 }

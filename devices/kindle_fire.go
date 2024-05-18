@@ -1,7 +1,7 @@
 package devices
 
 type KindleFire struct {
-	base
+	p Parser
 }
 
 var (
@@ -9,11 +9,9 @@ var (
 	kindleFireMatchRegex = []string{`Kindle Fire|KFTT`}
 )
 
-func NewKindleFire(userAgent string) *KindleFire {
+func NewKindleFire(p Parser) *KindleFire {
 	return &KindleFire{
-		base{
-			userAgent: userAgent,
-		},
+		p: p,
 	}
 }
 
@@ -22,5 +20,5 @@ func (k *KindleFire) Name() string {
 }
 
 func (k *KindleFire) Match() bool {
-	return k.match(kindleFireMatchRegex)
+	return k.p.Match(kindleFireMatchRegex)
 }

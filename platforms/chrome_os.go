@@ -1,7 +1,7 @@
 package platforms
 
 type ChromeOS struct {
-	base
+	p Parser
 }
 
 var (
@@ -10,11 +10,9 @@ var (
 	chromeOSMatchRegexp   = []string{`CrOS`}
 )
 
-func NewChromeOS(userAgent string) *ChromeOS {
+func NewChromeOS(p Parser) *ChromeOS {
 	return &ChromeOS{
-		base: base{
-			userAgent: userAgent,
-		},
+		p: p,
 	}
 }
 
@@ -23,9 +21,9 @@ func (c *ChromeOS) Name() string {
 }
 
 func (c *ChromeOS) Version() string {
-	return c.version(chromeOSVersionRegexp, 1, "")
+	return c.p.Version(chromeOSVersionRegexp, 1, "")
 }
 
 func (c *ChromeOS) Match() bool {
-	return c.match(chromeOSMatchRegexp)
+	return c.p.Match(chromeOSMatchRegexp)
 }

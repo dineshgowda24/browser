@@ -1,7 +1,7 @@
 package matchers
 
 type Opera struct {
-	base
+	p Parser
 }
 
 var (
@@ -11,9 +11,9 @@ var (
 	operaMatchRegexp   = []string{`(Opera|OP(R|iOS|T)/)`}
 )
 
-func NewOpera(userAgent string) *Opera {
+func NewOpera(p Parser) *Opera {
 	return &Opera{
-		base: newBase(userAgent),
+		p: p,
 	}
 }
 
@@ -22,9 +22,9 @@ func (o *Opera) Name() string {
 }
 
 func (o *Opera) Version() string {
-	return o.version(operaVersionRegexp, 1)
+	return o.p.Version(operaVersionRegexp, 1)
 }
 
 func (o *Opera) Match() bool {
-	return o.match(operaMatchRegexp)
+	return o.p.Match(operaMatchRegexp)
 }

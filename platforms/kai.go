@@ -1,7 +1,7 @@
 package platforms
 
 type KaiOS struct {
-	base
+	p Parser
 }
 
 var (
@@ -10,11 +10,9 @@ var (
 	kaiOSMatchRegexp   = []string{`KaiOS`}
 )
 
-func NewKaiOS(userAgent string) *KaiOS {
+func NewKaiOS(p Parser) *KaiOS {
 	return &KaiOS{
-		base{
-			userAgent: userAgent,
-		},
+		p: p,
 	}
 }
 
@@ -23,9 +21,9 @@ func (k *KaiOS) Name() string {
 }
 
 func (k *KaiOS) Version() string {
-	return k.version(kaiOSVersionRegexp, 1, "")
+	return k.p.Version(kaiOSVersionRegexp, 1, "")
 }
 
 func (k *KaiOS) Match() bool {
-	return k.match(kaiOSMatchRegexp)
+	return k.p.Match(kaiOSMatchRegexp)
 }

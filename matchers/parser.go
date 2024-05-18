@@ -4,21 +4,35 @@ import (
 	"regexp"
 )
 
-type base struct {
+// Parser is an interface for user agent parsers.
+type Parser interface {
+	String() string
+	Version([]string, int) string
+	Match([]string) bool
+}
+
+// compile time check if UAParser implements Parser interface
+var _ Parser = (*UAParser)(nil)
+
+type UAParser struct {
 	userAgent string
 }
 
-func newBase(userAgent string) base {
-	return base{
+func NewUAParser(userAgent string) *UAParser {
+	return &UAParser{
 		userAgent: userAgent,
 	}
 }
 
-// version returns the first match of the given patterns.
+func (b UAParser) String() string {
+	return b.userAgent
+}
+
+// Version returns the first match of the given patterns.
 // The pattern is a list of regular expressions.
 // The order is the index of the match group in the regular expression.
 // If the order is greater than the number of matches, it returns "0.0".
-func (b base) version(patterns []string, order int) string {
+func (b UAParser) Version(patterns []string, order int) string {
 	for _, pattern := range patterns {
 		re := regexp.MustCompile(pattern)
 		matches := re.FindStringSubmatch(b.userAgent)
@@ -30,9 +44,9 @@ func (b base) version(patterns []string, order int) string {
 	return "0.0"
 }
 
-// match returns true if the user agent matches the pattern.
+// Match returns true if the user agent matches the pattern.
 // The pattern is a list of regular expressions.
-func (b base) match(patterns []string) bool {
+func (b UAParser) Match(patterns []string) bool {
 	for _, pattern := range patterns {
 		if regexp.MustCompile(pattern).MatchString(b.userAgent) {
 			return true

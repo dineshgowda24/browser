@@ -5,7 +5,7 @@ import (
 )
 
 type Android struct {
-	base
+	p Parser
 }
 
 var (
@@ -13,17 +13,15 @@ var (
 	androidMatchRegex = []string{`(?i)Android`}
 )
 
-func NewAndroid(userAgent string) *Android {
+func NewAndroid(p Parser) *Android {
 	return &Android{
-		base: base{
-			userAgent: userAgent,
-		},
+		p: p,
 	}
 }
 
 func (a Android) Name() string {
 	re := regexp.MustCompile(androidNameRegex)
-	matches := re.FindStringSubmatch(a.userAgent)
+	matches := re.FindStringSubmatch(a.p.String())
 	if len(matches) > 1 {
 		return matches[1]
 	}
@@ -32,5 +30,5 @@ func (a Android) Name() string {
 }
 
 func (a Android) Match() bool {
-	return a.match(androidMatchRegex)
+	return a.p.Match(androidMatchRegex)
 }

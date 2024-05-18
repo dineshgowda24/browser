@@ -1,7 +1,7 @@
 package devices
 
 type Kindle struct {
-	base
+	p Parser
 }
 
 var (
@@ -9,11 +9,9 @@ var (
 	kindleMatchRegex = []string{`Kindle`}
 )
 
-func NewKindle(userAgent string) *Kindle {
+func NewKindle(p Parser) *Kindle {
 	return &Kindle{
-		base{
-			userAgent: userAgent,
-		},
+		p: p,
 	}
 }
 
@@ -22,5 +20,5 @@ func (k *Kindle) Name() string {
 }
 
 func (k *Kindle) Match() bool {
-	return k.match(kindleMatchRegex)
+	return k.p.Match(kindleMatchRegex)
 }

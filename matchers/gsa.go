@@ -1,7 +1,7 @@
 package matchers
 
 type GoogleSearchApp struct {
-	base
+	p Parser
 }
 
 var (
@@ -11,9 +11,9 @@ var (
 	googleSearchAppMatchRegex    = []string{`(?i)GSA`}
 )
 
-func NewGoogleSearchApp(userAgent string) *GoogleSearchApp {
+func NewGoogleSearchApp(p Parser) *GoogleSearchApp {
 	return &GoogleSearchApp{
-		base: newBase(userAgent),
+		p: p,
 	}
 }
 
@@ -22,9 +22,9 @@ func (g *GoogleSearchApp) Name() string {
 }
 
 func (g *GoogleSearchApp) Version() string {
-	return g.version(googleSearchAppVersionRegexp, 1)
+	return g.p.Version(googleSearchAppVersionRegexp, 1)
 }
 
 func (g *GoogleSearchApp) Match() bool {
-	return g.match(googleSearchAppMatchRegex)
+	return g.p.Match(googleSearchAppMatchRegex)
 }

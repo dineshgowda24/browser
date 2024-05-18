@@ -42,30 +42,31 @@ func NewDevice(userAgent string) (*Device, error) {
 
 // register registers the device matcher detected from the user agent string
 func (d *Device) register() {
+	parser := devices.NewUAParser(d.userAgent)
 	// define all your device matchers here
 	matchers := []DeviceMatcher{
-		devices.NewBlackberryPlaybook(d.userAgent),
-		devices.NewIphone(d.userAgent),
-		devices.NewIpad(d.userAgent),
-		devices.NewIpodTouch(d.userAgent),
-		devices.NewKindleFire(d.userAgent),
-		devices.NewKindle(d.userAgent),
-		devices.NewPlayStation3(d.userAgent),
-		devices.NewPlayStation4(d.userAgent),
-		devices.NewPlayStation5(d.userAgent),
-		devices.NewPSVita(d.userAgent),
-		devices.NewPSP(d.userAgent),
-		devices.NewWiiU(d.userAgent),
-		devices.NewWii(d.userAgent),
-		devices.NewXboxOne(d.userAgent), // this must be before xbox 360
-		devices.NewXbox360(d.userAgent),
-		devices.NewSwitch(d.userAgent),
-		devices.NewSurface(d.userAgent),
-		devices.NewKindle(d.userAgent),
-		devices.NewSamsung(d.userAgent),
-		devices.NewTV(d.userAgent), // this must be before android
-		devices.NewAndroid(d.userAgent),
-		devices.NewUnknown(d.userAgent),
+		devices.NewBlackberryPlaybook(parser),
+		devices.NewIphone(parser),
+		devices.NewIpad(parser),
+		devices.NewIpodTouch(parser),
+		devices.NewKindleFire(parser),
+		devices.NewKindle(parser),
+		devices.NewPlayStation3(parser),
+		devices.NewPlayStation4(parser),
+		devices.NewPlayStation5(parser),
+		devices.NewPSVita(parser),
+		devices.NewPSP(parser),
+		devices.NewWiiU(parser),
+		devices.NewWii(parser),
+		devices.NewXboxOne(parser), // this must be before xbox 360
+		devices.NewXbox360(parser),
+		devices.NewSwitch(parser),
+		devices.NewSurface(parser),
+		devices.NewKindle(parser),
+		devices.NewSamsung(parser),
+		devices.NewTV(parser), // this must be before android
+		devices.NewAndroid(parser),
+		devices.NewUnknown(parser),
 	}
 
 	for _, matcher := range matchers {

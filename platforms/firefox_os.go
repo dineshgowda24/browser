@@ -1,7 +1,7 @@
 package platforms
 
 type FirefoxOS struct {
-	base
+	p Parser
 }
 
 var (
@@ -10,11 +10,9 @@ var (
 	firefoxDeviceExcludeRegexp = []string{`Android|Linux|BlackBerry|Windows|Mac`}
 )
 
-func NewFirefoxOS(userAgent string) *FirefoxOS {
+func NewFirefoxOS(p Parser) *FirefoxOS {
 	return &FirefoxOS{
-		base{
-			userAgent: userAgent,
-		},
+		p: p,
 	}
 }
 
@@ -27,9 +25,9 @@ func (f *FirefoxOS) Version() string {
 }
 
 func (f *FirefoxOS) Match() bool {
-	return !f.isExcludeDevice() && f.match(firefoxOSMatchRegexp)
+	return !f.isExcludeDevice() && f.p.Match(firefoxOSMatchRegexp)
 }
 
 func (f *FirefoxOS) isExcludeDevice() bool {
-	return f.match(firefoxDeviceExcludeRegexp)
+	return f.p.Match(firefoxDeviceExcludeRegexp)
 }

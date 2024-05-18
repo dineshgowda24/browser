@@ -1,7 +1,7 @@
 package devices
 
 type TV struct {
-	base
+	p Parser
 }
 
 var (
@@ -9,11 +9,9 @@ var (
 	tvMatchRegex = []string{`(?i)(\btv|Android.*?ADT-1|Nexus Player)`}
 )
 
-func NewTV(userAgent string) *TV {
+func NewTV(p Parser) *TV {
 	return &TV{
-		base{
-			userAgent: userAgent,
-		},
+		p: p,
 	}
 }
 
@@ -22,5 +20,5 @@ func (t *TV) Name() string {
 }
 
 func (t *TV) Match() bool {
-	return t.match(tvMatchRegex)
+	return t.p.Match(tvMatchRegex)
 }

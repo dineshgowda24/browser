@@ -1,7 +1,7 @@
 package devices
 
 type PSVita struct {
-	base
+	p Parser
 }
 
 var (
@@ -9,11 +9,9 @@ var (
 	psVitaMatchRegex = []string{`(?i)PlayStation Vita`}
 )
 
-func NewPSVita(userAgent string) *PSVita {
+func NewPSVita(p Parser) *PSVita {
 	return &PSVita{
-		base{
-			userAgent: userAgent,
-		},
+		p: p,
 	}
 }
 
@@ -22,5 +20,5 @@ func (p *PSVita) Name() string {
 }
 
 func (p *PSVita) Match() bool {
-	return p.match(psVitaMatchRegex)
+	return p.p.Match(psVitaMatchRegex)
 }

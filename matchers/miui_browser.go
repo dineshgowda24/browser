@@ -1,7 +1,7 @@
 package matchers
 
 type MiuiBrowser struct {
-	base
+	p Parser
 }
 
 var (
@@ -10,9 +10,9 @@ var (
 	miuiBrowserMatchRegexp   = []string{`MiuiBrowser`}
 )
 
-func NewMiuiBrowser(userAgent string) *MiuiBrowser {
+func NewMiuiBrowser(p Parser) *MiuiBrowser {
 	return &MiuiBrowser{
-		base: newBase(userAgent),
+		p: p,
 	}
 }
 
@@ -21,9 +21,9 @@ func (m *MiuiBrowser) Name() string {
 }
 
 func (m *MiuiBrowser) Version() string {
-	return m.version(miuiBrowserVersionRegexp, 1)
+	return m.p.Version(miuiBrowserVersionRegexp, 1)
 }
 
 func (m *MiuiBrowser) Match() bool {
-	return m.match(miuiBrowserMatchRegexp)
+	return m.p.Match(miuiBrowserMatchRegexp)
 }
