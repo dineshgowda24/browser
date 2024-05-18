@@ -1,7 +1,7 @@
 package matchers
 
 type HuaweiBrowser struct {
-	base
+	p Parser
 }
 
 var (
@@ -10,9 +10,9 @@ var (
 	huaweiBrowserMatchRegexp   = []string{`(?i)(HuaweiBrowser|HBPC)`}
 )
 
-func NewHuaweiBrowser(userAgent string) *HuaweiBrowser {
+func NewHuaweiBrowser(p Parser) *HuaweiBrowser {
 	return &HuaweiBrowser{
-		base: newBase(userAgent),
+		p: p,
 	}
 }
 
@@ -21,9 +21,9 @@ func (h *HuaweiBrowser) Name() string {
 }
 
 func (h *HuaweiBrowser) Version() string {
-	return h.version(huaweiBrowserVersionRegexp, 1)
+	return h.p.Version(huaweiBrowserVersionRegexp, 1)
 }
 
 func (h *HuaweiBrowser) Match() bool {
-	return h.match(huaweiBrowserMatchRegexp)
+	return h.p.Match(huaweiBrowserMatchRegexp)
 }

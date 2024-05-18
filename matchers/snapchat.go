@@ -1,7 +1,7 @@
 package matchers
 
 type Snapchat struct {
-	base
+	p Parser
 }
 
 var (
@@ -10,9 +10,9 @@ var (
 	snapchatMatchRegexp   = []string{`Snapchat`}
 )
 
-func NewSnapchat(userAgent string) *Snapchat {
+func NewSnapchat(p Parser) *Snapchat {
 	return &Snapchat{
-		base: newBase(userAgent),
+		p: p,
 	}
 }
 
@@ -21,9 +21,9 @@ func (s *Snapchat) Name() string {
 }
 
 func (s *Snapchat) Version() string {
-	return s.version(snapchatVersionRegexp, 1)
+	return s.p.Version(snapchatVersionRegexp, 1)
 }
 
 func (s *Snapchat) Match() bool {
-	return s.match(snapchatMatchRegexp)
+	return s.p.Match(snapchatMatchRegexp)
 }

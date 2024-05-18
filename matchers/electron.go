@@ -1,7 +1,7 @@
 package matchers
 
 type Electron struct {
-	base
+	p Parser
 }
 
 var (
@@ -10,9 +10,9 @@ var (
 	electronMatchRegex    = []string{`Electron`}
 )
 
-func NewElectron(userAgent string) *Electron {
+func NewElectron(p Parser) *Electron {
 	return &Electron{
-		base: newBase(userAgent),
+		p: p,
 	}
 }
 
@@ -21,9 +21,9 @@ func (e *Electron) Name() string {
 }
 
 func (e *Electron) Version() string {
-	return e.version(electronVersionRegexp, 1)
+	return e.p.Version(electronVersionRegexp, 1)
 }
 
 func (e *Electron) Match() bool {
-	return e.match(electronMatchRegex)
+	return e.p.Match(electronMatchRegex)
 }

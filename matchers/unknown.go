@@ -3,7 +3,7 @@ package matchers
 import "regexp"
 
 type Unknown struct {
-	base
+	p Parser
 }
 
 var (
@@ -11,16 +11,16 @@ var (
 	unknownVersionRegexp = []string{`QuickTime/([\d.]+)`, `CoreMedia v([\d.]+)`, `AppleCoreMedia/([\d.]+)`}
 )
 
-func NewUnknown(userAgent string) *Unknown {
+func NewUnknown(p Parser) *Unknown {
 	return &Unknown{
-		base: newBase(userAgent),
+		p: p,
 	}
 }
 
 func (u *Unknown) Name() string {
 	inferedUnknowns := map[string]string{"QuickTime": "QuickTime", "CoreMedia": "Apple CoreMedia"}
 	for k, v := range inferedUnknowns {
-		if regexp.MustCompile(k).MatchString(u.userAgent) {
+		if regexp.MustCompile(k).MatchString(u.p.String()) {
 			return v
 		}
 	}
@@ -28,7 +28,7 @@ func (u *Unknown) Name() string {
 }
 
 func (u *Unknown) Version() string {
-	return u.version(unknownVersionRegexp, 1)
+	return u.p.Version(unknownVersionRegexp, 1)
 }
 
 func (u *Unknown) Match() bool {

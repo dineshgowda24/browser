@@ -7,7 +7,7 @@ import (
 )
 
 const (
-	userAgentSizeLimit = 2048 // 2KB
+	userAgentSizeLimit = 2048 // 2KiB
 )
 
 // Matcher is an interface for user agent matchers.
@@ -66,38 +66,39 @@ func NewBrowser(userAgent string) (*Browser, error) {
 // register registers the browser matcher detected from the user agent string.
 func (b *Browser) register() {
 	// add all your browser matchers here, order matters
+	parser := matchers.NewUAParser(b.userAgent)
 	matchers := []BrowserMatcher{
-		matchers.NewAlipay(b.userAgent),
-		matchers.NewNokia(b.userAgent),
-		matchers.NewUCBrowser(b.userAgent),
-		matchers.NewBlackBerry(b.userAgent),
-		matchers.NewOpera(b.userAgent),
-		matchers.NewOtter(b.userAgent),
-		matchers.NewInstagram(b.userAgent),
-		matchers.NewSnapchat(b.userAgent),
-		matchers.NewWeibo(b.userAgent),
-		matchers.NewMicroMessenger(b.userAgent),
-		matchers.NewQQ(b.userAgent),
-		matchers.NewElectron(b.userAgent),
-		matchers.NewDuckDuckGo(b.userAgent),
-		matchers.NewGoogleSearchApp(b.userAgent),
-		matchers.NewHuaweiBrowser(b.userAgent),
-		matchers.NewKonqueror(b.userAgent),
-		matchers.NewMaxthon(b.userAgent),
-		matchers.NewMiuiBrowser(b.userAgent),
-		matchers.NewPaleMoon(b.userAgent),
-		matchers.NewPuffin(b.userAgent),
-		matchers.NewEdge(b.userAgent),
-		matchers.NewInternetExplorer(b.userAgent),
-		matchers.NewSamsungBrowser(b.userAgent),
-		matchers.NewSogouBrowser(b.userAgent),
-		matchers.NewVivoBrowser(b.userAgent),
-		matchers.NewSputnik(b.userAgent),
-		matchers.NewYaaniBrowser(b.userAgent),
-		matchers.NewYandex(b.userAgent),
-		matchers.NewChrome(b.userAgent), // chrome should be before safari
-		matchers.NewSafari(b.userAgent), // chrome and safari must be at the end
-		matchers.NewUnknown(b.userAgent),
+		matchers.NewAlipay(parser),
+		matchers.NewNokia(parser),
+		matchers.NewUCBrowser(parser),
+		matchers.NewBlackBerry(parser),
+		matchers.NewOpera(parser),
+		matchers.NewOtter(parser),
+		matchers.NewInstagram(parser),
+		matchers.NewSnapchat(parser),
+		matchers.NewWeibo(parser),
+		matchers.NewMicroMessenger(parser),
+		matchers.NewQQ(parser),
+		matchers.NewElectron(parser),
+		matchers.NewDuckDuckGo(parser),
+		matchers.NewGoogleSearchApp(parser),
+		matchers.NewHuaweiBrowser(parser),
+		matchers.NewKonqueror(parser),
+		matchers.NewMaxthon(parser),
+		matchers.NewMiuiBrowser(parser),
+		matchers.NewPaleMoon(parser),
+		matchers.NewPuffin(parser),
+		matchers.NewEdge(parser),
+		matchers.NewInternetExplorer(parser),
+		matchers.NewSamsungBrowser(parser),
+		matchers.NewSogouBrowser(parser),
+		matchers.NewVivoBrowser(parser),
+		matchers.NewSputnik(parser),
+		matchers.NewYaaniBrowser(parser),
+		matchers.NewYandex(parser),
+		matchers.NewChrome(parser), // chrome should be before safari
+		matchers.NewSafari(parser), // chrome and safari must be at the end
+		matchers.NewUnknown(parser),
 	}
 
 	for _, matcher := range matchers {

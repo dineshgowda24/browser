@@ -1,7 +1,7 @@
 package matchers
 
 type UCBrowser struct {
-	base
+	p Parser
 }
 
 var (
@@ -10,9 +10,9 @@ var (
 	ucBrowserMatchRegexp   = []string{`UC(Browser|WEB)`}
 )
 
-func NewUCBrowser(userAgent string) *UCBrowser {
+func NewUCBrowser(p Parser) *UCBrowser {
 	return &UCBrowser{
-		base: newBase(userAgent),
+		p: p,
 	}
 }
 
@@ -21,9 +21,9 @@ func (u *UCBrowser) Name() string {
 }
 
 func (u *UCBrowser) Version() string {
-	return u.version(ucBrowserVersionRegexp, 1)
+	return u.p.Version(ucBrowserVersionRegexp, 1)
 }
 
 func (u *UCBrowser) Match() bool {
-	return u.match(ucBrowserMatchRegexp)
+	return u.p.Match(ucBrowserMatchRegexp)
 }

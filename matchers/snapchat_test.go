@@ -9,7 +9,7 @@ import (
 func TestNewSnapchat(t *testing.T) {
 	Convey("Subject: #NewSnapchat", t, func() {
 		Convey("It should return a new Snapchat instance", func() {
-			So(NewSnapchat(""), ShouldHaveSameTypeAs, &Snapchat{})
+			So(NewSnapchat(NewUAParser("")), ShouldHaveSameTypeAs, &Snapchat{})
 		})
 	})
 }
@@ -17,7 +17,7 @@ func TestNewSnapchat(t *testing.T) {
 func TestSnapchatName(t *testing.T) {
 	Convey("Subject: #Name", t, func() {
 		Convey("It should return Snapchat", func() {
-			s := NewSnapchat("")
+			s := NewSnapchat(NewUAParser(""))
 			So(s.Name(), ShouldEqual, "Snapchat")
 		})
 	})
@@ -29,9 +29,9 @@ func TestSnapchatVersion(t *testing.T) {
 			Convey("It should return the version", func() {
 				s := testUserAgents["snapchat"]
 
-				So(NewSnapchat(s.Android).Version(), ShouldEqual, "10.18.2.0")
-				So(NewSnapchat(s.IOS).Version(), ShouldEqual, "10.22.2.0")
-				So(NewSnapchat(s.Windows).Version(), ShouldEqual, "10.72.5.0")
+				So(NewSnapchat(NewUAParser(s.Android)).Version(), ShouldEqual, "10.18.2.0")
+				So(NewSnapchat(NewUAParser(s.IOS)).Version(), ShouldEqual, "10.22.2.0")
+				So(NewSnapchat(NewUAParser(s.Windows)).Version(), ShouldEqual, "10.72.5.0")
 			})
 		})
 	})
@@ -43,9 +43,9 @@ func TestSnapchatMatch(t *testing.T) {
 			Convey("It should return true", func() {
 				s := testUserAgents["snapchat"]
 
-				So(NewSnapchat(s.Android).Match(), ShouldBeTrue)
-				So(NewSnapchat(s.IOS).Match(), ShouldBeTrue)
-				So(NewSnapchat(s.Windows).Match(), ShouldBeTrue)
+				So(NewSnapchat(NewUAParser(s.Android)).Match(), ShouldBeTrue)
+				So(NewSnapchat(NewUAParser(s.IOS)).Match(), ShouldBeTrue)
+				So(NewSnapchat(NewUAParser(s.Windows)).Match(), ShouldBeTrue)
 			})
 		})
 
@@ -53,7 +53,7 @@ func TestSnapchatMatch(t *testing.T) {
 			Convey("It should return false", func() {
 				s := testUserAgents["chrome"]
 
-				So(NewSnapchat(s.Linux).Match(), ShouldBeFalse)
+				So(NewSnapchat(NewUAParser(s.Linux)).Match(), ShouldBeFalse)
 			})
 		})
 	})

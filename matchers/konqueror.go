@@ -1,7 +1,7 @@
 package matchers
 
 type Konqueror struct {
-	base
+	p Parser
 }
 
 var (
@@ -10,9 +10,9 @@ var (
 	konquerorMatchRegex    = []string{`(?i)Konqueror`}
 )
 
-func NewKonqueror(userAgent string) *Konqueror {
+func NewKonqueror(p Parser) *Konqueror {
 	return &Konqueror{
-		base: newBase(userAgent),
+		p: p,
 	}
 }
 
@@ -21,9 +21,9 @@ func (k *Konqueror) Name() string {
 }
 
 func (k *Konqueror) Version() string {
-	return k.version(konquerorVersionRegexp, 1)
+	return k.p.Version(konquerorVersionRegexp, 1)
 }
 
 func (k *Konqueror) Match() bool {
-	return k.match(konquerorMatchRegex)
+	return k.p.Match(konquerorMatchRegex)
 }

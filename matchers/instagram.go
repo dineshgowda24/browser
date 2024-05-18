@@ -1,7 +1,7 @@
 package matchers
 
 type Instagram struct {
-	base
+	p Parser
 }
 
 var (
@@ -10,9 +10,9 @@ var (
 	instagramMatchRegex    = []string{`(?i)Instagram`}
 )
 
-func NewInstagram(userAgent string) *Instagram {
+func NewInstagram(p Parser) *Instagram {
 	return &Instagram{
-		base: newBase(userAgent),
+		p: p,
 	}
 }
 
@@ -21,9 +21,9 @@ func (i *Instagram) Name() string {
 }
 
 func (i *Instagram) Version() string {
-	return i.version(instagramVersionRegexp, 1)
+	return i.p.Version(instagramVersionRegexp, 1)
 }
 
 func (i *Instagram) Match() bool {
-	return i.match(instagramMatchRegex)
+	return i.p.Match(instagramMatchRegex)
 }

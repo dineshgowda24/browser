@@ -9,7 +9,7 @@ import (
 func TestNewPaleMoon(t *testing.T) {
 	Convey("Subject: #NewPaleMoon", t, func() {
 		Convey("It should return a new PaleMoon instance", func() {
-			So(NewPaleMoon(""), ShouldHaveSameTypeAs, &PaleMoon{})
+			So(NewPaleMoon(NewUAParser("")), ShouldHaveSameTypeAs, &PaleMoon{})
 		})
 	})
 }
@@ -17,7 +17,7 @@ func TestNewPaleMoon(t *testing.T) {
 func TestPaleMoonName(t *testing.T) {
 	Convey("Subject: #Name", t, func() {
 		Convey("It should return PaleMoon", func() {
-			So(NewPaleMoon("").Name(), ShouldEqual, "Pale Moon")
+			So(NewPaleMoon(NewUAParser("")).Name(), ShouldEqual, "Pale Moon")
 		})
 	})
 }
@@ -28,16 +28,16 @@ func TestPaleMoonVersion(t *testing.T) {
 			Convey("It should return the version", func() {
 				ua := testUserAgents["pale-moon"]
 
-				So(NewPaleMoon(ua.Linux).Version(), ShouldEqual, "25.6.0")
-				So(NewPaleMoon(ua.Mac).Version(), ShouldEqual, "25.3.1")
-				So(NewPaleMoon(ua.Windows).Version(), ShouldEqual, "25.6.0")
-				So(NewPaleMoon(ua.Android).Version(), ShouldEqual, "25.4.1")
+				So(NewPaleMoon(NewUAParser(ua.Linux)).Version(), ShouldEqual, "25.6.0")
+				So(NewPaleMoon(NewUAParser(ua.Mac)).Version(), ShouldEqual, "25.3.1")
+				So(NewPaleMoon(NewUAParser(ua.Windows)).Version(), ShouldEqual, "25.6.0")
+				So(NewPaleMoon(NewUAParser(ua.Android)).Version(), ShouldEqual, "25.4.1")
 			})
 		})
 
 		Convey("When the version is not matched", func() {
 			Convey("It should return default version", func() {
-				pm := NewPaleMoon(testUserAgents["chrome"].Linux)
+				pm := NewPaleMoon(NewUAParser(testUserAgents["chrome"].Linux))
 				So(pm.Version(), ShouldEqual, "0.0")
 			})
 		})
@@ -50,10 +50,10 @@ func TestPaleMoonMatch(t *testing.T) {
 			Convey("It should return true", func() {
 				ua := testUserAgents["pale-moon"]
 
-				So(NewPaleMoon(ua.Linux).Match(), ShouldBeTrue)
-				So(NewPaleMoon(ua.Mac).Match(), ShouldBeTrue)
-				So(NewPaleMoon(ua.Windows).Match(), ShouldBeTrue)
-				So(NewPaleMoon(ua.Android).Match(), ShouldBeTrue)
+				So(NewPaleMoon(NewUAParser(ua.Linux)).Match(), ShouldBeTrue)
+				So(NewPaleMoon(NewUAParser(ua.Mac)).Match(), ShouldBeTrue)
+				So(NewPaleMoon(NewUAParser(ua.Windows)).Match(), ShouldBeTrue)
+				So(NewPaleMoon(NewUAParser(ua.Android)).Match(), ShouldBeTrue)
 			})
 		})
 
@@ -61,7 +61,7 @@ func TestPaleMoonMatch(t *testing.T) {
 			Convey("It should return false", func() {
 				ua := testUserAgents["chrome"]
 
-				So(NewPaleMoon(ua.Linux).Match(), ShouldBeFalse)
+				So(NewPaleMoon(NewUAParser(ua.Linux)).Match(), ShouldBeFalse)
 			})
 		})
 	})

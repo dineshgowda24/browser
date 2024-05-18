@@ -1,7 +1,7 @@
 package matchers
 
 type Maxthon struct {
-	base
+	p Parser
 }
 
 var (
@@ -10,9 +10,9 @@ var (
 	maxthonMatchRegex    = []string{`(i?)Maxthon`}
 )
 
-func NewMaxthon(userAgent string) *Maxthon {
+func NewMaxthon(p Parser) *Maxthon {
 	return &Maxthon{
-		base: newBase(userAgent),
+		p: p,
 	}
 }
 
@@ -21,9 +21,9 @@ func (m *Maxthon) Name() string {
 }
 
 func (m *Maxthon) Version() string {
-	return m.version(maxthonVersionRegexp, 1)
+	return m.p.Version(maxthonVersionRegexp, 1)
 }
 
 func (m *Maxthon) Match() bool {
-	return m.match(maxthonMatchRegex)
+	return m.p.Match(maxthonMatchRegex)
 }

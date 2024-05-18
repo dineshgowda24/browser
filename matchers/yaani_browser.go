@@ -1,7 +1,7 @@
 package matchers
 
 type YaaniBrowser struct {
-	base
+	p Parser
 }
 
 var (
@@ -10,9 +10,9 @@ var (
 	yaaniBrowserMatchRegex    = []string{`YaaniBrowser`}
 )
 
-func NewYaaniBrowser(userAgent string) *YaaniBrowser {
+func NewYaaniBrowser(p Parser) *YaaniBrowser {
 	return &YaaniBrowser{
-		base: newBase(userAgent),
+		p: p,
 	}
 }
 
@@ -21,9 +21,9 @@ func (y *YaaniBrowser) Name() string {
 }
 
 func (y *YaaniBrowser) Version() string {
-	return y.version(yaaniBrowserVersionRegexp, 1)
+	return y.p.Version(yaaniBrowserVersionRegexp, 1)
 }
 
 func (y *YaaniBrowser) Match() bool {
-	return y.match(yaaniBrowserMatchRegex)
+	return y.p.Match(yaaniBrowserMatchRegex)
 }

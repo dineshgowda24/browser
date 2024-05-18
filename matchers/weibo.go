@@ -1,7 +1,7 @@
 package matchers
 
 type Weibo struct {
-	base
+	p Parser
 }
 
 var (
@@ -10,9 +10,9 @@ var (
 	weiboMatchRegexp   = []string{`__weibo__`}
 )
 
-func NewWeibo(userAgent string) *Weibo {
+func NewWeibo(p Parser) *Weibo {
 	return &Weibo{
-		base: newBase(userAgent),
+		p: p,
 	}
 }
 
@@ -21,9 +21,9 @@ func (w *Weibo) Name() string {
 }
 
 func (w *Weibo) Version() string {
-	return w.version(weiboVersionRegexp, 1)
+	return w.p.Version(weiboVersionRegexp, 1)
 }
 
 func (w *Weibo) Match() bool {
-	return w.match(weiboMatchRegexp)
+	return w.p.Match(weiboMatchRegexp)
 }

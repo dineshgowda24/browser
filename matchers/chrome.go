@@ -1,7 +1,7 @@
 package matchers
 
 type Chrome struct {
-	base
+	p Parser
 }
 
 var (
@@ -10,9 +10,9 @@ var (
 	chromeMatchRegex    = []string{`Chrome|CriOS`}
 )
 
-func NewChrome(userAgent string) *Chrome {
+func NewChrome(p Parser) *Chrome {
 	return &Chrome{
-		base: newBase(userAgent),
+		p: p,
 	}
 }
 
@@ -21,9 +21,9 @@ func (c *Chrome) Name() string {
 }
 
 func (c *Chrome) Version() string {
-	return c.version(chromeVersionRegexp, 1)
+	return c.p.Version(chromeVersionRegexp, 1)
 }
 
 func (c *Chrome) Match() bool {
-	return c.match(chromeMatchRegex)
+	return c.p.Match(chromeMatchRegex)
 }

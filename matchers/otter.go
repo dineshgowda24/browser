@@ -1,7 +1,7 @@
 package matchers
 
 type Otter struct {
-	base
+	p Parser
 }
 
 var (
@@ -10,9 +10,9 @@ var (
 	otterMatchRegexp   = []string{`Otter`}
 )
 
-func NewOtter(userAgent string) *Otter {
+func NewOtter(p Parser) *Otter {
 	return &Otter{
-		base: newBase(userAgent),
+		p: p,
 	}
 }
 
@@ -21,9 +21,9 @@ func (o *Otter) Name() string {
 }
 
 func (o *Otter) Version() string {
-	return o.version(otterVersionRegexp, 1)
+	return o.p.Version(otterVersionRegexp, 1)
 }
 
 func (o *Otter) Match() bool {
-	return o.match(otterMatchRegexp)
+	return o.p.Match(otterMatchRegexp)
 }

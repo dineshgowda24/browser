@@ -1,7 +1,7 @@
 package matchers
 
 type Nokia struct {
-	base
+	p Parser
 }
 
 var (
@@ -10,9 +10,9 @@ var (
 	nokiaMatchRegexp   = []string{`S40OviBrowser`, `NokiaBrowser`}
 )
 
-func NewNokia(userAgent string) *Nokia {
+func NewNokia(p Parser) *Nokia {
 	return &Nokia{
-		base: newBase(userAgent),
+		p: p,
 	}
 }
 
@@ -21,9 +21,9 @@ func (n *Nokia) Name() string {
 }
 
 func (n *Nokia) Version() string {
-	return n.version(nokiaVersionRegexp, 1)
+	return n.p.Version(nokiaVersionRegexp, 1)
 }
 
 func (n *Nokia) Match() bool {
-	return n.match(nokiaMatchRegexp)
+	return n.p.Match(nokiaMatchRegexp)
 }

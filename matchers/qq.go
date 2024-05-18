@@ -1,7 +1,7 @@
 package matchers
 
 type QQ struct {
-	base
+	p Parser
 }
 
 var (
@@ -10,9 +10,9 @@ var (
 	qqMatchRegexp   = []string{`QQ/|QQBrowser`}
 )
 
-func NewQQ(userAgent string) *QQ {
+func NewQQ(p Parser) *QQ {
 	return &QQ{
-		base: newBase(userAgent),
+		p: p,
 	}
 }
 
@@ -21,9 +21,9 @@ func (q *QQ) Name() string {
 }
 
 func (q *QQ) Version() string {
-	return q.version(qqVersionRegexp, 1)
+	return q.p.Version(qqVersionRegexp, 1)
 }
 
 func (q *QQ) Match() bool {
-	return q.match(qqMatchRegexp)
+	return q.p.Match(qqMatchRegexp)
 }

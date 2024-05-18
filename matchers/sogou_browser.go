@@ -1,7 +1,7 @@
 package matchers
 
 type SogouBrowser struct {
-	base
+	p Parser
 }
 
 var (
@@ -10,9 +10,9 @@ var (
 	sogouBrowserMatchRegexp   = []string{`(?i)SogouMobileBrowser`, `\bSE\b`}
 )
 
-func NewSogouBrowser(userAgent string) *SogouBrowser {
+func NewSogouBrowser(p Parser) *SogouBrowser {
 	return &SogouBrowser{
-		base: newBase(userAgent),
+		p: p,
 	}
 }
 
@@ -21,9 +21,9 @@ func (s *SogouBrowser) Name() string {
 }
 
 func (s *SogouBrowser) Version() string {
-	return s.version(sogouBrowserVersionRegexp, 1)
+	return s.p.Version(sogouBrowserVersionRegexp, 1)
 }
 
 func (s *SogouBrowser) Match() bool {
-	return s.match(sogouBrowserMatchRegexp)
+	return s.p.Match(sogouBrowserMatchRegexp)
 }

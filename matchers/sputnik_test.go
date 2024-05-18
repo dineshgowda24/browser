@@ -9,7 +9,7 @@ import (
 func TestNewSputnik(t *testing.T) {
 	Convey("Subject: #NewSputnik", t, func() {
 		Convey("It should return a new Sputnik instance", func() {
-			So(NewSputnik(""), ShouldHaveSameTypeAs, &Sputnik{})
+			So(NewSputnik(NewUAParser("")), ShouldHaveSameTypeAs, &Sputnik{})
 		})
 	})
 }
@@ -17,7 +17,7 @@ func TestNewSputnik(t *testing.T) {
 func TestSputnikName(t *testing.T) {
 	Convey("Subject: #Name", t, func() {
 		Convey("It should return Sputnik", func() {
-			s := NewSputnik("")
+			s := NewSputnik(NewUAParser(""))
 			So(s.Name(), ShouldEqual, "Sputnik")
 		})
 	})
@@ -29,10 +29,10 @@ func TestSputnikVersion(t *testing.T) {
 			Convey("It should return the version", func() {
 				s := testUserAgents["sputnik"]
 
-				So(NewSputnik(s.Android).Version(), ShouldEqual, "0.6.1")
-				So(NewSputnik(s.IOS).Version(), ShouldEqual, "2.3.8")
-				So(NewSputnik(s.Linux).Version(), ShouldEqual, "3.3.2038.2")
-				So(NewSputnik(s.Windows).Version(), ShouldEqual, "1.9.48.2")
+				So(NewSputnik(NewUAParser(s.Android)).Version(), ShouldEqual, "0.6.1")
+				So(NewSputnik(NewUAParser(s.IOS)).Version(), ShouldEqual, "2.3.8")
+				So(NewSputnik(NewUAParser(s.Linux)).Version(), ShouldEqual, "3.3.2038.2")
+				So(NewSputnik(NewUAParser(s.Windows)).Version(), ShouldEqual, "1.9.48.2")
 			})
 		})
 	})
@@ -44,10 +44,10 @@ func TestSputnikMatch(t *testing.T) {
 			Convey("It should return true", func() {
 				s := testUserAgents["sputnik"]
 
-				So(NewSputnik(s.Android).Match(), ShouldBeTrue)
-				So(NewSputnik(s.IOS).Match(), ShouldBeTrue)
-				So(NewSputnik(s.Linux).Match(), ShouldBeTrue)
-				So(NewSputnik(s.Windows).Match(), ShouldBeTrue)
+				So(NewSputnik(NewUAParser(s.Android)).Match(), ShouldBeTrue)
+				So(NewSputnik(NewUAParser(s.IOS)).Match(), ShouldBeTrue)
+				So(NewSputnik(NewUAParser(s.Linux)).Match(), ShouldBeTrue)
+				So(NewSputnik(NewUAParser(s.Windows)).Match(), ShouldBeTrue)
 			})
 		})
 
@@ -55,7 +55,7 @@ func TestSputnikMatch(t *testing.T) {
 			Convey("It should return false", func() {
 				s := testUserAgents["chrome"]
 
-				So(NewSputnik(s.Linux).Match(), ShouldBeFalse)
+				So(NewSputnik(NewUAParser(s.Linux)).Match(), ShouldBeFalse)
 			})
 		})
 	})

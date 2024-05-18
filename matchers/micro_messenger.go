@@ -1,7 +1,7 @@
 package matchers
 
 type MicroMessenger struct {
-	base
+	p Parser
 }
 
 var (
@@ -10,9 +10,9 @@ var (
 	microMessengerMatchRegexp   = []string{`MicroMessenger`}
 )
 
-func NewMicroMessenger(userAgent string) *MicroMessenger {
+func NewMicroMessenger(p Parser) *MicroMessenger {
 	return &MicroMessenger{
-		base: newBase(userAgent),
+		p: p,
 	}
 }
 
@@ -21,9 +21,9 @@ func (m *MicroMessenger) Name() string {
 }
 
 func (m *MicroMessenger) Version() string {
-	return m.version(microMessengerVersionRegexp, 1)
+	return m.p.Version(microMessengerVersionRegexp, 1)
 }
 
 func (m *MicroMessenger) Match() bool {
-	return m.match(microMessengerMatchRegexp)
+	return m.p.Match(microMessengerMatchRegexp)
 }

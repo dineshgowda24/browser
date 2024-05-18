@@ -1,7 +1,7 @@
 package matchers
 
 type PaleMoon struct {
-	base
+	p Parser
 }
 
 var (
@@ -10,20 +10,20 @@ var (
 	paleMoonMatchRegex    = []string{`PaleMoon`}
 )
 
-func NewPaleMoon(userAgent string) *PaleMoon {
+func NewPaleMoon(p Parser) *PaleMoon {
 	return &PaleMoon{
-		base: newBase(userAgent),
+		p: p,
 	}
 }
 
-func (p *PaleMoon) Name() string {
+func (pa *PaleMoon) Name() string {
 	return paleMoonName
 }
 
-func (p *PaleMoon) Version() string {
-	return p.version(paleMoonVersionRegexp, 1)
+func (pa *PaleMoon) Version() string {
+	return pa.p.Version(paleMoonVersionRegexp, 1)
 }
 
-func (p *PaleMoon) Match() bool {
-	return p.match(paleMoonMatchRegex)
+func (pa *PaleMoon) Match() bool {
+	return pa.p.Match(paleMoonMatchRegex)
 }
