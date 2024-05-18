@@ -93,6 +93,7 @@ func (b *Browser) register() {
 		matchers.NewInternetExplorer(parser),
 		matchers.NewSamsungBrowser(parser),
 		matchers.NewSogouBrowser(parser),
+		matchers.NewVivaldi(parser),
 		matchers.NewVivoBrowser(parser),
 		matchers.NewSputnik(parser),
 		matchers.NewYaaniBrowser(parser),
@@ -439,6 +440,17 @@ func (b *Browser) IsSamsungBrowser() bool {
 // https://www.sogou.com/
 func (b *Browser) IsSougouBrowser() bool {
 	if _, ok := b.getMatcher().(*matchers.SogouBrowser); ok {
+		return true
+	}
+
+	return false
+}
+
+// IsVivaldi returns true if the browser is Vivaldi.
+//
+// https://vivaldi.com/
+func (b *Browser) IsVivaldi() bool {
+	if _, ok := b.getMatcher().(*matchers.Vivaldi); ok {
 		return true
 	}
 
