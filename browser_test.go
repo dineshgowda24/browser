@@ -966,3 +966,23 @@ func TestBrowserIsEdge(t *testing.T) {
 		})
 	})
 }
+
+func TestBrowserIsFirefox(t *testing.T) {
+	Convey("Subject: #IsFirefox", t, func() {
+		Convey("When the browser is Firefox", func() {
+			Convey("It should return true", func() {
+				ua := testUserAgents["firefox"]
+				b, _ := NewBrowser(ua.Mac)
+				So(b.IsFirefox(), ShouldBeTrue)
+			})
+		})
+
+		Convey("When the browser is not Firefox", func() {
+			Convey("It should return false", func() {
+				ua := testUserAgents["chrome"]
+				b, _ := NewBrowser(ua.Windows)
+				So(b.IsFirefox(), ShouldBeFalse)
+			})
+		})
+	})
+}

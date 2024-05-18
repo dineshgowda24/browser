@@ -96,6 +96,7 @@ func (b *Browser) register() {
 		matchers.NewSputnik(parser),
 		matchers.NewYaaniBrowser(parser),
 		matchers.NewYandex(parser),
+		matchers.NewFirefox(parser),
 		matchers.NewChrome(parser), // chrome should be before safari
 		matchers.NewSafari(parser), // chrome and safari must be at the end
 		matchers.NewUnknown(parser),
@@ -291,6 +292,17 @@ func (b *Browser) IsQQ() bool {
 // https://www.electronjs.org/
 func (b *Browser) IsElectron() bool {
 	if _, ok := b.getMatcher().(*matchers.Electron); ok {
+		return true
+	}
+
+	return false
+}
+
+// IsFirefox returns true if the browser is Firefox.
+//
+// https://www.mozilla.org/firefox/
+func (b *Browser) IsFirefox() bool {
+	if _, ok := b.getMatcher().(*matchers.Firefox); ok {
 		return true
 	}
 

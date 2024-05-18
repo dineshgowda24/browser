@@ -31,6 +31,12 @@ electron:
   linux: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Atom/1.1.0 Chrome/43.0.2357.65 Electron/0.30.7 Safari/537.36
   mac: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/537.36 (KHTML, like Gecko) Franz/0.9.8 Chrome/47.0.2526.110 Electron/0.36.9 Safari/537.36
   windows: Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.73 Electron/0.36.4 Safari/537.36
+firefox:
+ android: Mozilla/5.0 (Android 8.0.0; Mobile; rv:59.0.2) Gecko/59.0.2 Firefox/59.0.2
+ ios: Mozilla/5.0 (iPhone; CPU iPhone OS 12_0_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) FxiOS/7.0.4 Mobile/16A404 Safari/605.1.15
+ linux: Mozilla/5.0 (Linux; U; Linux 2.6; en-US; rv:1.9.9.2) Gecko/20100722 Firefox/3.6.8
+ mac: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14_1; rv:64.0) Gecko/20100101 Firefox/64.0
+ windows: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.2.8) Gecko/20100722 AskTbBLT/3.8.0.12304 Firefox/3.6.8 GTB7.1
 gsa:
   android: Mozilla/5.0 (LINUX; ANDROID 4.4.2; LG-X135 Build/KOT49H.V10c) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/30.0.0.0 MOBILE Safari/537.36 GSA/5.10.32.19.arm
   ios: Mozilla/5.0 (iPhone; CPU iPhone OS 8_4_1 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) GSA/7.0.55539 Mobile/12H321 Safari/600.1.4
