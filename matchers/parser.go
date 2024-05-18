@@ -11,8 +11,8 @@ type Parser interface {
 	Match([]string) bool
 }
 
-// compile time check for interface
-var _ Parser = &UAParser{}
+// compile time check if UAParser implements Parser interface
+var _ Parser = (*UAParser)(nil)
 
 type UAParser struct {
 	userAgent string
